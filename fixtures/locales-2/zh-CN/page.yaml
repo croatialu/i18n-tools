@@ -1,0 +1,1612 @@
+'403':
+  no-permission: 403 没有权限
+'404':
+  404-not-found: 404 Not Found
+  back-to-home: 返回首页
+  description: 前面的区域，以后再来探索吧！
+common:
+  copy-fail: 复制失败
+  copy-success: 复制成功
+components:
+  behavior-tree:
+    node:
+      agv-act: AGV动作
+      agv-move: AGV移动
+      always-failure: 总是失败
+      always-success: 总是成功
+      comm-dev-comparer: 设备属性比较
+      comm-dev-setter: 设备属性设置
+      delay: 延迟
+      eq: 黑板值比较
+      expression: 比较表达式
+      fallback: 选择
+      force-failure: 强制失败
+      force-success: 强制成功
+      hang-sequence: 顺序挂起
+      http-act: 中控
+      http-wait: HTTP等待
+      if-then-else: IfThenElse
+      inverter: 取反
+      parallel: 并行
+      parallel-all: 并行所有
+      reactive-sequence: 反应式顺序
+      retry-until-successful: 重试
+      sequence: 顺序
+      sequence-with-memory: 有记忆顺序
+      set-blackboard: 黑板写值
+      sub-tree: 子树
+      switch: 分支
+      while-do-else: WhileDoElse
+    node-detail:
+      desc: 备注
+      params: 参数
+  data-empty-short:
+    description: 暂无数据
+  modals:
+    language:
+      content:
+        current-language: 语言
+      title: 选择语言
+    quick-create-order:
+      content:
+        action-form:
+          action-template-list: 动作模板
+          enum:
+            'false': 否
+            'true': 是
+          mission-template-list: 任务模板
+          move-action:
+            map-name-placeholder: 请输入搜索地图
+            station-name-placeholder: 请输入搜索站点
+          selected-mission: 已选任务
+          title: 任务列表
+        basic-form:
+          execute-type-label: 执行类型
+          execute-type-radio:
+            not-specify: 不指定
+            robot: 指定机器人
+            robot-group: 指定机器人群组
+          execute-type-robot-group-label: 机器人群组
+          execute-type-robot-group-placeholder-with-name: 请选择{name}
+          execute-type-robot-label: 机器人
+          execute-type-robot-placeholder-with-name: 请选择{name}
+          priority-label: 订单优先级
+          title: 基本信息
+        enum:
+          action-type:
+            move: 移动
+            seer-custom: 仙工自定义动作
+            std-custom: 斯坦德自定义动作
+          priority:
+            high: 高优先级
+            low: 低优先级
+            medium: 中优先级
+        toast:
+          error-types: 参数类型错误
+          invalid-json: JSON 数据不合法！
+          invalid-parameter: 数据不合法！
+          none-actions: 请添加任务
+          none-fields: 参数内容不能为空
+          success: 快速建单成功
+      title: 快速建单
+    robot-selector:
+      content:
+        labels:
+          filter-by-map-version: 按地图版本选择
+          filter-by-robot-group: 按机器人群组选择
+          filter-by-robot-group-items-title: 全部机器人
+          filter-by-robot-type: 按机器人型号选择
+          filter-by-robot-type-items-title: 全部机器人
+          filter-by-sros-version: 按SROS版本号选择
+          total-with-number: '{number}项'
+        placeholder:
+          filter-by-map-version: 机器人/地图版本
+          filter-by-robot-group: 机器人/群组名称
+          filter-by-robot-type: 机器人/机器人型号
+          filter-by-sros-version: 机器人/SROS版本号
+      title: 选择机器人
+    user-profile:
+      confirm-new-password: 确认新密码
+      my-profile: 我的账号
+      new-password: 新密码
+      nickname: 用户名称
+      old-password: 旧密码
+      password: 密码
+      role: 角色
+      update-password: 修改密码
+      update-success: 修改成功
+      update-user-nickname: 修改用户名称
+      username: 用户账号
+  robot-state-block:
+    avoid-state: 避障状态
+    break-sw-state: 解抱闸状态
+    charging-state: 充电状态
+    crowd-state: 群组
+    emergency-state: 急停状态
+    idle-state: 空闲状态
+    low-battery-state: 低电量状态
+    manual-state: 手动控制状态
+    need-location-state: 需要定位状态
+    offline-state: 离线状态
+    online-state: 在线状态
+    order-hang-state: 订单挂起
+    order-held-state: 订单暂停
+    running-state: 运动状态
+    save-mode-state: 低功耗状态
+    standby-state: 待命状态
+    traffic-control-state: 交管状态
+  std-map:
+    abnormal: 状态异常
+    backward-edge: 后退路径
+    brake-released: 解抱闸
+    charging: 充电中
+    current-path: 当前规划路径
+    disabled-edge: 禁用路径
+    edge-group: 选择路径组路径
+    elements:
+      all-occupy: 所有占用的资源
+      edge-congestion-level: 显示路径拥堵程度
+      func-area: 功能区
+      map-axis: 地图坐标系
+      map-background: 黑白底图
+      map-grid: 地图网格
+      node: 节点
+      offline-robot: 已释放资源的离线车辆
+      removed-edges: 显示禁用路径
+      resource-zone: 显示车辆资源区域
+      show-text: 显示路网名称
+      station: 站点
+    executing: 执行任务中
+    forward-edge: 前进路径
+    idle: 空闲中
+    input-robot-name-station-name-and-id-to-search: 请输入机器人名称、站点名称/ID进行搜索定位
+    legend: 图例
+    load-state: 载货状态
+    loaded-robot-restricted-edge: 满载路径
+    map-edge: 地图路径
+    normal-execution: 执行正常
+    'obstacle-avoiding ': 避障中
+    occupied-path: 交管占用
+    offline: 离线
+    operation:
+      full-screen: 全屏
+      reset-view: 回到原点
+      zoom-in: 放大
+      zoom-out: 缩小
+    order: 订单
+    order-pause: 订单暂停
+    order-suspended: 订单挂起
+    placeholder:
+      select-edge-group: 请选择路径组
+      select-map: 选择地图
+      show-map-elements: 显示地图元素
+    robot: 机器人
+    robot-detail:
+      action-status: 行驶速度
+      charging: 充电中
+      copy-obj-id: 点击复制对象ID
+      current-station-name: 当前站点
+      location-position: 定位位置
+      locked-robots: 交管对象
+      order-detail: 订单详情
+      order-id: 订单ID
+      order-name: 订单名称
+      order-state: 订单状态
+      robot-group: 群组
+      robot-status: 机器人状态
+      rotate-theta: 旋转角度
+      traffic-detail: 交管资源
+      traffic-status: 交管状态
+      traffic-time: 交管时间
+      traffic-type: 交管类型
+    robot-info: 机器人信息
+    select-edge-group: 请选择路径组
+    setting: 设置
+    setting-modal:
+      default-value: （默认值：{0}）
+      edge-width: 路径线宽
+      map-font-size: 地图字体大小
+      robot-font-size: 车辆名称字体
+      robot-zoom: 车辆放大倍数
+      setting: 设置
+      station-radius: 站点半径
+      station-width: 站点线宽
+    start-station-to-end-station: 起点-终点
+    toast:
+      operate-success: 操作成功
+    traffic-controlling: 交通管制中
+    unloaded-robot-restricted-edge: 空载路径
+  system-notification:
+    title: 系统异常告警
+  uploaders:
+    base-file-uploader:
+      cancelled: 已取消
+    sros-file-uploader:
+      upload-sros-file: 上传SROS文件
+composables:
+  use-confirm:
+    cancel-text: 取消
+    ok-text: 确定
+    title: 温馨提示
+constants:
+  action-template:
+    action-template-name: 模板名称
+    action-template-type: 动作模板
+  device-type:
+    air-shower-door: 区域管理设备-风淋门
+    charger: 区域管理设备-充电桩
+    common: 通用设备
+    door: 区域管理设备-自动门
+    elevator: 区域管理设备-电梯
+  driver-config:
+    air-shower:
+      zlan: 卓岚-风淋门
+    autodoor:
+      zlan: 卓岚-自动门
+    charing-station:
+      titan: 泰坦充电桩
+    elevator:
+      wanglong: 旺龙电梯
+      zlan: 卓岚电梯
+    host: IP地址
+    maximum-timeout-times: 最大请求超时次数
+    polling-mills: 状态频率
+    port: 端口
+    request-timeout: 单次请求超时时间
+    robot:
+      seer: 仙工AGV
+      seer-ports:
+        config-port: 配置模块端口
+        control-port: 控制模块端口
+        navigator-port: 导航模块端口
+        push-port: 主动上报端口
+        state-port: 状态模块端口
+      standard: 斯坦德AMR
+    selection-label: 驱动
+    slave-id: 从站号
+integrated-equipment:
+  air-shower:
+    actions:
+      change-state-disable: 请确认将风淋门状态修改为维修中？维修状态时风淋门将被视为常开状态，经过风淋门将不会发送开关门信号、风淋信号
+      change-state-enable: 请确认将风淋门状态修改为上线？
+    add-shower: 添加风淋门
+    air-shower-control: 风淋门控制
+    back-door: 内门
+    confirm-delete-shower: 确定要删除该风淋门吗？
+    edit-shower-door: 编辑风淋门
+    execute-stations: 执行风淋动作的站点
+    front-door: 外门
+    inner-door-area: 内门区域
+    inner-door-close: 内门关门
+    inner-door-close-status: 内门关门到位状态
+    inner-door-close-tip: 请确认是否执行内门关门操作
+    inner-door-open: 内门开门
+    inner-door-open-status: 内门开门到位状态
+    inner-door-open-tip: 请确认是否执行内门开门操作
+    inner-door-release-tip: 请确认是否执行内门常开操作
+    is-execute-operate: 是否执行风淋操作
+    is-execute-shower: 请确认是否执行手动风淋操作
+    manual-shower: 手动风淋
+    no: 否
+    operate-failed: 操作失败
+    out-door-area: 外门区域
+    out-door-close: 外门关门
+    out-door-close-status: 外门关门到位状态
+    out-door-open: 外门开门
+    out-door-open-status: 外门开门到位状态
+    out-door-open-tip: 请确认是否执行外门开门操作
+    out-door-release-tip: 请确认是否执行外门常开操作
+    outer-door-close-tip: 请确认是否执行外门关门操作
+    please-select-stations: 请选择执行风淋动作的站点
+    select-shower-action-site: 选择风淋动作站点
+    shower-action: 执行风淋动作
+    shower-door-detail: 风淋门详情
+    shower-door-name: 风淋门名称
+    shower-manage: 风淋门管理
+    yes: 是
+  autodoor:
+    '':
+      open-successful: 开门成功
+      port: 端口号
+    actions:
+      change-state-disable: 请确认是否将自动门状态修改为维修？维修状态时自动门将被视为常开状态，经过自动门将不会发送开关门信号
+      change-state-enable: 请确认是否将自动门状态修改为上线？
+    add-door: 添加自动门
+    add-successful: 新增成功
+    area-name: 区域名称
+    autodoor: 自动门管理
+    autodoor-control: 自动门控制（仅维修中可以操作）
+    autodoor-deetail: 自动门详情
+    autodoor-man: 自动门名称
+    autodoor-status: 自动门状态
+    close-door: 关门
+    close-failed: 关门失败
+    close-ok: 关门到位
+    close-status: 关门到位状态
+    close-successful: 关门成功
+    close-tip: 请确认是否执行关门操作
+    connected: 已连接
+    delete: 删除
+    delete-autodoor: 确定要删除该自动门吗？
+    delete-success: 删除成功
+    detail: 查看详情
+    device-name: 设备名称
+    edit: 编辑
+    edit-autodoor: 编辑自动门
+    edit-autodoor-status: 请确认将自动门状态修改为
+    edit-success: 编辑成功
+    fault: 故障
+    fix: 维修
+    idle: 空闲
+    in-maintenance: 维修中
+    inner-map-area: 内门地图区域
+    ip: IP地址
+    ip-port: IP地址/端口
+    ip-search: 输入ip地址搜索
+    link-status: 连接状态
+    map: 地图
+    map-area: 地图区域
+    map-name: 地图名称
+    name-search: 输入名称搜索
+    nomally-open-tip: 请确认是否执行常开操作
+    normally-open: 常开
+    online: 上线
+    open-door: 开门
+    open-failed: 开门失败
+    open-not-ok: 未到位
+    open-ok: 开门到位
+    open-status: 开门到位状态
+    open-successful: 开门成功
+    open-tip: 请确认是否执行开门操作
+    operate: 操作
+    operate-success: 操作成功
+    out-door-map-area: 外门地图区域
+    please-input-device-name: 请输入设备名称
+    please-select: 请选择
+    please-select-in-door-map-area: 请选择内门地图区域
+    please-select-map: 请选择地图
+    please-select-map-area: 请选择地图区域
+    please-select-out-map-area: 请选择外门地图区域
+    port: 端口号
+    release: 释放资源
+    release-failed: 释放资源失败
+    release-resources: 释放资源成功
+    resource-occupation: 资源占用
+    running: 运行中
+    select-map-name: 请选择地图名称
+    sure-release: 请确认是否执行释放资源操作
+    unconected: 未连接
+    unknown: 未知
+    work-status: 工作状态
+    working: 工作中
+  charging-station:
+    abnormal: 异常
+    actions:
+      change-state-disable: 请确认将充电桩状态修改为维修？维修状态时充电桩为不可用状态，充电任务将不会分配此充电桩
+      change-state-enable: 请确认将充电桩状态修改为上线？
+    add-charge: 添加充电桩
+    be-occupied: 被占用
+    booking: 预定中
+    charge-detail: 充电桩详情
+    charge-manage: 充电桩管理
+    charge-name: 充电桩名称
+    charge-station-config: 充电站点配置
+    charge-status: 充电状态
+    charging-pile-control: 充电桩控制（仅维修中可以操作）
+    compressed: 已压紧
+    driver-name: 驱动名称
+    edit-charge: 编辑充电桩
+    error: 错误
+    input-search-charge-name: 输入充电桩名称搜索
+    not-compacted: 未压紧
+    not-retracted: 未缩回
+    occupied: 占用中
+    online: 在线
+    pffline: 离线
+    placing: 放置中
+    plug-in: 电推伸出
+    plug-into: 电推压紧
+    pre-occupancy: 预占用
+    retracted: 已缩回
+    site-name: 站点名称
+    sure-delete-charge: 确定要删除该充电桩吗？
+    sure-is-execute-electricity-push: 请确认是否执行电推缩回操作
+    sure-is-execute-plug-in: 请确认是否执行电推伸出操作
+    unplug: 电推缩回
+    work: 工作
+  elevator:
+    actions:
+      change-state-disable: 请确认将电梯状态修改为维修中？维修状态时电梯为不可用状态，跨楼层任务可能会失败
+      change-state-enable: 请确认将电梯状态修改为上线？
+    add-charge-station: 新建充电站点
+    add-elevator: 添加电梯
+    add-floor: 新增楼层
+    all-floor: 所在楼层
+    base-info: 基本信息
+    call-elevator: 呼梯
+    call-elevator-failed: 呼叫电梯失败
+    call-elevator-successful: 呼叫电梯成功
+    charge-station: 充电站点
+    charge-station-name: 充电站点名称
+    edit-elevator: 编辑电梯
+    elevator-area: 电梯区域
+    elevator-detail: 电梯详情
+    elevator-manage: 电梯管理
+    elevator-name: 电梯名称
+    elevator-operate: 电梯操作（仅维修中可以操作）
+    elevator-station: 电梯内乘梯点
+    floor: 楼层
+    floor-config: 楼层配置
+    floor-name: 楼层名称
+    floor-no: 楼层号
+    inner-door-close-ok: 内门关门到位
+    inner-door-open-ok: 内门开门到位
+    input-charge-station-name: 请输入充电站点名称
+    input-floor: 输入楼层
+    input-floor-name: 请输入楼层名称
+    input-relative-floor: 请输入关联楼层
+    match-is-not-whole: 配置未填写完整
+    networking: 联网
+    no-internet: 不联网
+    out-door-close-ok: 外门关门到位
+    out-door-open-ok: 外门开门到位
+    quit-station: 退出站点
+    relative-floor: 关联楼层
+    relative-map: 关联地图
+    select-charge-station: 请选择充电站点
+    select-elevator-area: 请选择电梯区域
+    select-elevator-board-point: 请选择电梯内乘梯点
+    select-quit-site: 请选择退出站点
+    select-relative-map: 请选择关联地图
+    select-specified-vehicle-group: 请选择指定的车型组
+    select-type: 请选择类型
+    specified-vehicle-group: 指定的车型组
+    submit: 提交
+    sure-delete-elevator: 确定要删除该电梯吗？
+    type: 类型
+    use-status: 使用状态
+map:
+  edge-group:
+    actions:
+      confirm-delete:
+        content: 确定要删除所选路径组吗？
+      create-path-group: 新建路径组
+      delete-path-group: 删除
+      edit-path-group: 编辑
+    enums:
+      edge-group-type:
+        same-direction-only: 单方向行驶
+        single-vehicle-only: 单车行驶
+    modals:
+      path-group:
+        content:
+          actions:
+            add-map-edge-group: 添加地图和边
+          enums:
+            edge-with-number: 边{number}
+          form:
+            custom-message:
+              edge-ids-min: 跨地图路径组资源不能为空!
+              map-edge-group-resource-min: 跨地图路径组至少需要2个!
+              map-id-min: 清选择地图!
+              map-name-min: 清选择地图!
+            labels:
+              edge-group-type: 路径组类型
+              map-edge-group-name: 路径组名称
+              map-edge-group-resources: 已选择地图和边
+            placeholder:
+              edge-group-type: 请选择路径组类型
+              map-edge-group-name: 请输入路径组名称
+              map-name: 请选择地图
+          toast:
+            create-success: 新建成功
+            update-success: 编辑成功
+        title:
+          add: 新建路径组
+          edit: 编辑路径组
+    placeholder:
+      map-edge-group-name: 输入路径组名称搜索
+    table-columns:
+      edge-group-type: 路径组类型
+      id: ID
+      map-edge-group-name: 路径组名称
+      map-edge-group-resources: 关联【地图-边】列表
+      operate: 操作
+    toast:
+      delete-success: 删除成功
+    tooltips:
+      map-edge-group-resources:
+        body:
+          description-with-name-number: 【{name}】:{number}条边 ;
+        content:
+          title-with-name-id: 【{name}】:{id};
+          title-with-number: 共关联{number}个地图-边
+  list:
+    actions:
+      clear-out: 禁用路径
+      confirm-delete:
+        content-with-name: 确认删除【{name}】地图吗？
+        ok-text: 删除
+      delete: 删除
+      edit-map: 修改状态
+      export: 导出
+      import-map: 导入地图文件
+      pull-map: 从机器人拉取地图
+    enums:
+      map-info-state:
+        activated: 已启用
+        inactivated: 已禁用
+      source:
+        fetch: 从机器人拉取
+        new-CAD: 手动创建
+        upload: 导入文件
+    modals:
+      clear-out:
+        content:
+          actions:
+            able-status: 启用
+            confirm-delete:
+              content: 确定要删除所选禁用路径集合吗？
+            confirm-switch-status:
+              content:
+                able-status: 确定要启用所选禁用路径吗？
+                disable-status: 确定要禁用所选禁用路径吗？
+            create-clear-out: 新建禁用路径集合
+            delete: 删除
+            disable-status: 禁用
+            edit: 编辑
+          enums:
+            edge-with-name: 边{name}
+          table-columns:
+            map-removed-edge-group-list: 禁用路径集合
+            map-removed-edge-group-name: 禁用路径集合名称
+            operator: 操作
+          table-placeholder:
+            map-removed-edge-group-name: 请输入禁用路径集合名称搜索
+          toast:
+            delete-success: 删除成功
+            update-status-success: 操作成功
+        title: 禁用路径集合
+      clear-out-form:
+        content:
+          enums:
+            edge-with-name: 边{name}
+          form:
+            custom-message:
+              map-removed-edge-group-list-no-empty: 请选择至少一个路径！
+            labels:
+              map-removed-edge-group-list: 禁用路径集合
+              map-removed-edge-group-name: 禁用路径集合名称
+            placeholder:
+              map-removed-edge-group-list: 请选择禁用的路径
+              map-removed-edge-group-name: 请输入禁用路径集合名称
+          toast:
+            create-success: 新建成功
+            update-success: 编辑成功
+        title:
+          add: 新建禁用路径集合
+          edit: 编辑禁用路径集合
+      map-detail-form:
+        content:
+          enum:
+            disable: 禁用
+            enable: 启用
+          form:
+            custom-message:
+              floor-max: 楼层数不得大于 100
+              floor-min: 楼层数必须大于等于 1
+            labels:
+              description: 地图描述
+              floor: 所在楼层
+              map-info-state: 地图状态
+              map-name: 地图文件名
+            placeholder:
+              description: 请输入地图描述
+              floor: 请输入所在楼层
+              map-name: 请输入地图文件名
+          toast:
+            update-success: 修改成功
+        title: 修改地图状态
+      map-import:
+        content:
+          toast:
+            upload-success: 上传成功
+        ok-text: 上传
+        title: 导入地图
+      map-pull:
+        content:
+          form:
+            labels:
+              map-name: 选择地图
+              vehicle-key: 选择机器人
+          toast:
+            download-success: 拉取成功
+        ok-text: 保存
+        title: 拉取地图
+    placeholder:
+      map-name: 输入地图名称搜索
+    table-columns:
+      floor: 楼层
+      gmt-modified: 更新时间
+      group: 版本号
+      id: ID
+      map-info-state: 状态
+      map-name: 地图名称
+      modified-by: 更新人
+      operate: 操作
+      source: 地图来源
+    toast:
+      delete-success: 删除成功
+      export-success: 导出成功
+  traffic:
+    actions:
+      confirm-delete:
+        content-with-name: 请确认是否删除外部交管{name}?
+      confirm-release:
+        content: 请确认是否清除该区域的资源占用？
+      create-traffic-outside: 创建外部区域管理
+      delete: 删除
+      edit: 编辑
+      release: 清除占用
+    modals:
+      traffic:
+        content:
+          form:
+            labels:
+              map: 选择地图
+              traffic-area-code: 交管区域编码
+              traffic-area-name: 名称
+              traffic-edge-group: 路径组名称
+            placeholder:
+              map: 请选择地图
+              traffic-area-code: 请输入交管区域编码
+              traffic-area-name: 请输入名称
+          toast:
+            create-success: 新增成功
+            update-success: 编辑成功
+        title: 交管区域
+    placeholder:
+      traffic-area-name: 请输入交管区域名称
+    table-columns:
+      id: ID
+      map-name: 地图名称
+      operate: 操作
+      traffic-apply-name: 资源占用
+      traffic-area-code: 交管区域编码
+      traffic-area-name: 名称
+      traffic-edge-group-name: 路径组名称
+    toast:
+      delete-success: 删除成功
+      traffic-outside-success: 操作成功
+order:
+  action-template:
+    actions:
+      confirm-delete-action-template:
+        content: 确认删除？
+      create-action-template: 新建动作模板
+      delete-action-template: 删除
+      edit-action-template: 编辑
+    modals:
+      action-template-modal:
+        content:
+          json-invalid: JSON 数据不合法！
+          parameter-invalid: 数据不合法！
+        title:
+          create: 新建动作模板
+          edit: 编辑动作模板
+    placeholder:
+      keyword: 请输入模板名称
+    table-columns:
+      actionName: 模版名称
+      gmtCreate: 创建时间
+      id: ID
+      operator: 操作
+    toast:
+      create-action-template-success: 创建动作模板成功
+      delete-action-template-success: 删除动作模板成功
+      edit-action-template-success: 编辑动作模板成功
+  transport-order:
+    actions:
+      detail: 查看详情
+      order-cancel: 取消订单
+      order-continue-form-hang: 继续
+      order-continue-form-rejected: 移回队列中
+      order-held: 暂停
+      order-jump-form-hang: 跳过
+      order-rejected: 从队列移除
+      order-simulation: 模拟分配
+      quick-create-form: 快速建单
+    components:
+      dropdown-menu:
+        toast:
+          operate-success: 操作成功
+    modals:
+      behavior-tree-log-table:
+        columns:
+          cur-status: 执行状态
+          film-time: 时间
+          msg: 节点信息
+          uid: 节点编号
+        enums:
+          cur-status-bb:
+            clear: 清空
+            remove: 删除
+            set: 设置
+          cur-status-bt-node:
+            failure: 失败
+            idle: 未执行
+            running: 执行中
+            success: 成功
+          cur-status-sub-task:
+            cancelled: 取消
+            checking: 检查中
+            failed: 失败
+            finished: 完成
+            pristine: 初始
+            processing: 子任务执行中
+          cur-status-task:
+            assign-next-sub-task: 分配下一个子任务
+            cancelled: 取消
+            failed: 失败
+            hang: 挂起
+            held: 暂停
+            in-queue: 队列中
+            in-queue-priority: 队列中手动优先
+            out-queue: 队列外
+            processing: 订单执行中
+            raw: 初始状态
+            succeeded: 成功
+          node-type:
+            bb: 黑板
+            bt-node: 行为树节点
+            na: 其他类型
+            sub-task: 子任务
+            task: 订单
+        placeholders:
+          select-node-type: 日志展示类型
+      order-cancel:
+        content:
+          description-disable-with-name: 取消订单的同时是否禁用 {name}
+          description-with-order-name: 确认取消「 {name} 」订单吗？
+          description-without-order-name: 对于执行中或已挂起的订单，请谨慎操作
+          items-false: 不禁用
+          items-true: 禁用
+          option-all: 所有机器人
+          option-current: 当前AGV
+        ok-text: 确认取消订单
+        title: 温馨提示
+      order-continue-form-rejected:
+        content: 是否确定移回队列中？
+        ok-text: 确定移回
+      order-continue-from-hang:
+        content: 请先确保导致订单挂起的异常因素已被排除
+        ok-text: 确定继续订单
+      order-continue-from-held:
+        content: 请先确保导致订单暂停的异常因素已被排除
+        ok-text: 确定继续订单
+      order-detail:
+        content:
+          act-content-with-name: 动作任务：{name}
+          columns:
+            appoint-vehicle-group-name: 指定机器人群组
+            appoint-vehicle-name: 指定机器人
+            cancel-reason: 失败原因
+            execute-vehicle-name: 执行机器人
+            final-time: 完成时间
+            gmt-create: 创建时间
+            modified-by: 操作用户
+            order-key: ID
+            order-name: 名称
+            order-priority: 优先级
+            order-state: 当前状态
+            order-type: 类型
+            start-execute-time: 开始执行时间
+            station-name: 起点 > 终点
+            tags: 标签
+          enums:
+            order-state:
+              assign-next-sub-task: 等待分配下一个子任务
+              cancelled: 已取消
+              checking: 检查中
+              failed: 已失败
+              finished: 完成
+              hang: 已挂起
+              held: 暂停
+              in-queue: 队列中
+              in-queue-priority: 队列中(优先)
+              na: 待开始
+              out-queue: 队列外
+              processing: 执行中
+              succeeded: 已成功
+            order-type:
+              battery-maintain: 电池保养订单
+              charge: 充电订单
+              park: 停靠订单
+              work: 工作订单
+            priority:
+              high: 高优先级
+              highest: 最高优先级
+              low: 低优先级
+              medium: 中优先级
+          items-title: 搬运订单基本信息
+          move-content-with-name: 移动任务：{name}
+          operations-title: 订单操作
+          title: 执行详情
+        open-bt: 行为树展示
+        title: 订单详情
+      order-jump:
+        content:
+          input-placeholder: 请输入授权码
+          subtitle: 授权码
+          title: 机器人当前动作会被跳过，此操作具有极高风险，是否确认？
+          toast-invalid-code: 授权码错误！
+        ok-text: 确定跳过动作
+        title: 温馨提示
+      order-pause:
+        content: 是否确定暂停订单？
+        ok-text: 确定暂停订单
+      order-rejected:
+        content: 是否确定从队列移除？
+        ok-text: 确定移除
+      order-simulation:
+        content:
+          combobox-placeholder: 指定机器人
+          notice-title: 提示：订单不会实际执行，只用于模拟分配查找订单不分配的原因
+          result: 结果：{result}
+          toast-none-device-key: 未指定机器人
+        ok-text: 提交
+        title: 温馨提示
+    placeholder:
+      created-by: 请选择创建人
+      execute-vehicle-key: 请选择机器人
+      keywords: 请输入订单ID或订单名称
+      tags: 请输入筛选标签
+    table-columns:
+      created-by: 创建人
+      detail: 执行任务状态
+      execute-vehicle-name: 执行机器人
+      gmt-create: 创建时间
+      operator: 操作
+      order-key: 订单ID
+      order-name: 订单名称
+      order-state: 当前状态
+      order-type: 订单类型
+      progress: 完成进度
+      station-name: 起点 > 终点
+    tabs:
+      all: 全部订单
+      cancelled: 已取消
+      failed: 已失败
+      hang: 已挂起
+      held: 已暂停
+      in-queue: 队列中
+      out-queue: 队列外
+      processing: 执行中
+      succeeded: 已完成
+robot:
+  actions:
+    entity-table:
+      cancel-emergency: 解除急停
+      cancel-task: 取消订单
+      clean-path-resource: 清除路径占用
+      continue-move: 继续移动
+      continue-task: 继续订单
+      create-charge-task: 快速充电
+      create-park-task: 一键停靠
+      create-robot-manual: 手动添加
+      create-robot-scan: 扫描添加
+      delete: 删除
+      pass: 车辆放行
+      pause-move: 暂停移动
+      pause-task: 暂停订单
+      schedule-disable: 调度下线
+      schedule-enable: 调度上线
+      trigger-emergency: 触发急停
+    group-table:
+      create-group: 创建群组
+      delete: 删除
+      edit: 编辑
+  components:
+    popover:
+      group-children-devices:
+        loading: 加载中...
+        none-data: 无数据
+        none-data-after-searching: 当前筛选条件无数据
+      robot-selector:
+        actions:
+          select: 选取
+          trigger-text: 选择车辆序列号
+        table-columns:
+          device-type: 设备型号
+          manufacturer: 厂商名称
+          operator: 操作
+          serial-number: 序列号
+        table-search-placeholder: 搜索
+  enum:
+    entity-table:
+      connection-state:
+        connection-broken: 连接中断
+        offline: 离线
+        online: 在线
+        unknown: 未知
+      scheduled:
+        offline: 下线
+        online: 上线
+  modals:
+    robot-create:
+      form:
+        labels:
+          name: 名称
+      title: 手动添加机器人
+      toast:
+        create-success: 创建成功
+    robot-create-scan:
+      content:
+        form:
+          labels:
+            device-name: 设备名称
+            device-type: 设备型号
+            interface-name: 协议版本号
+            manufacturer: 厂商
+            timestamp: 订阅时间
+          placeholder:
+            device-name: 请输入设备名称
+            device-type: 请输入设备型号
+            interface-name: 请输入协议版本号
+            manufacturer: 请输入厂商
+            timestamp: 请输入订阅时间
+      title: 扫描添加机器人
+      toast:
+        create-success: 创建成功！
+    robot-group:
+      form:
+        custom-message:
+          none-childIds: 群组成员不能为空
+        labels:
+          base-info: 基本信息
+          child-ids: 群组成员
+          group-info: 成员设置
+          group-name: 群组名称
+          group-parameter-length: 机器人长度(mm)
+          group-parameter-length-loaded: 机器人载货长度(mm)
+          group-parameter-width: 机器人宽度(mm)
+          group-parameter-width-loaded: 机器人载货宽度(mm)
+          more-info: 更多配置
+        placeholder:
+          child-ids: 请选择成员
+          group-name: 请输入群组名称
+          group-parameter-length: 请输入机器人长度(mm)
+          group-parameter-length-loaded: 请输入机器人载货长度(mm)
+          group-parameter-width: 请输入机器人宽度(mm)
+          group-parameter-width-loaded: 请输入机器人载货宽度(mm)
+      title:
+        add: 添加群组
+        edit: 编辑群组
+      toast:
+        create-success: 创建成功
+        edit-success: 编辑成功
+  placeholder:
+    group-table:
+      group-name-search: 请输入群组名称
+  table-columns:
+    entity-table:
+      action-state: 动作状态
+      battery-percentage: 电池电量
+      connection-state: 连接状态
+      current-map-name: 当前地图
+      current-map-station-id: 当前站点ID
+      device-key: 设备KEY
+      device-name: 车辆名称
+      movement-state: 移动状态
+      operator: 操作
+      order-key: 订单Key
+      order-name: 订单
+      scheduled: 上下线状态
+      status: 系统状态
+    group-table:
+      child-devices: 成员数量
+      id: ID
+      name: 名称
+      operator: 操作
+  tabs:
+    entity: 个体
+    group: 机器人群组
+  toast:
+    entity-table:
+      delete-success: 删除成功！
+      operate-success: 操作成功！
+    group-table:
+      delete-success: 删除成功！
+      operate-success: 操作成功！
+robot-SROS-version-mgt:
+  actions:
+    confirm-delete-package:
+      content: 确认删除文件？
+      title: 删除文件
+    delete-package: 删除
+    upload-package: 上传新文件
+  table-columns:
+    filename: 文件名
+    gmt-create: 上传时间
+    id: ID
+    operator: 操作
+robot-batch:
+  actions:
+    create-batch-operation: 新建批量任务
+  components:
+    table-operator-column:
+      actions:
+        cancel-batch-operate: 取消
+        confirm-cancel-batch-operate: 确认取消该批量任务吗
+        view-detail: 执行详情
+      toast:
+        operate-success: 操作成功
+  enums:
+    batch-task-operation-type:
+      cancel: 取消
+      delete: 删除
+      pause: 暂停
+      resume: 继续
+      retry: 重试
+    batch-task-status:
+      cancelled: 被取消
+      completed: 全部完成
+      executing: 执行中
+      failed: 失败
+      partial-completed: 部分完成
+      paused: 暂停
+      pending: 未开始
+    batch-task-type:
+      batch-task-SROS: 批量升级SROS
+      batch-task-map: 批量同步地图
+  modals:
+    batch-sync-map:
+      content:
+        actions:
+          more-config: 更多配置
+          selected-robot: 选择机器人
+        description:
+          selected-robot: 已选择的AGV：
+        enums:
+          'false': 否
+          'true': 是
+        form:
+          labels:
+            max-concurrent-count: 最大同时执行任务数
+            selected-map-id: 选择同步的地图
+            selected-map-version: 地图版本
+            selected-robot: 选择升级的机器人
+            to-parking-upgrade: 是否前往停靠点升级
+          placeholder:
+            selected-map-id: 请选择地图
+            selected-map-version: 请选择地图
+      title: 批量同步地图
+    batch-task-detail:
+      content:
+        enums:
+          'false': 否
+          'true': 是
+        table-columns:
+          agv-name: 机器人名称
+          gmt-create: 任务开始时间
+          gmt-modified: 任务更新时间
+          message: 执行详情
+          work-state: 执行状态
+        task-detail:
+          map-name: 同步地图名称
+          max-work-quantity: 最大同时执行任务数
+          need-to-park-station: 是否前往停靠点升级
+          os-file-url: SROS升级包版本号
+      title: 执行详情
+    batch-upgrade-SROS:
+      content:
+        actions:
+          more-config: 更多配置
+          selected-robot: 选择机器人
+        description:
+          selected-robot: 已选择的AGV：
+        enums:
+          'false': 否
+          'true': 是
+        form:
+          labels:
+            max-concurrent-count: 最大同时执行任务数
+            selected-SROS-id: 选择同步的SROS升级包
+            selected-robot: 选择升级的机器人
+            to-parking-upgrade: 是否前往停靠点升级
+          placeholder:
+            selected-SROS-id: 请选择升级包
+      title: 批量升级SROS
+  placeholder:
+    batch-task-status: 请选择任务状态
+    batch-task-type: 请选择任务类型
+  table-columns:
+    end-time: 结束时间
+    execute-work-key: 任务类型
+    id: ID
+    operator: 操作
+    process: 执行进度
+    start-time: 开始时间
+    work-state: 任务状态
+robot-charging-ploy:
+  actions:
+    confirm-delete-content: 确定要删除该充电策略吗？
+    confirm-update-strategy-state-invalid-with-name: 禁用充电策略「{name}」
+    confirm-update-strategy-state-valid-with-name: 启用充电策略「{name}」
+    create-charging-play: 添加新充电策略
+    delete: 删除
+    edit: 编辑
+    strategy-state-invalid: 禁用
+    strategy-state-valid: 启用
+  enum:
+    custom-strategy: 普通策略
+    default-strategy: 默认策略
+    strategy-state-invalid: 未生效
+    strategy-state-valid: 生效
+    strategy-type-high-efficiency: 订单优先模式
+    strategy-type-hold-battery: 电量优先模式
+  modals:
+    charging-plot:
+      content:
+        actions:
+          add-robot-group: 添加使用该策略的机器人群组
+          confirm-none-group-id-list: 未指定特定的机器人群组，充电策略将在所有机器人上生效。
+          confirm-remove-robot-group: 要从该充电策略中移除该机器人群组吗？
+          remove-robot-group: 删除
+        form:
+          custom-message:
+            critical-threshold-min: 低电量必须 > 10%
+            fully-threshold-min: 高电量必须 > 10%
+            idle-charge-frequency-max: 仅支持 0s ~ 300s 之间
+            idle-charge-frequency-min: 仅支持 0s ~ 300s 之间
+            increment-battery-max: 仅支持 0% ~ 100% 之间
+            increment-battery-min: 仅支持 0% ~ 100% 之间
+            number-int: 必须为整数
+            sufficiently-threshold-min: 正常电量必须 > 10%
+            threshold-max: 电量值必须为 100% 以内
+            threshold-step: '电量限制: 高电量 > 正常电量 > 低电量'
+            threshold-total-max: '电量限制: 低电量 + 出让电量 < 100%'
+            time-rage: '时间限制: 结束时间必须在开始时间之后'
+          labels:
+            begin-time: 策略开始时间
+            critical-threshold: 低电量阈值（%）
+            end-time: 策略结束时间
+            fully-threshold: 高电量阈值（%）
+            group-able: 使指定的机器人群组生效
+            idle-charge-frequency: 空闲充电判定时间阈值（秒）
+            increment-battery: 非低电量机器人让出充电桩的最低电量增量（%）
+            strategy-name: 充电策略名称
+            strategy-type: 充电策略模式
+            sufficiently-threshold: 正常电量阈值（%）
+          placeholder:
+            critical-threshold: 请输入低电量阈值（%）
+            fully-threshold: 请输入高电量阈值（%）
+            idle-charge-frequency: 请输入空闲充电判定时间阈值（秒）
+            increment-battery: 请输入非低电量机器人让出充电桩的最低电量增量（%）
+            strategy-name: 请输入充电策略名称
+            strategy-type: 请选择充电策略模式
+            sufficiently-threshold: 请输入正常电量阈值（%）
+        table:
+          table-columns:
+            id: ID
+            name: 机器人群组名称
+        toast:
+          create-success: 新增成功
+          update-success: 修改成功
+        tooltips:
+          hight-efficiency:
+            critical-threshold: 不执行任务，强制充电
+            description: 订单优先模式：优先保证尽可能多的机器人在执行订单，只有机器人电量低于低电量的值才会强制充电
+            extra-full-threshold: 不会自动生成充电任务
+            fully-threshold: 机器人空闲时可充电，充电任务会被工作任务打断
+            sufficiently-threshold: 机器人空闲时可充电，充电任务不会被工作任务打断
+          hold-battery:
+            critical-threshold: 不执行任务，强制充电
+            description: 电量优先模式：优先保证充电桩全部在工作充电，提高机器人群组的整体平均电量
+            extra-full-threshold: 不会自动生成充电任务
+            fully-threshold: 机器人空闲时可充电，充电任务会被工作任务打断
+            sufficiently-threshold: 按照电量从低到高的顺序，把充电桩占满，被分配到充电桩的机器人充电任务不可被打断，其余的机器人正常执行任务
+      title:
+        add: 添加充电策略
+        edit: 编辑充电策略
+    robot-group:
+      content:
+        search-placeholder: 按机器人群组名称搜索
+        table:
+          table-columns:
+            child-devices: 成员数量
+            id: ID
+            name: 机器人群组名称
+            robot-name: 机器人名称
+      title: 选择机器人群组
+  table-columns:
+    begin-time: 策略开始时间
+    end-time: 策略结束时间
+    gmt-create: 创建时间
+    group-names-text: 机器人群组
+    id: ID
+    operator: 操作
+    strategy-name: 充电策略名称
+    strategy-state: 状态
+    strategy-type: 充电策略模式
+  toast:
+    delete-success: 删除成功
+    update-success: 更新成功
+routes:
+  auth:
+    login: 登录
+    sys-activate: 系统激活
+  home:
+    index: 首页
+  integrated-equipment:
+    air-shower: 风淋门
+    autodoor: 自动门
+    charging-station: 充电桩
+    elevator: 电梯
+  map:
+    edge-group: 跨地图路径组
+    list: 地图列表
+    traffic: 外部区域交管
+  order:
+    action-template: 动作模板
+    transport: 订单列表
+  robot:
+    batch-operation: 批量操作
+    charging-ploy: 充电策略
+    list: 机器人列表
+    sros-version-mgt: SROS 版本管理
+  system:
+    account: 用户帐号
+    debug-tool: 调试工具
+    dispatch: 调度配置
+    log-manage: 日志管理
+    message-manage: 消息列表
+    monitor: 服务器监控
+    operation-log: 操作记录
+    playback-monitor: 回放监控
+    upgrade: 系统升级
+scene-monitoring:
+  actions:
+    3D-monitoring: 3D 场控
+    cancel-emergency: 一键解除急停
+    close-order-list: 关闭订单列表
+    open-order-list: 查看订单列表
+    schedule-disable: 一键调度下线
+    schedule-enable: 一键调度上线
+    trigger-emergency: 一键触发急停
+  components:
+    side-bar:
+      battery-with-percent: 电量：{percent}%
+      enums:
+        anomalies: 异常
+        offlines: 离线
+        onlines: 在线
+        standbys: 待命
+        workings: 任务中
+      toast:
+        not-found: 未找到当前机器人所在地图
+        operate-success: 操作成功
+  modals:
+    device-operate:
+      content:
+        description-with-name: 是否确认将全部车辆进行{name}?
+      toast:
+        device-operate-success-with-name: 「{name}」执行成功
+  toast:
+    operate-success-with-name: '{name}执行成功'
+side-menu:
+  debug-tool: 调试工具
+  home: 首页
+  integrated-equipment: 集成设备
+  language: 选择语言
+  logout: 退出登录
+  logout-content: 确认退出登录吗
+  map: 地图
+  message: 消息
+  order: 订单
+  robot: 机器人
+  system: 系统
+  system-utils: 工具
+  user-profile: 修改账户信息
+system:
+  account:
+    actions:
+      create-account: 新增帐号
+    components:
+      dropdown:
+        account-item:
+          actions:
+            authorized-administrator: 授权管理员
+            delete-user: 删除账号
+            disable-user: 禁用
+            edit-user: 编辑用户
+            enable-user: 启用
+            reset-password: 重置密码
+            unauthorized-administrator: 取消管理员
+    composables:
+      user-account:
+        actions:
+          confirm-change-status:
+            content:
+              disable-with-name: 确认禁用【{name}】账号？
+              enable-with-name: 确认启用【{name}】账号？
+          confirm-delete-account:
+            content-with-name: 确认删除【{name}】账号？
+            ok-text: 删除
+        toast:
+          delete-account-success: 删除成功
+          update-account-role-success: 操作成功
+          update-account-status-success: 操作成功
+    enums:
+      role-name:
+        admin: 管理员
+        default: 一般成员
+        super-admin: 超级管理员
+    modals:
+      create-account:
+        content:
+          form:
+            labels:
+              nickname: 昵称
+              password: 用户密码
+              password-confirm: 确认密码
+              role-name: 所属角色
+              username: 用户帐号
+            placeholder:
+              nickname: 请输入昵称
+              password: 请输入用户密码
+              password-confirm: 请输入确认密码
+              role-name: 请选择所属角色
+              username: 请输入用户帐号
+          toast:
+            create-success: 创建成功
+        title: 新增帐号
+      reset-password:
+        content:
+          form:
+            labels:
+              password: 密码
+              password-confirm: 确认密码
+            placeholder:
+              password: 请输入密码
+              password-confirm: 请再次输入密码
+          toast:
+            update-success: 提交成功
+        title: 重置密码
+      update-account:
+        content:
+          form:
+            custom-message:
+              nickname-max: 昵称过长
+              username-max: 账号过长
+            labels:
+              nickname: 昵称
+              username: 账户
+            placeholder:
+              nickname: 请输入昵称
+              username: 请输入账户
+          toast:
+            update-success: 提交成功
+        title: 修改账号信息
+    placeholder:
+      keywords: 请输入关键字
+    table-columns:
+      nickname: 昵称
+      operator: 操作
+      role-name: 角色
+      username: 帐号
+  debug-tool:
+    advanced-options: 高级选项
+    binary-system: 二进制
+    clear: 清除
+    connect: 连接
+    data-log: 数据日志
+    data-send: 数据发送
+    debug-tool: 调试工具
+    disconnect: 断开
+    display-type: 显示类型
+    hexadecimal: 十六进制
+    input-ip: 请输入IP地址
+    input-port: 请输入端口
+    ping-tool: ping工具
+    please-input: 请输入
+    port: 端口
+    protocol-type: 协议类型
+    send: 发送
+    socket-tool: socket工具
+    start: 开始
+    string: 字符串
+  dispatch:
+    actions:
+      edit-config: 编辑
+    enterprise-info:
+      action:
+        update-enterprise-info: 更新
+      table-columns:
+        icon: 网页 ICON
+        icon-subtitle: （分辨率 32*32 最佳，ico 格式，文件大小在 1Mb 以内）
+        logo: 系统 LOGO
+        logo-subtitle: （分辨率 88*32 最佳，png 格式，文件大小在 1Mb 以内）
+      toast:
+        update-enterprise-info-success: 更新 Logo 信息成功
+        upload-icon-file-success: 上传 Icon 文件成功
+        upload-logo-file-success: 上传 Logo 文件成功
+    modals:
+      sys-config:
+        content:
+          form:
+            labels:
+              config-key-desc: 描述
+              config-key-name: 配置名称
+              config-type: 配置类型
+              config-value: 当前值
+              config-value-range: 取值范围
+              config-value-unit: 单位
+              default-config-value: 默认值
+        title: 编辑系统配置
+    table-columns:
+      config-key: 配置KEY
+      config-key-name: 配置名称
+      config-value: 当前值
+      id: ID
+      operator: 操作
+    tabs:
+      enterprise-info: 替换 Logo
+      https-config: HTTPS 配置
+      system-config: 系统配置
+  message:
+    critical: 严重
+    deadly: 致命
+    device: 设备
+    error-code: 错误码
+    happened-time: 发生时间
+    input-order-id: 请输入订单ID
+    major-alarm: 严重级别告警
+    message-manage: 消息管理
+    normal: 一般
+    operate: 操作
+    operate-tip: 操作提示
+    order: 订单
+    order-id: 订单ID
+    read: 已读
+    read-status: 已读状态
+    read-unread: 已读未读
+    read-width-one-click: 一键已读
+    robot: 机器人
+    select-level: 请选择级别
+    select-warn-type: 请选择告警类型
+    server: 服务器
+    success: 操作成功
+    unread: 未读
+    view: 查看
+    warn-description: 告警描述
+    warn-type: 告警类型
+    warning: 警告
+  monitor:
+    alternate-ip: 备用服务器IP
+    attribute: 属性
+    available-memory: 可用内存
+    available-size: 可用大小
+    current-idle-rate: 当前空闲率
+    device-hot-backup-status: 双机热备状态
+    disk-status: 磁盘状态
+    drive-path: 盘符路径
+    drive-type: 盘符类型
+    file-system: 文件系统
+    internal-memory: 内存
+    number-of-cores: 核心数
+    operating-system: 操作系统
+    operational-info: 运行信息
+    percentage-used: 已用百分比
+    running-time: RIOT已运行时间
+    secondary-serve-status: 备用服务器状态
+    server-info: 服务器信息
+    server-ip: 服务器IP
+    server-monitor: 服务器监控
+    server-name: 服务器名称
+    system-architecture: 系统架构
+    system-usage: 系统使用率
+    total-memory: 总内存
+    total-size: 总大小
+    used-size: 已用大小
+    user-utilization-rate: 用户使用率
+    userd-memory: 已用内存
+    utilization-rate: 使用率
+  operation-log:
+    actions:
+      detail: 查看详情
+      detail-default-message: 未知数据
+      detail-default-title: 详情
+    enums:
+      operate-success:
+        'false': 失败
+        'true': 成功
+    placeholder:
+      operate-ip: 请输入 IP 地址
+      operate-module: 选择操作模块
+      operate-module-detail: 选择操作行为
+      operate-sub-name: 请输入操作对象
+      operate-user-name: 请输入操作用户
+    table-columns:
+      gmt-modified: 操作时间
+      operate-data: 原始请求数据
+      operate-ip: 操作 IP
+      operate-module: 操作模块
+      operate-module-detail: 操作行为
+      operate-sub-name: 操作对象
+      operate-success: 操作结果
+      operate-user-name: 操作用户
+  playback:
+    1-speed: 1倍速
+    2-speed: 2倍速
+    4-speed: 4倍速
+    advance-5-second: 前进5s
+    back-5-second: 后退5s
+    current-time: 当前时间
+    half-speed: 0.5倍速
+    pause: 暂停
+    play: 播放
+    speed: 倍速
+  system-log:
+    actions:
+      export-log: 导出
+    title-columns:
+      operator: 操作
+      size-label: 日志大小
+      time: 日志时间
+    toast:
+      downloading: 下载中
+      export-success: 导出成功
+  upgrade:
+    actions:
+      auth-mgt:
+        update-license: 更新授权文件
+      system-upgrade:
+        confirm-reboost:
+          content: 确认重启服务？
+          title: 重启
+        confirm-reboost-after-upload:
+          content: 上传成功，是否重启服务?
+          ok-text: 重启
+          title: 重启
+        confirm-rollback:
+          content: 确认回滚到该版本？
+          title: 回滚
+        current-version: 当前版本
+        reboost: 重启服务
+        rollback-version: 回滚
+        upgrade-version: 升级
+    components:
+      sys-activate-info:
+        enums:
+          business-info:
+            items:
+              company-name: 公司名称
+              order-id: 订单号
+              sales-name: 销售经理
+            title: 业务信息
+          license-info:
+            items:
+              display-version: 授权文件版本号
+              expire-date-str: 授权过期时间
+              license-id: 授权文件ID
+              limit-vehicle-quantity: 可接入机器人数量
+              machine-id: 机器码
+              valid-days: 授权剩余有效时间
+              valid-days-with-number: '{number}天'
+            title: 授权信息
+    enums:
+      auth-mgt: 授权管理
+      system-upgrade: 系统升级
+    table-columns:
+      system-upgrade:
+        display-version: 版本号
+        gmt-modified: 更新时间
+        modified-by: 更新人
+        operator: 操作
+    toast:
+      auth-mgt:
+        update-success: 更新授权文件成功
+      system-upgrade:
+        reboost-success: 服务重启成功
+        rollback-success-with-version: 版本已回滚至{version}，请手动点击「重启服务」

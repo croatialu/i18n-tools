@@ -1,0 +1,26 @@
+default-empty-text: まだデータがありません
+file-upload:
+  click-to-upload: クリックしてアップロード
+  drag-into-file: またはドラッグアンドドロップ
+  exceed-max-count-with-count: ''
+  exceed-max-size: ファイルサイズ制限を超えました
+  invalid-file-type: サポートされていないファイル形式
+  release-to-upload: 手放してアップロード
+  retry: もう一度やり直してください
+  upload-failure: アップロードに失敗しました。もう一度お試しください
+input:
+  default-placeholder: 入力してください
+  placeholder: '{0}を入力してください'
+modal:
+  default-cancel-text: キャンセル
+  default-ok-text: もちろん
+pagination:
+  next-text: 次のページ
+  prev-text: 前のページへ
+select:
+  default-placeholder: 選択してください
+  placeholder: ''
+textarea:
+  default-placeholder: 入力してください
+toast:
+  operate-success: 操作は成功しました

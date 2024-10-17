@@ -1,0 +1,271 @@
+archiveConfig:
+  children:
+    archiveTableSize:
+      description: 單張歸檔表最大記錄數
+      name: 單張歸檔表最大記錄數
+    enable:
+      description: 歸檔開關,歷史數據歸檔只支持Mysql
+      name: 啟用歷史數據歸檔
+    fixedDelay:
+      description: 延時執行時間
+      name: 延時執行時間
+    maxHistoryDay:
+      description: 觸發歸檔任務後，根據該時間範圍確定原數據表需要保留的數據，早於該時間的數據將被歸檔備份並刪除
+      name: 數據過期時間
+    maxRecordSize:
+      description: 超出最大記錄數後歸檔
+      name: 觸發歸檔的最大記錄數
+    minRecordSize:
+      description: 超過歸檔時間但數量小於該值時不觸發歸檔,剩下的已過期記錄數小於該值不能觸發歸檔
+      name: 觸發歸檔的最小記錄數
+    mode:
+      description: 歸檔方式
+      name: 歸檔方式
+    tableSet:
+      description: 歸檔的數據表名, order_mission是關聯表不需要填寫
+      name: 需要歸檔的數據表
+  name: 歷史數據歸檔配置
+chargeConfig:
+  children:
+    enableLoadStateCanCharge:
+      description: 機器人在載貨狀態下可生成充電任務
+      name: 機器人在載貨狀態下可生成充電任務
+  name: 充電配置
+dispatchConfig:
+  children:
+    assignTimePriority:
+      description: 優先順序越高，排隊時間長的訂單被提前分配的概率越高
+      name: 訂單排隊時間對訂單分配影響的級別
+    enableDispatchByLoading:
+      description: 機器人在載貨狀態下可分配新任務
+      name: 機器人在載貨狀態下可分配新任務
+    idleVehiclesRedispatchInterval:
+      description: 訂單分配時間間隔(單位:毫秒)
+      name: 訂單分配時間間隔(單位:毫秒)
+  name: 訂單分配
+interfaceConfig:
+  children:
+    authHeadKey:
+      description: 請求中控系統Auth請求頭KEY
+      name: 請求中控系統Auth請求頭KEY
+    authHeadValue:
+      description: 請求中控系統Auth請求頭值
+      name: 請求中控系統Auth請求頭值
+    requestUrlFailRetryCount:
+      description: 中控回調介面重試次數,當回調介面返回HTTP狀態碼非200時，重試回調的次數
+      name: 中控系統介面請求失敗後的重試次數
+    requestUrlTimeOut:
+      description: 與中控系統http通訊的超時時間
+      name: 請求中控系統URL超時時間
+    thirdPartyUrl:
+      description: 設置中控系統介面URL時,需要輸入完整URL，例如http://127.0.0.1/api
+      name: 中控系統 URL
+  name: 介面配置
+noticeConfig:
+  children:
+    dingTalkEnable:
+      description: 啟用釘釘推送通知
+      name: 啟用釘釘推送通知
+    dingTalkKeyWord:
+      description: 釘釘推送關鍵字
+      name: 釘釘推送關鍵字
+    dingTalkUrl:
+      description: 釘釘推送URL
+      name: 釘釘推送URL
+  name: 通知配置
+orderTaskConfig:
+  children:
+    argActionRetryCount:
+      description: 動作任務執行失敗後自動重試次數
+      name: 動作任務執行失敗後自動重試次數
+    changeMapTimeout:
+      description: 在乘坐電梯等場景，會給機器人發送切換地圖指令，超過該配置時間，將認為切換地圖失敗，訂單會掛起
+      name: 切換地圖指令超時時間
+    hangOrderTaskOperateToCheckVehicleCoordinate:
+      description: 防止在訂單掛起後，人為移動機器人，導致恢復訂單掛起狀態時，機器人沒有在對接點，造成掉料的情況
+      name: 恢復掛起狀態訂單時校驗機器人座標和角度
+    moveOperateVehicleAngleNear:
+      description: 在機器人返回移動任務結束後，會對當前機器人的座標和角度與發送的座標做二次校驗，此配置為允許的角度偏移量
+      name: 移動任務完成後角度校驗允許的偏移量
+    stationDistanceVehicleNear:
+      description: 在機器人返回移動任務結束後，會對當前機器人的座標和角度與發送的座標做二次校驗，此配置為允許的座標偏移量
+      name: 移動任務完成後距離校驗允許的偏移量
+  name: 訂單配置
+parkConfig:
+  children:
+    enableLoadStateCanPark:
+      description: 機器人在載貨狀態下可生成停靠任務
+      name: 機器人在載貨狀態下可生成停靠任務
+    enableVehicleIdlePark:
+      description: 啟用機器人空閒停靠功能
+      name: 啟用機器人空閒停靠功能
+    idleVehicleToParkingWaitingTime:
+      description: 機器人完成訂單後，在等待時間內沒有分配到新的訂單，將會自動生成前往停靠點的停靠任務
+      name: 機器人空閒後生成停靠任務時間
+  name: 停靠配置
+realtimeAlarmConfig:
+  children:
+    airDoorOfflineThreshold:
+      description: 風淋門長時間處於離線閾值,-1代表關閉該提示
+      name: 風淋門長時間處於離線閾值
+    chargeOfflineThreshold:
+      description: 充電樁(聯網)長時間處於離線閾值,-1代表關閉該提示
+      name: 充電樁(聯網)長時間處於離線閾值
+    doorOfflineThreshold:
+      description: 自動門長時間處於離線閾值,-1代表關閉該提示
+      name: 自動門長時間處於離線閾值
+    elevatorOfflineThreshold:
+      description: 電梯長時間處於離線閾值,-1代表關閉該提示
+      name: 電梯長時間處於離線閾值
+    robotObstacleThreshold:
+      description: 機器人長時間處於避障閾值,-1代表關閉該提示
+      name: 機器人長時間處於避障閾值
+    robotOfflineThreshold:
+      description: 機器人在執行任務過程長時間處於離線閾值,-1代表關閉該提示
+      name: 機器人在執行任務過程長時間處於離線閾值
+    robotTrafficThreshold:
+      description: 機器人長時間處於交管閾值,-1代表關閉該提示
+      name: 機器人長時間處於交管閾值
+    serverCpuUsedThreshold:
+      description: 伺服器長時間處於CPU佔用率超80{'%'}的閾值
+      name: 伺服器長時間處於CPU佔用率超過高閾值
+    serverMemoryUsedThreshold:
+      description: 伺服器長時間處於記憶體佔用率超80{'%'}的閾值
+      name: 伺服器長時間處於記憶體佔用率超過高閾值
+    taskUnallocatedThreshold:
+      description: 訂單長時間未分配閾值,-1代表關閉該提示
+      name: 訂單長時間未分配閾值
+  name: 即時告警配置
+routeConfig:
+  children:
+    enableVehicleObstacleReroute:
+      description: 啟用機器人避障後重新規劃，機器人會自動規劃路線繞過障礙物
+      name: 啟用機器人避障後重新規劃
+    maxReturnDistance:
+      description: 機器人座標偏離路徑時可回歸到路徑的最大垂直距離（mm），超過這個距離就不會生成回歸路徑，移動任務失敗
+      name: 機器人座標偏離路徑時可回歸到路徑的最大垂直距離（mm）
+    rerouteEnable:
+      description: 啟用動態路徑規劃
+      name: 啟用動態路徑規劃
+    rerouteMode:
+      description: 重路由模式:取消模式;追加模式
+      name: 重路由模式
+    returnByDistanceThreshold:
+      description: 執行任務時，機器人距離節點大於該範圍，會生成回歸路徑。該值必須小於單機參數955
+      name: 機器人在節點上的距離判定範圍(mm)
+    shortestPathAlg:
+      description: 最短路徑演算法:迪傑斯特拉演算法;A星演算法
+      name: 最短路徑演算法
+    stationNodeDeviateThreshold:
+      description: 大於這個距離的站點和節點無法綁定
+      name: 站點節點偏離閾值(mm)
+    tdsppCostMode:
+      description: 時間相關代價計算模式:路徑長度;簡單旅行時間;靜態旅行時間;誘導因數;時變旅行旅遊時間
+      name: 時間相關代價計算模式
+    tdsppEnable:
+      description: 時間相關路徑規劃開關
+      name: 啟用時間相關路徑規劃
+    tdsppOnEdgeTolerance:
+      description: 判斷距離是否在邊容忍度
+      name: 判斷距離是否在邊容忍度
+    tdsspMaxSpeedCount:
+      description: 路況-最大速度持續次數
+      name: 路況-最大速度持續次數
+    tdsspRoadDurationTime:
+      description: 路況-更新時取速度資訊的時間範圍,此時間到當前時間段取平均值計算
+      name: 路況-更新持續時間
+    tdsspRoadSensitiveTime:
+      description: 路況-更新路況資訊頻率,每次更新的時間,
+      name: 路況-更新敏感時間
+  name: 路徑規劃
+systemConfig:
+  children:
+    enableDataRecord:
+      description: 記錄數據到時序數據庫，支撐回放、數據統計等功能。需依賴其他組件，windows系統需關閉
+      name: 開啟時序資料庫相關功能
+    enableStandBy:
+      description: 啟用雙機熱備
+      name: 啟用雙機熱備
+    musicIdWhenOrderHang:
+      description: 訂單掛起時播放音樂ID
+      name: 訂單掛起時播放音樂ID
+    orderTagQuantityThreshold:
+      description: 訂單標籤數量閾值 下單時檢測標籤數量超閾值提示報錯
+      name: 訂單標籤數量閾值
+    standByServerIp1:
+      description: 雙機熱備伺服器1 IP地址
+      name: 雙機熱備伺服器1 IP地址
+    standByServerIp2:
+      description: 雙機熱備伺服器2 IP地址
+      name: 雙機熱備伺服器2 IP地址
+    thirdAuthTokenUrl:
+      description: 單點登錄鑒權介面地址
+      name: 單點登錄鑒權介面地址
+    thirdRedirectUrl:
+      description: 單點登錄鑒權失敗後跳轉頁面地址
+      name: 單點登錄鑒權失敗後跳轉頁面地址
+    tokenExpirationTime:
+      description: 保存token過期時間(單位分鐘)
+      name: token過期時間(單位分鐘)
+  name: 系統配置
+trafficConfig:
+  children:
+    agvModelIncremental:
+      description: agv交管模型的增量
+      name: agv模型的增量(mm)
+    arbitrationServerEnable:
+      description: 啟用第三方作為外部交管仲裁服務，true時結合外部交管仲裁服務地址使用，false時RIOT作為交管仲裁方
+      name: 啟用第三方作為外部交管仲裁方
+    autoKeepDistanceCheckEnable:
+      description: 自動保持車距開關
+      name: 自動保持車距開關
+    mergeStepMinLength:
+      description: 在申請資源時，如果路徑長度小於該配置值時，會繼續申請下一段路，直到申請的資源大於該配置值，防止由於路徑過短導致機器人走走停停
+      name: 路徑在計算交管時被合併申請的長度閾值
+    minGenCircleRadian:
+      description: 機器人原地旋轉時，生成旋轉交管區域的最小角度值，旋轉角度大於這個值會生成對應旋轉角度的旋轉交管區域
+      name: 機器人原地旋轉時，生成旋轉交管區域的最小角度值
+    outsideArbitrationServerUrl:
+      description: >-
+        例如，http://127.0.0.1:8089/outsideTraffic?command={'%'}s&areaCode={'%'}s&systemId={'%'}s，GET請求,command值為apply或release,areaCode為區域id,systemId為系統id;回應成功{'{'}code:0{'}'}
+      name: 外部交管仲裁服務地址
+    twoEdgeRoadSafeStopDistance:
+      description: 載貨後最大尺寸的車的旋轉半徑加一半車長
+      name: 雙向路口安全停車距離(mm)
+  name: 交管配置
+vda5050DiscoverConfig:
+  children:
+    brokerUrl:
+      description: mqtt Broker地址需要輸入完整URL，例如tcp://127.0.0.1:1883
+      name: vda5050 mqtt服務URL
+    enable:
+      description: 啟用vda5050 mqtt 發現器
+      name: 啟用vda5050 mqtt 發現器
+    password:
+      description: 設置用於mqtt broker連接的密碼
+      name: vda5050 mqtt服務密碼
+    userName:
+      description: 設置用於mqtt broker連接的用戶名
+      name: vda5050 mqtt服務 用戶名
+  name: Vda5050-AGV發現器配置
+vehicleConfig:
+  children:
+    vehicleLength:
+      description: 機器人長度
+      name: 機器人長度
+    vehicleLoadLength:
+      description: 機器人載貨狀態長度
+      name: 機器人載貨狀態長度
+    vehicleLoadSpeed:
+      description: 機器人載貨時最大速度
+      name: 機器人載貨時最大速度
+    vehicleLoadWidth:
+      description: 機器人載貨狀態寬度
+      name: 機器人載貨狀態寬度
+    vehicleSpeed:
+      description: 機器人未載貨時最大速度
+      name: 機器人未載貨時最大速度
+    vehicleWidth:
+      description: 機器人寬度
+      name: 機器人寬度
+  name: 機器人配置

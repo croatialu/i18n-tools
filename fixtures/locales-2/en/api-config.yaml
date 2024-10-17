@@ -1,0 +1,324 @@
+archiveConfig:
+  children:
+    archiveTableSize:
+      description: Maximum number of records in single table
+      name: Maximum number of records in single table
+    enable:
+      description: Automatic archiving only support in MySQL.
+      name: Enable automatic archiving
+    fixedDelay:
+      description: Delay to archive even it is triggered (/s)
+      name: Delay to archive(/s)
+    maxHistoryDay:
+      description: Archive interval（/day） is the max length to trigger data archiving
+      name: Archive interval（/day）
+    maxRecordSize:
+      description: It will archive the data if the number of record exceed this limit.
+      name: Maximum number of records to trigger archiving
+    minRecordSize:
+      description: >-
+        It will not archive the data if the number of record less than this
+        limit, even when time late than archive interval
+      name: Minimum number of  records to trigger archiving
+    mode:
+      description: Archive mode:DB
+      name: Archive mode
+    tableSet:
+      description: >-
+        Name of table to be archived. order_mission does not need to be
+        archived.
+      name: Tables to be archived
+  name: Archive setting
+chargeConfig:
+  children:
+    enableLoadStateCanCharge:
+      description: It can assign charging order to the robot in loaded
+      name: Enable charging when robot loaded
+  name: Charging setting
+dispatchConfig:
+  children:
+    assignTimePriority:
+      description: If an order waiting for a longer time, it will have a higher priority.
+      name: Dispatch priority by order creation time
+    enableDispatchByLoading:
+      description: Assign new destination to loaded robot
+      name: >-
+        If the robot already carries material, can assign new nearest
+        destination to it, given the condition all the material is the same.
+    idleVehiclesRedispatchInterval:
+      description: It will assign order to idle robot if exceed this time limit （/ms）
+      name: Time span from idle to order assignment（/ms）
+  name: Order dispatch setting
+interfaceConfig:
+  children:
+    authHeadKey:
+      description: HTTP request header AUTH KEY
+      name: HTTP request header AUTH KEY
+    authHeadValue:
+      description: HTTP request header AUTH value
+      name: HTTP request header AUTH value
+    requestUrlFailRetryCount:
+      description: Repeat several times when request get code not equal to 200
+      name: Repeat times of failed HTTP request
+    requestUrlTimeOut:
+      description: Timeout limit of  HTTP request
+      name: Timeout limit of  HTTP request
+    thirdPartyUrl:
+      description: Need complete URL of 3rd-party service
+      name: URL of 3rd-party service
+  name: Interface setting
+noticeConfig:
+  children:
+    dingTalkEnable:
+      description: Enable notification to Dingding
+      name: Enable notification to Dingding
+    dingTalkKeyWord:
+      description: Key word of notification
+      name: Key word of notification
+    dingTalkUrl:
+      description: Web socket  URL of Dingding
+      name: Web socket  URL of Dingding
+  name: Notification setting
+orderTaskConfig:
+  children:
+    argActionRetryCount:
+      description: Robot will repeat action several times if it failed.
+      name: Repeat times of failed action
+    changeMapTimeout:
+      description: >-
+        It will swap maps if robot change floor by elevator. Order will be in
+        suspended if response long time than this timeout limit.
+      name: Timeout limit of command to swap maps
+    hangOrderTaskOperateToCheckVehicleCoordinate:
+      description: Prevent serious accident when manually move robot after order suspended
+      name: >-
+        Verify robot current posture/angle with location when continue or skip
+        suspended order
+    moveOperateVehicleAngleNear:
+      description: >-
+        After robot completes moving, it will verify whether the angle deviation
+        of robot's current orientation and station direction within the
+        deviation limit.
+      name: >-
+        Angle limit to verify robot orientation and station direction after
+        robot completes moving (/°)
+    stationDistanceVehicleNear:
+      description: >-
+        After robot completes moving, it will verify whether the displacement of
+        robot's current position and target coordinate within the deviation
+        limit.
+      name: >-
+        Deviation limit of current position and target coordinate after robot
+        completes moving (/mm)
+  name: Order setting
+parkConfig:
+  children:
+    enableLoadStateCanPark:
+      description: It can assign park order to the robot in loaded
+      name: Enable parking when robot loaded
+    enableVehicleIdlePark:
+      description: Enable parking when robot is idle
+      name: Enable parking when idle
+    idleVehicleToParkingWaitingTime:
+      description: >-
+        It will create and assign a new parking order to robot if the duration
+        of being in idle state exceed this time limit
+      name: Time span from idle to park(/s)
+  name: Parking setting
+realtimeAlarmConfig:
+  children:
+    airDoorOfflineThreshold:
+      description: Offline time threshold of air shower, -1 means closing this alarm
+      name: Offline time threshold of air shower
+    chargeOfflineThreshold:
+      description: Offline time threshold of charging station, -1 means closing this alarm
+      name: Offline time threshold of charging station
+    doorOfflineThreshold:
+      description: Offline time threshold of auto door, -1 means closing this alarm
+      name: Offline time threshold of auto door
+    elevatorOfflineThreshold:
+      description: Offline time threshold of elevator, -1 means closing this alarm
+      name: Offline time threshold of elevator
+    robotObstacleThreshold:
+      description: Time threshold of obstacle avoidance, -1 means closing this alarm
+      name: Time threshold of obstacle avoidance(/s)
+    robotOfflineThreshold:
+      description: Time threshold of offline when in executing,-1 means closing this alarm
+      name: Time threshold of offline when in executing
+    robotTrafficThreshold:
+      description: Time threshold of traffic control, -1 means closing this alarm
+      name: Time threshold of traffic control(/s)
+    serverCpuUsedThreshold:
+      description: There will be an alarm if CPU usage more than this threshold
+      name: CPU usage threshold(%)
+    serverMemoryUsedThreshold:
+      description: There will be an alarm if memory usage more than this threshold
+      name: Memory usage threshold(%)
+    taskUnallocatedThreshold:
+      description: Time threshold of order assignment, -1 means closing this alarm
+      name: Time threshold of order assignment(/s)
+  name: Alarm setting
+routeConfig:
+  children:
+    enableVehicleObstacleReroute:
+      description: Path re-planning will power robot to plan new path when it blocked
+      name: Enable path re-planning when robot blocked
+    maxReturnDistance:
+      description: >-
+        Move job will fail if robot's current position deviate larger distance
+        than this limit.
+      name: Maximum regression distance (mm)
+    rerouteEnable:
+      description: Dynamic path planning will enable robot choose more efficiency path.
+      name: Enable dynamic path planning
+    rerouteMode:
+      description: 'Mode of rerouting: Cancel mode, Append mode'
+      name: Mode of rerouting
+    returnByDistanceThreshold:
+      description: >-
+        Robot should be within this limit when moves. And this limit should less
+        than the value of parameter numbered 955 set in robot
+      name: Robot deviation limit (/mm)
+    shortestPathAlg:
+      description: Shortest path algorithm:Dijkstra,A*
+      name: Shortest path algorithm
+    stationNodeDeviateThreshold:
+      description: Regard station and node as the same if they are within this limit.
+      name: Station deviation limit (/mm)
+    tdsppCostMode:
+      description: >-
+        Mode of time computation: path length,simple travel time, static travel
+        time, induction factor , time dependent travel time
+      name: mode of time computation
+    tdsppEnable:
+      description: Enable time as a factor in path planning
+      name: Enable time as a factor in path planning
+    tdsppOnEdgeTolerance:
+      description: Distance on edge tolerance
+      name: Distance on edge tolerance
+    tdsspMaxSpeedCount:
+      description: Maximum count of maximum speed about traffic condition
+      name: Maximum count of maximum speed about traffic condition
+    tdsspRoadDurationTime:
+      description: ''
+      name: Update duration about traffic condition
+    tdsspRoadSensitiveTime:
+      description: Each update duration about traffic condition
+      name: Sensitive time about traffic condition
+  name: Path planning
+systemConfig:
+  children:
+    enableDataRecord:
+      description: >-
+        Record data or time series database, which support playback and
+        dashboard,etc. If in windows OS , should disable this function.
+      name: Enable data record
+    enableStandBy:
+      description: Enable dual-device hot backup
+      name: Enable dual-device hot backup
+    musicIdWhenOrderHang:
+      description: >-
+        Music ID for audible alarm using robot speaker when transport order
+        suspended
+      name: Music ID for audible alarm when transport order suspended
+    orderTagQuantityThreshold:
+      description: It will fail to place order if the tag number exceed this limit.
+      name: Maximum number of order tag
+    standByServerIp1:
+      description: Server 1 IP address
+      name: Server 1 IP
+    standByServerIp2:
+      description: Server 2 IP address
+      name: Server 2 IP
+    thirdAuthTokenUrl:
+      description: URL of SSO authentication service
+      name: URL of SSO authentication service
+    thirdRedirectUrl:
+      description: Redirect URL when SSO authentication failed
+      name: Redirect URL when SSO authentication failed
+    tokenExpirationTime:
+      description: Lifetime of token（/min）
+      name: Lifetime of token（/min）
+  name: System setting
+trafficConfig:
+  children:
+    agvModelIncremental:
+      description: Enlarge robot size over length and width set in robot setting (/mm)
+      name: Redundant size over robot length and width in traffic control (/mm)
+    arbitrationServerEnable:
+      description: |-
+        True- 3rd-party service serve as arbitration
+        false- RIoT serve as arbitration
+      name: Enable arbitration function of traffic control with 3rd-party service
+    autoKeepDistanceCheckEnable:
+      description: Enable safe distance between robots
+      name: Enable safe distance between robots
+    mergeStepMinLength:
+      description: >-
+        To prevent robots discontinuous moving, it will apply for longer path
+        than this limit in one time.
+      name: Minimum length to merge edges in traffic control (/mm)
+    minGenCircleRadian:
+      description: >-
+        Robot will apply for a round bounding box when it rotates a angle larger
+        than this limit.
+      name: >-
+        Minimum rotating angle to reflect robot bounding box as circle in
+        traffic control （/°）
+    outsideArbitrationServerUrl:
+      description: >-
+        Example:http://127.0.0.1:8089/outside Traffic?command={'%'}s&area
+        Code={'%'}s&system Id={'%'}s,
+
+        Method: GET,
+
+        command: en um, apply or release,
+
+        area Code: string, area id, set in traffic control area,
+
+        system Id: string, system id,
+
+        response success: {'{'}code:0{'}'}
+      name: URL of arbitration service
+    twoEdgeRoadSafeStopDistance:
+      description: Rotation radius of loaded robot size + unloaded robot length/2
+      name: Minimum distance from bidirectional edge to crossroads (mm)
+  name: Traffic control setting
+vda5050DiscoverConfig:
+  children:
+    brokerUrl:
+      description: |-
+        Address of MQTT service,example:
+        tcp://127.0.0.1:1883
+      name: Address of MQTT service
+    enable:
+      description: Enable MQTT service
+      name: Enable MQTT service
+    password:
+      description: Password to connect MQTT
+      name: Password
+    userName:
+      description: Username to connect MQTT
+      name: Username
+  name: MQTT setting
+vehicleConfig:
+  children:
+    vehicleLength:
+      description: Robot length using in traffic control(/mm)
+      name: Robot length (/mm)
+    vehicleLoadLength:
+      description: The length of robot with load using in traffic control(/mm)
+      name: Loaded robot length (/mm)
+    vehicleLoadSpeed:
+      description: Maximum speed of robot with load (m/s)
+      name: Maximum speed of loaded robot (m/s)
+    vehicleLoadWidth:
+      description: The width of robot with load using in traffic control(/mm)
+      name: Loaded robot width  (/mm)
+    vehicleSpeed:
+      description: Maximum speed of robot without load (m/s)
+      name: Maximum speed of unloaded robot (m/s)
+    vehicleWidth:
+      description: Robot width using in traffic control(/mm)
+      name: Robot width (/mm)
+  name: Robot setting

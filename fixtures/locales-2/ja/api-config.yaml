@@ -1,0 +1,296 @@
+archiveConfig:
+  children:
+    archiveTableSize:
+      description: 単一のアーカイブ テーブル内のレコードの最大数
+      name: 単一のアーカイブ テーブル内のレコードの最大数
+    enable:
+      description: アーカイブ スイッチ、履歴データのアーカイブは Mysql のみをサポートします
+      name: 履歴データのアーカイブを有効にする
+    fixedDelay:
+      description: 実行時間の遅延
+      name: 実行時間の遅延
+    maxHistoryDay:
+      description: >-
+        アーカイブ タスクがトリガーされると、元のデータ
+        テーブルに保持する必要があるデータが時間範囲に基づいて決定され、この時点よりも古いデータがアーカイブされ、バックアップされ、削除されます。
+      name: データの有効期限
+    maxRecordSize:
+      description: 最大レコード数を超えた後のアーカイブ
+      name: アーカイブをトリガーするレコードの最大数
+    minRecordSize:
+      description: アーカイブ時間を超えても、その数がこの値より少ない場合、残りの期限切れレコードの数がこの値より少ない場合、アーカイブはトリガーされません。
+      name: アーカイブをトリガーするレコードの最小数
+    mode:
+      description: アーカイブ方法
+      name: アーカイブ方法
+    tableSet:
+      description: アーカイブされたデータテーブル名、order_mission は関連するテーブルであり、入力する必要はありません。
+      name: アーカイブする必要があるデータテーブル
+  name: 履歴データのアーカイブ構成
+chargeConfig:
+  children:
+    enableLoadStateCanCharge:
+      description: ロボットは荷物を運びながら充電タスクを生成できます
+      name: ロボットは荷物を運びながら充電タスクを生成できます
+  name: 充電構成
+dispatchConfig:
+  children:
+    assignTimePriority:
+      description: 優先順位が高いほど、待ち時間が長い注文が事前に割り当てられる可能性が高くなります。
+      name: 注文の待ち時間が注文の割り当てに及ぼす影響のレベル
+    enableDispatchByLoading:
+      description: 荷物を運びながらロボットに新しいタスクを割り当てることができる
+      name: 荷物を運びながらロボットに新しいタスクを割り当てることができる
+    idleVehiclesRedispatchInterval:
+      description: 注文引当時間間隔（単位：ミリ秒）
+      name: 注文引当時間間隔（単位：ミリ秒）
+  name: 注文の割り当て
+interfaceConfig:
+  children:
+    authHeadKey:
+      description: リクエスト中央制御システム認証リクエストヘッダーKEY
+      name: リクエスト中央制御システム認証リクエストヘッダーKEY
+    authHeadValue:
+      description: 中央制御システムの認証要求ヘッダー値を要求する
+      name: 中央制御システムの認証要求ヘッダー値を要求する
+    requestUrlFailRetryCount:
+      description: >-
+        中央制御コールバック インターフェイスの再試行回数。コールバック インターフェイスが 200 以外の HTTP ステータス
+        コードを返した場合のコールバックの再試行回数。
+      name: 中央制御システムのインターフェース要求が失敗した後の再試行回数
+    requestUrlTimeOut:
+      description: 中央制御システムとの http 通信のタイムアウト
+      name: 中央制御システム URL タイムアウトの要求
+    thirdPartyUrl:
+      description: >-
+        中央制御システム インターフェイスの URL を設定するときは、http://127.0.0.1/api などの完全な URL
+        を入力する必要があります。
+      name: 中央管理システムURL
+  name: インターフェース構成
+noticeConfig:
+  children:
+    dingTalkEnable:
+      description: DingTalk プッシュ通知を有効にする
+      name: DingTalk プッシュ通知を有効にする
+    dingTalkKeyWord:
+      description: DingTalk プッシュキーワード
+      name: DingTalk プッシュキーワード
+    dingTalkUrl:
+      description: DingTalk プッシュ URL
+      name: DingTalk プッシュ URL
+  name: 通知設定
+orderTaskConfig:
+  children:
+    argActionRetryCount:
+      description: アクションタスクの実行が失敗した後の自動再試行の数
+      name: アクションタスクの実行が失敗した後の自動再試行の数
+    changeMapTimeout:
+      description: >-
+        エレベーターに乗るなどのシナリオでは、設定された時間を超えると、ロボットにマップ切り替えコマンドが送信され、マップ切り替えが失敗したとみなされ、注文が中断されます。
+      name: スイッチマップコマンドタイムアウト
+    hangOrderTaskOperateToCheckVehicleCoordinate:
+      description: >-
+        これにより、オーダーが一時停止された後にロボットを手動で動かすことができなくなり、オーダーが一時停止状態に戻ったときにロボットがドッキングポイントにいないため、材料が落下してしまいます。
+      name: 未決注文を再開するときにロボットの座標と角度を確認する
+    moveOperateVehicleAngleNear:
+      description: >-
+        ロボットがモバイル タスクに戻った後、現在のロボットの座標と角度が、送信された座標に対して 2
+        回検証されます。この構成は、許容される角度オフセットです。
+      name: 移動タスクの完了後に角度を検証できるオフセット
+    stationDistanceVehicleNear:
+      description: >-
+        ロボットがモバイル タスクに戻った後、現在のロボットの座標と角度、および送信された座標が 2
+        回検証されます。この設定は、許容される座標オフセットです。
+      name: 移動タスク完了後の距離検証に使用できるオフセット
+  name: 注文構成
+parkConfig:
+  children:
+    enableLoadStateCanPark:
+      description: ロボットは貨物を積み込むときにドッキングタスクを生成できます。
+      name: ロボットは貨物を積み込むときにドッキングタスクを生成できます。
+    enableVehicleIdlePark:
+      description: ロボットアイドルドッキング機能を有効にする
+      name: ロボットアイドルドッキング機能を有効にする
+    idleVehicleToParkingWaitingTime:
+      description: >-
+        ロボットがオーダーを完了し、待機時間内に新しいオーダーが割り当てられなかった場合、ロボットはドッキング ポイントへのドッキング
+        タスクを自動的に生成します。
+      name: ロボットがアイドル状態になった後にドッキング タスク時間を生成します
+  name: ドッキング構成
+realtimeAlarmConfig:
+  children:
+    airDoorOfflineThreshold:
+      description: エア シャワー ドアは長い間オフラインのしきい値にありました。-1 はプロンプトを閉じることを意味します
+      name: エアシャワードアが長時間オフラインのしきい値にある
+    chargeOfflineThreshold:
+      description: 充電パイル (インターネットに接続されている) が長期間オフラインになっています。 -1 は、プロンプトをオフにすることを意味します。
+      name: 充電パイル (インターネットに接続されている) が長期間オフラインのしきい値にある
+    doorOfflineThreshold:
+      description: 自動ドアは長期間オフラインになっています。-1 はプロンプトを閉じることを意味します。
+      name: 自動ドアが長時間停止したままになる
+    elevatorOfflineThreshold:
+      description: エレベーターは長期間オフラインになっています。-1 はプロンプトをオフにすることを意味します。
+      name: エレベーターが長時間止まっている
+    robotObstacleThreshold:
+      description: ロボットは長い間障害物回避しきい値にあります。-1 はプロンプトをオフにすることを意味します
+      name: ロボットが障害物回避閾値に長時間留まっている
+    robotOfflineThreshold:
+      description: ロボットはタスクの実行中に長時間オフラインでした。-1 はプロンプトをオフにすることを意味します。
+      name: ロボットはタスクを実行している間、長時間オフラインのままです。
+    robotTrafficThreshold:
+      description: ロボットは長い間交通規制のしきい値にありました。-1 はプロンプトを閉じることを意味します
+      name: ロボットが交通規制のしきい値に長時間留まる
+    serverCpuUsedThreshold:
+      description: サーバーの CPU 使用率が長時間にわたって 80{'%'} のしきい値を超えています。
+      name: サーバーの CPU 使用率が長時間にわたって上限しきい値を超えています
+    serverMemoryUsedThreshold:
+      description: サーバーのメモリ使用量が長時間にわたって 80{'%'} のしきい値を超えています。
+      name: サーバーのメモリ使用量が長時間にわたって上限のしきい値を超えています
+    taskUnallocatedThreshold:
+      description: 注文には長期間にわたってしきい値が割り当てられていません。-1 はプロンプトを閉じることを意味します
+      name: オーダーが長期間しきい値まで割り当てられていませんでした
+  name: リアルタイムアラーム設定
+routeConfig:
+  children:
+    enableVehicleObstacleReroute:
+      description: ロボットの障害物回避と再計画を有効にすると、ロボットは障害物を回避するルートを自動的に計画します。
+      name: ロボットの障害物回避を有効にした後の再計画
+    maxReturnDistance:
+      description: ロボットの座標がパスから外れた場合に復帰できる最大垂直距離 (mm)。この距離を超えると復帰パスは生成されず、移動タスクは失敗します。
+      name: ロボットの座標が軌道から外れた場合に、軌道に戻ることができる垂直方向の最大距離(mm)
+    rerouteEnable:
+      description: 動的パス計画を有効にする
+      name: 動的パス計画を有効にする
+    rerouteMode:
+      description: '再ルーティングモード: 追加モードをキャンセルします。'
+      name: 再ルーティングモード
+    returnByDistanceThreshold:
+      description: >-
+        タスクの実行時、ノードからロボットの距離がこの範囲よりも大きい場合、回帰パスが生成されます。この値は、スタンドアロン パラメータ 955
+        より小さくなければなりません。
+      name: ノード上のロボットの距離判定範囲(mm)
+    shortestPathAlg:
+      description: '最短経路アルゴリズム: ダイクストラ アルゴリズム、スター アルゴリズム。'
+      name: 最短経路アルゴリズム
+    stationNodeDeviateThreshold:
+      description: この距離を超えるサイトとノードはバインドできません
+      name: サイトノード偏差閾値(mm)
+    tdsppCostMode:
+      description: '時間関連のコスト計算モード: 単純な移動時間、時間変化する移動時間。'
+      name: 時間依存コスト計算モード
+    tdsppEnable:
+      description: 時間依存の経路計画スイッチ
+      name: 時間依存の経路計画を有効にする
+    tdsppOnEdgeTolerance:
+      description: 距離がエッジ公差内であるかどうかを判断します
+      name: 距離がエッジ公差内であるかどうかを判断します
+    tdsspMaxSpeedCount:
+      description: 道路状況 - 最高速度の継続時間
+      name: 道路状況 - 最高速度の継続時間
+    tdsspRoadDurationTime:
+      description: 交通状況 - 更新時に速度情報を取得する時間帯を取得し、その時点から現在の時間帯までの平均値を計算します。
+      name: 交通状況 - 更新期間
+    tdsspRoadSensitiveTime:
+      description: 交通状況 - 交通情報の更新頻度、各更新時間、
+      name: 交通状況 - 感知時間を更新する
+  name: パスの計画
+systemConfig:
+  children:
+    enableDataRecord:
+      description: >-
+        データを時系列データベースに記録し、再生やデータ統計などの機能をサポートします。他のコンポーネントに依存する必要があるため、Windows
+        システムをシャットダウンする必要があります
+      name: 時系列データベース関連機能を有効にする
+    enableStandBy:
+      description: ホットバックアップを有効にする
+      name: ホットバックアップを有効にする
+    musicIdWhenOrderHang:
+      description: 注文保留中に音楽 ID を再生する
+      name: 注文保留中に音楽 ID を再生する
+    orderTagQuantityThreshold:
+      description: 注文ラベル数量のしきい値。注文時に、ラベルの数量がしきい値を超えていることを検出し、エラーを表示します。
+      name: 注文ラベル数量のしきい値
+    standByServerIp1:
+      description: デュアルマシンホットスタンバイサーバー1のIPアドレス
+      name: デュアルマシンホットスタンバイサーバー1のIPアドレス
+    standByServerIp2:
+      description: デュアルマシンホットスタンバイサーバー2のIPアドレス
+      name: デュアルマシンホットスタンバイサーバー2のIPアドレス
+    thirdAuthTokenUrl:
+      description: シングルサインオン認証インターフェースアドレス
+      name: シングルサインオン認証インターフェースアドレス
+    thirdRedirectUrl:
+      description: シングルサインオン認証失敗後のジャンプページアドレス
+      name: シングルサインオン認証失敗後のジャンプページアドレス
+    tokenExpirationTime:
+      description: 保存トークンの有効期限（単位：分）
+      name: トークンの有効期限（単位：分）
+  name: システム構成
+trafficConfig:
+  children:
+    agvModelIncremental:
+      description: AGV トラフィック管理モデルの増加
+      name: agvモデルの増分(mm)
+    arbitrationServerEnable:
+      description: >-
+        サードパーティを外部トラフィック管理調停サービスとして有効にします。 true
+        の場合、外部トラフィック管理調停サービスのアドレスと組み合わせて使用​​されます。 false の場合、RIOT
+        がトラフィック管理調停当事者として機能します。
+      name: サードパーティを外部トラフィックアービターとして有効にする
+    autoKeepDistanceCheckEnable:
+      description: 車間距離自動切替
+      name: 車間距離自動切替
+    mergeStepMinLength:
+      description: >-
+        リソースを適用する際、パスの長さが設定値より短い場合は、パスが長すぎるためにロボットが停止するのを防ぐために、適用されるリソースが設定値よりも大きくなるまで、道路の次のセクションに適用され続けます。短い。
+      name: トラフィック制御を計算するときにマージされるパスの長さのしきい値
+    minGenCircleRadian:
+      description: >-
+        ロボットがその場で回転すると、回転交通管制エリアの最小角度値が生成され、この値より大きい回転角度では、回転角度に対応する回転交通管制エリアが生成されます。
+      name: ロボットがその場で回転すると、回転交通エリアの最小角度値が生成されます。
+    outsideArbitrationServerUrl:
+      description: >-
+        たとえば、http://127.0.0.1:8089/outsideTraffic?command={'%'}s&areaCode={'%'}s&systemId={'%'}s、GET
+        リクエスト、コマンド値は apply または release、areaCode はエリア ID、systemId は成功したシステム ID
+        です。{'{'}コード:0{'}'}。
+      name: 外部トラフィック管理調停サービスのアドレス
+    twoEdgeRoadSafeStopDistance:
+      description: 積載後の最大の車両の回転半径は車両の長さの半分です。
+      name: 二叉路交差点での安全停止距離 (mm)
+  name: トラフィック制御の構成
+vda5050DiscoverConfig:
+  children:
+    brokerUrl:
+      description: mqtt ブローカー アドレスには、tcp://127.0.0.1:1883 などの完全な URL を入力する必要があります。
+      name: vda5050 mqtt サービス URL
+    enable:
+      description: vda5050 mqtt ディスカバーを有効にする
+      name: vda5050 mqtt ディスカバーを有効にする
+    password:
+      description: MQTT ブローカー接続のパスワードを設定する
+      name: vda5050 mqtt サービスのパスワード
+    userName:
+      description: MQTT ブローカー接続のユーザー名を設定する
+      name: vda5050 mqtt サービスのユーザー名
+  name: Vda5050-AGV ディスカバー構成
+vehicleConfig:
+  children:
+    vehicleLength:
+      description: ロボットの長さ
+      name: ロボットの長さ
+    vehicleLoadLength:
+      description: ロボット積載状態長さ
+      name: ロボット積載状態長さ
+    vehicleLoadSpeed:
+      description: 荷物を積み込む際のロボットの最高速度
+      name: 荷物を積み込む際のロボットの最高速度
+    vehicleLoadWidth:
+      description: ロボットローディング状態幅
+      name: ロボットローディング状態幅
+    vehicleSpeed:
+      description: 荷物を積んでいないときのロボットの最高速度
+      name: 荷物を積んでいないときのロボットの最高速度
+    vehicleWidth:
+      description: ロボット幅
+      name: ロボット幅
+  name: ロボットの構成

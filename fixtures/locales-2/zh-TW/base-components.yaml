@@ -1,0 +1,26 @@
+default-empty-text: 暫無數據
+file-upload:
+  click-to-upload: 點擊上傳
+  drag-into-file: 或者拖放
+  exceed-max-count-with-count: ''
+  exceed-max-size: 超過檔案大小限制
+  invalid-file-type: 不支援的文件類型
+  release-to-upload: 放手上傳
+  retry: 再試一次
+  upload-failure: 上傳失敗，請重試
+input:
+  default-placeholder: 請輸入
+  placeholder: 請輸入{0}
+modal:
+  default-cancel-text: 取消
+  default-ok-text: 確定
+pagination:
+  next-text: 下一頁
+  prev-text: 上一頁
+select:
+  default-placeholder: 請選擇
+  placeholder: ''
+textarea:
+  default-placeholder: 請輸入
+toast:
+  operate-success: 操作成功

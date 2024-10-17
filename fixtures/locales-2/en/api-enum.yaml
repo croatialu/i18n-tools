@@ -1,0 +1,199 @@
+operation-log:
+  operate-module-detail:
+    agv-batch-operate-cancel-emergency: Batch Operation- Deactivate E-Stop
+    agv-batch-operate-cancel-task: Batch Operation- Cancel Order
+    agv-batch-operate-clean-path-resource: Batch Operation- Clear Occupied Path
+    agv-batch-operate-continue-move: Batch Operation- Continue Move
+    agv-batch-operate-continue-task: Batch Operation- Continue Order
+    agv-batch-operate-create-charge-task: Batch Operation- Charge
+    agv-batch-operate-create-park-task: Batch Operation- Park
+    agv-batch-operate-pass: Batch Operation- Release
+    agv-batch-operate-pause-move: Batch Operation- Pause Move
+    agv-batch-operate-pause-task: Batch Operation- Pause Order
+    agv-batch-operate-schedule-disable: Batch Operation- Disable
+    agv-batch-operate-schedule-enable: Batch Operation- Enable
+    agv-batch-operate-trigger-emergency: Batch Operation- Activate E-Stop
+    agv-create-device: Robot- New
+    agv-delete-device: Robot- Delete
+    agv-single-operate-cancel-emergency: Robot- Deactivate E-stop
+    agv-single-operate-cancel-task: Robot- Cancel Order
+    agv-single-operate-clean-path-resource: Robot- Clear Occupied Path
+    agv-single-operate-continue-move: Robot- Continue Move
+    agv-single-operate-continue-task: Robot- Continue Order
+    agv-single-operate-create-charge-task: Robot- Charge
+    agv-single-operate-create-park-task: Robot- Park
+    agv-single-operate-enter-clean-wheel-mode: Robot operation - enter wheel washing mode
+    agv-single-operate-exit-clean-wheel-mode: Robot Operation-Exiting Wheel Washing Mode
+    agv-single-operate-pass: Robot- Release
+    agv-single-operate-pause-move: Robot- Pause Move
+    agv-single-operate-pause-task: Robot- Pause Order
+    agv-single-operate-schedule-disable: Robot- Disable
+    agv-single-operate-schedule-enable: Robot- Enable
+    agv-single-operate-trigger-emergency: Robot- Activate E-stop
+    agv-single-operate-wait-pass: Robotic operation - waiting for release
+    agv-unknown: Robot- Unknown operation
+    agv-vehicle-group-add: Robot Group-New
+    agv-vehicle-group-delete: Robot Group-Delete
+    agv-vehicle-group-edit: Robot Group-Edit
+    batch-work-cancel: Batch Operation- Cancel Job
+    batch-work-create: Batch Operation- New Job
+    batch-work-delete: Batch Operation- Delete Job
+    batch-work-operate: Batch Operation- Operate Job
+    batch-work-pause: Batch Operation- Pause Job
+    batch-work-resume: Batch Operation- Resume Job
+    batch-work-start: Batch Operation- Continue Job
+    batch-work-update: Batch Operation- Edit Job
+    confirm-license: License- Activate
+    delete-sors-file: Delete SORS Package
+    dispatch-config-update: Modify the Dispatch Setting
+    dispatch-external-apply: Shared Traffic Control Area- Apply
+    dispatch-external-create: Shared Traffic Control Area- New
+    dispatch-external-delete: Shared Traffic Control Area- Delete
+    dispatch-external-edit: Shared Traffic Control Area- Edit
+    dispatch-external-release: Shared Traffic Control Area- Release
+    dispatch-move-update: Order- Update Move
+    dispatch-order-cancel: Order- Cancel
+    dispatch-order-continue: Order- Continue
+    dispatch-order-create: Order- New
+    dispatch-order-held: Order- Resume
+    dispatch-order-pause: Order- Pause
+    dispatch-order-priority: Order- Priority
+    dispatch-order-remove-queue: Order- Queue out
+    dispatch-order-resume-queue: Order- Queue in
+    dispatch-order-skip: Order- Skip Job
+    dispatch-unknown: Dispatch
+    inner-auto-door-clear-resource: Auto Door- Release
+    inner-auto-door-close: Auto Door- Close Manually
+    inner-auto-door-create: Auto Door- New
+    inner-auto-door-delete: Auto Door- Delete
+    inner-auto-door-open: Auto Door- Open Manually
+    inner-auto-door-update: Auto Door- Edit
+    inner-charging-station-add: Charging Station- New
+    inner-charging-station-delete: Charging Station- Delete
+    inner-charging-station-operate-clear: Charging Station- Release
+    inner-charging-station-operate-pull: Charging Station- Unplug
+    inner-charging-station-operate-push: Charging Station- Plug in
+    inner-charging-station-relation-add: Charging Location Station- New
+    inner-charging-station-relation-delete-all: Charging Location Station- Delete All
+    inner-charging-station-relation-delete-single: Charging Location Station- Delete
+    inner-charging-station-update: Charging Station- Edit
+    inner-charging-strategy-add: Charging Strategy- New
+    inner-charging-strategy-delete: Charging Strategy- Delete
+    inner-charging-strategy-disable: Charging Strategy- Disable
+    inner-charging-strategy-enable: Charging Strategy- Enable
+    inner-charging-strategy-update: Charging Strategy- Edit
+    inner-elevator-add: Elevator- New
+    inner-elevator-call: elevator-  Apply
+    inner-elevator-clear-resource: Elevator - Release
+    inner-elevator-close: Elevator - Close Door Manually
+    inner-elevator-delete: Elevator- Delete
+    inner-elevator-open: Elevator - Open Door Manually
+    inner-elevator-update: Elevator - Edit
+    inner-shower-door-add: Air Shower- New
+    inner-shower-door-clear-resource: Air Shower- Release
+    inner-shower-door-delete: Air Shower- Delete
+    inner-shower-door-in-close: Air Shower- Close Inside Door Manually
+    inner-shower-door-in-open: Air Shower- Open Inside Door Manually
+    inner-shower-door-out-close: Air Shower- Close Outside Door Manually
+    inner-shower-door-out-open: Air Shower- Open Outside Door Manually
+    inner-shower-door-shower: Air Shower- Control Air Shower Manually
+    inner-shower-door-update: Air Shower- Edit
+    log-download: System- Export Log
+    map-delete: Map- Delete
+    map-export: Map- Export
+    map-import: Map- Import from Server
+    map-multi-map-connect-add: Map Link- New
+    map-multi-map-connect-delete: Map Link- Delete
+    map-multi-map-connect-update: Map Link- Edit
+    map-multi-map-edge-group-add: Map Link- New
+    map-multi-map-edge-group-delete: Map Link- Delete
+    map-multi-map-edge-group-update: Map Link- Edit
+    map-pull: Map- Upload from Robot
+    map-push: Map- Sync
+    map-temp-edge-add-or-update: Edge Group- New or Edit
+    map-temp-edge-delete: Edge Group- Delete
+    map-temp-edge-disable: Edge Group- Disable
+    map-temp-edge-enable: Edge Group- Enable
+    map-update-status: Map- Edit
+    read-all: Notification- Read All
+    system-log-export: System- Export Log
+    system-replay-delete: System- Delete Recording Data
+    system-replay-export: System- Export Recording Data
+    system-replay-import: System- Import Recording Data
+    system-rollback: System- Rollback
+    system-shutdown: System- Restart
+    system-unknown: System- Unknown
+    system-upgrade: System- Update
+    template-add: Action Template-New
+    template-delete: Action Template-Delete
+    template-update: Action Template-Modify
+    unknown: Unknown
+    update-enterprise: Enterprise Information-Update
+    update-license: Update authorization file
+    update-log-read: Notification- Read All
+    update-log-unread: Notification- Unread All
+    update-sros-file: Update SROS Version
+    user-add: Account- New
+    user-delete-user: Account- Delete
+    user-login: Account- Log in
+    user-logout: Account- Log out
+    user-update: Account- Edit Profile
+    user-update-batch-status: Account- Edit Account in Batch
+    user-update-password: Account- Change Password
+    user-update-role: Account- Reassign Role
+    version-rollback: Version Rollback
+  operate-module:
+    agv-manager: Robot
+    dispatch-manager: Dispatch
+    integrated-equipment: Integrated Equipment
+    map-manager: Map
+    system-manager: System
+    template: Template management
+    unknown: Unknown
+    user-manager: Account
+  operate-sub-type:
+    agv: Robot
+    agv-group: Robot group
+    auto-door: Auto door
+    charging-station: Charging station
+    charging-station-relation: Charging station relationship
+    config: Configuration
+    device: 3rd-party Device
+    elevator: Elevator
+    map: Map
+    map-multi-edge-group: Path groups
+    map-temp-edge: Disable edge
+    out-traffic: Shared traffic control
+    shower-door: Airshower
+    system-log: System log
+    system-replay: Playback
+    task: Order
+    unknown: Unknown manipulator
+robot-operation:
+  cancel-emergency: Deactivate E-stop
+  charging: Charge
+  clean-resource: Clear Occupied Path
+  continue-move: Continue Move
+  pause-move: Pause Move
+  trigger-emergency: Activate E-stop
+transport-order:
+  order-state:
+    assign-next-sub-task: Executing
+    cancelled: Canceled
+    failed: Failed
+    hang: Suspended
+    held: Paused
+    in-queue: Pending
+    in-queue-priority: Pending(Priority)
+    out-queue: Queueout
+    processing: Executing
+    succeed: Completed
+  order-type:
+    battery-maintain: Maintenance Order
+    charge: Charging Order
+    park: Parking Order
+    work: Work Order
+user:
+  permission:
+    admin: Admin
+    default: User

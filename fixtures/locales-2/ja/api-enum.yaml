@@ -1,0 +1,199 @@
+operation-log:
+  operate-module-detail:
+    agv-batch-operate-cancel-emergency: AGV一括運転・非常停止解除
+    agv-batch-operate-cancel-task: AGV バッチ操作 - キャンセル命令
+    agv-batch-operate-clean-path-resource: AGV バッチ操作 - パス占有のクリア
+    agv-batch-operate-continue-move: AGV バッチ操作 - 動き続ける
+    agv-batch-operate-continue-task: AGV バッチ操作 - 継続命令
+    agv-batch-operate-create-charge-task: AGV一括運転 - 急速充電
+    agv-batch-operate-create-park-task: AGV バッチ操作 - ワンクリックでドッキング
+    agv-batch-operate-pass: AGV一括運行 - 車両リリース
+    agv-batch-operate-pause-move: AGV一括運転・一時停止移動
+    agv-batch-operate-pause-task: AGVバッチ運転一時停止命令
+    agv-batch-operate-schedule-disable: AGV バッチ操作 - オフラインでのスケジュール設定
+    agv-batch-operate-schedule-enable: AGV バッチ操作 - オンラインでスケジュール設定
+    agv-batch-operate-trigger-emergency: AGV一括運転 - 緊急停止トリガ
+    agv-create-device: AGV装置の作成
+    agv-delete-device: AGV機器の削除
+    agv-single-operate-cancel-emergency: AGV単独操作・非常停止解除
+    agv-single-operate-cancel-task: AGV単独運転キャンセルオーダー
+    agv-single-operate-clean-path-resource: AGV 単一操作 - パス占有をクリア
+    agv-single-operate-continue-move: AGV 単独運転 - 動き続ける
+    agv-single-operate-continue-task: AGV 単独運転継続命令
+    agv-single-operate-create-charge-task: AGV シングルオペレーション - 急速充電
+    agv-single-operate-create-park-task: AGV の単一操作、ワンクリックのドッキング
+    agv-single-operate-enter-clean-wheel-mode: ロボット操作 - 車輪洗浄モードに入る
+    agv-single-operate-exit-clean-wheel-mode: ロボットの動作 - 車輪洗浄モードの終了
+    agv-single-operate-pass: AGV 1台稼働車両リリース
+    agv-single-operate-pause-move: AGV単独運転・一時停止移動
+    agv-single-operate-pause-task: AGV単体運転停止指令
+    agv-single-operate-schedule-disable: AGV 単一操作 - オフラインでのスケジュール設定
+    agv-single-operate-schedule-enable: AGV 単独運転 - オンラインでスケジュール設定
+    agv-single-operate-trigger-emergency: AGV 単独操作・トリガ緊急停止
+    agv-single-operate-wait-pass: ロボット操作 - リリース待ち
+    agv-unknown: AGV 不明な動作
+    agv-vehicle-group-add: 車両グループを追加
+    agv-vehicle-group-delete: 車両グループの削除
+    agv-vehicle-group-edit: 車両グループの編集
+    batch-work-cancel: バッチタスクをキャンセルする
+    batch-work-create: バッチタスクを作成する
+    batch-work-delete: バッチタスクの削除
+    batch-work-operate: バッチタスクの操作
+    batch-work-pause: バッチタスクを停止する
+    batch-work-resume: バッチタスクが続行されます
+    batch-work-start: バッチタスクの開始
+    batch-work-update: バッチタスクの変更
+    confirm-license: ライセンスのアクティベーション
+    delete-sors-file: SORSファイルを削除する
+    dispatch-config-update: スケジュール設定の変更
+    dispatch-external-apply: 外部トラフィック管理 - アプリケーション
+    dispatch-external-create: 外部トラフィック管理 - 作成
+    dispatch-external-delete: 外部トラフィック管理 - 削除
+    dispatch-external-edit: 外部トラフィック管理 - エディター
+    dispatch-external-release: 外部トラフィック制御 - リリース
+    dispatch-move-update: 移動サブタスクの更新
+    dispatch-order-cancel: 注文操作 - 注文のキャンセル
+    dispatch-order-continue: 注文操作 - 手動で続行
+    dispatch-order-create: 引越注文の作成
+    dispatch-order-held: 注文操作 - 継続保留中
+    dispatch-order-pause: 注文操作マニュアル一時停止
+    dispatch-order-priority: 順序操作 - 優先順位の変更
+    dispatch-order-remove-queue: 注文操作 - キューの削除
+    dispatch-order-resume-queue: 注文操作 - 再開キュー
+    dispatch-order-skip: 注文アクションマニュアルスキップ
+    dispatch-unknown: スケジュール管理
+    inner-auto-door-clear-resource: 自動ドアの空きリソースが占有されています
+    inner-auto-door-close: 自動ドア - ドアを閉めてください
+    inner-auto-door-create: 自動ドアの作成
+    inner-auto-door-delete: 自動ドア削除
+    inner-auto-door-open: 自動ドア - ドアを開けます
+    inner-auto-door-update: 自動ドア - 更新情報
+    inner-charging-station-add: チャージパイル追加
+    inner-charging-station-delete: 課金パイル削除
+    inner-charging-station-operate-clear: 充電パイルの空き占有率
+    inner-charging-station-operate-pull: 充電パイル電動プッシャー後退
+    inner-charging-station-operate-push: 充電パイル電動プッシャー延長
+    inner-charging-station-relation-add: チャージパイル関係 - 追加、更新
+    inner-charging-station-relation-delete-all: チャージパイル関係 - 全て削除
+    inner-charging-station-relation-delete-single: 充電パイル関係 - 単一の削除
+    inner-charging-station-update: 充電パイルアップデート
+    inner-charging-strategy-add: チャージパイル戦略追加
+    inner-charging-strategy-delete: 課金パイルポリシーの削除
+    inner-charging-strategy-disable: 課金パイルポリシーが無効になりました
+    inner-charging-strategy-enable: チャージパイル戦略が有効になりました
+    inner-charging-strategy-update: チャージパイル戦略のアップデート
+    inner-elevator-add: エレベーターの追加
+    inner-elevator-call: エレベーター呼び
+    inner-elevator-clear-resource: エレベーター - リソース占有をクリアする
+    inner-elevator-close: エレベーター - ドアを閉めてください
+    inner-elevator-delete: エレベーターの削除
+    inner-elevator-open: エレベーター - ドアを開けてください
+    inner-elevator-update: エレベーター - 更新されました
+    inner-shower-door-add: エアシャワー扉追加
+    inner-shower-door-clear-resource: エア シャワー ドア - 占有リソースをクリア
+    inner-shower-door-delete: エアシャワードア削除
+    inner-shower-door-in-close: エアシャワー扉・内扉閉
+    inner-shower-door-in-open: エアシャワー扉・内扉開口部
+    inner-shower-door-out-close: エアシャワー扉・内扉閉
+    inner-shower-door-out-open: エアシャワードア - 外部ドア開口部
+    inner-shower-door-shower: エアシャワードア-エアシャワー
+    inner-shower-door-update: エアシャワードア更新
+    log-download: ログのエクスポート
+    map-delete: 地図情報を削除する
+    map-export: マップのエクスポート
+    map-import: マップをインポートする
+    map-multi-map-connect-add: マルチマップ接続の追加
+    map-multi-map-connect-delete: 複数のマップ接続の削除
+    map-multi-map-connect-update: マルチマップ接続変更
+    map-multi-map-edge-group-add: マルチマップルートグループの追加
+    map-multi-map-edge-group-delete: マルチマップ パス グループの削除
+    map-multi-map-edge-group-update: マルチマップパスグループの変更
+    map-pull: マップファイルをプルする
+    map-push: マップファイルをプッシュする
+    map-temp-edge-add-or-update: 一時的なエッジの削除 - 追加/変更
+    map-temp-edge-delete: 一時的なエッジの削除 - 削除
+    map-temp-edge-disable: 一時的にエッジ解除が無効になります
+    map-temp-edge-enable: 一時的なエッジ除去が可能
+    map-update-status: マップステータスの変更
+    read-all: ワンクリックで読む
+    system-log-export: システムログのエクスポート
+    system-replay-delete: システムリプレイ削除
+    system-replay-export: システム管理 - リプレイのエクスポート
+    system-replay-import: システムプレイバックインポート
+    system-rollback: システム管理 - ロールバック
+    system-shutdown: システム管理 - シャットダウン
+    system-unknown: システム管理 - 不明
+    system-upgrade: システムアップグレード
+    template-add: アクション テンプレート - 新規
+    template-delete: アクション テンプレート - 削除
+    template-update: アクションテンプレート - 変更
+    unknown: 未知
+    update-enterprise: 会社情報更新
+    update-license: 認証ファイルを更新する
+    update-log-read: ログを読み取りステータスに変更します
+    update-log-unread: ログを未読ステータスに変更する
+    update-sros-file: SROSファイルを更新する
+    user-add: 新しいユーザーを追加
+    user-delete-user: ユーザーの削除
+    user-login: ユーザーログイン
+    user-logout: ユーザーのログアウト
+    user-update: ユーザー情報の変更
+    user-update-batch-status: ユーザーステータスをバッチで変更する
+    user-update-password: パスワードを変更する
+    user-update-role: 役割の再割り当て
+    version-rollback: バージョンのロールバック
+  operate-module:
+    agv-manager: ロボット管理
+    dispatch-manager: スケジュール管理
+    integrated-equipment: 統合された装置
+    map-manager: 地図管理
+    system-manager: システム管理
+    template: テンプレート管理
+    unknown: 未知
+    user-manager: ユーザー管理
+  operate-sub-type:
+    agv: AGVロボット
+    agv-group: ロボットグループ
+    auto-door: 自動ドア
+    charging-station: 充電パイル
+    charging-station-relation: チャージパイル関係
+    config: 構成
+    device: 外部デバイス
+    elevator: エレベーター
+    map: 地図
+    map-multi-edge-group: 複数のマップ パス グループ
+    map-temp-edge: 地図は一時的に削除されました
+    out-traffic: 外部トラフィック制御
+    shower-door: エアシャワードア
+    system-log: システムログ
+    system-replay: 再生
+    task: 注文
+    unknown: 未知のマニピュレーター
+robot-operation:
+  cancel-emergency: 非常停止を解除する
+  charging: 急速充電
+  clean-resource: クリアなパス占有率
+  continue-move: 動き続ける
+  pause-move: 動きを一時停止する
+  trigger-emergency: 非常停止
+transport-order:
+  order-state:
+    assign-next-sub-task: 次のサブタスクを割り当てる
+    cancelled: キャンセル
+    failed: 失敗した
+    hang: 保留中
+    held: 一時停止中
+    in-queue: キューにいます
+    in-queue-priority: キュー内の注文
+    out-queue: キュー外
+    processing: 実行中
+    succeed: 完了しました
+  order-type:
+    battery-maintain: バッテリーメンテナンスの指示
+    charge: 充電順序
+    park: ドックの順序
+    work: 作業命令
+user:
+  permission:
+    admin: 管理者
+    default: 一般会員

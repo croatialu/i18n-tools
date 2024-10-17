@@ -1,0 +1,101 @@
+errors:
+  custom: 錯誤的輸入格式
+  invalid_arguments: 錯誤的函數參數格式
+  invalid_date: 錯誤的日期格式
+  invalid_enum_value: 錯誤的枚舉值 '{received}'。請輸入 {options}
+  invalid_intersection_types: 交叉類型結果無法被合併
+  invalid_literal: 錯誤的字面量值，請輸入 {expected}
+  invalid_return_type: 錯誤的函數返回值格式
+  invalid_string:
+    cuid: 錯誤的{validation}格式
+    datetime: 錯誤的{validation}格式
+    email: 錯誤的{validation}格式
+    endsWith: ''
+    ip: 錯誤的 IP 地址格式
+    regex: 錯誤的格式
+    startsWith: ''
+    url: 錯誤的{validation}格式
+    uuid: 錯誤的{validation}格式
+  invalid_type: 預期輸入為{expected}，而輸入為{received}
+  invalid_type_received_null: 必填
+  invalid_type_received_undefined: 必填
+  invalid_union: 不滿足聯合類型中的選項
+  invalid_union_discriminator: 標識值無法被區分。請輸入 {options}
+  not_finite: 數值必須有限
+  not_multiple_of: 數值必須是 {multipleOf} 的倍數
+  password:
+    confirm: 兩次輸入的密碼不一致
+    invalid-symbol: 密碼不能包含非法字元
+    pure-alphabetic: 密碼不能只包含字母
+    pure-number: 密碼不能只包含數字
+  too_big:
+    array:
+      exact: 數組元素必須為 {maximum} 個
+      inclusive: 數組元素不得多於 {maximum} 個
+      not_inclusive: 數組元素必須少於 {maximum} 個
+    date:
+      exact: 日期必須為 {maximum}
+      inclusive: 日期不得早於 {maximum}
+      not_inclusive: 日期必須晚於 {maximum}
+    number:
+      exact: 數值必須為 {maximum}
+      inclusive: 數值不得大於 {maximum}
+      not_inclusive: 數值必須小於 {maximum}
+    set:
+      exact: 錯誤的輸入格式
+      inclusive: 錯誤的輸入格式
+      not_inclusive: 錯誤的輸入格式
+    string:
+      exact: 文本長度必須為 {maximum} 個字元
+      inclusive: 文本長度不得多於 {maximum} 個字元
+      not_inclusive: 文本長度必須少於 {maximum} 個字元
+  too_small:
+    array:
+      exact: 數組元素必須為 {minimum} 個
+      inclusive: 數組元素不得少於 {minimum} 個
+      not_inclusive: 數組元素必須超過 {minimum} 個
+    date:
+      exact: 日期必須為 {minimum}
+      inclusive: 日期不得晚於 {minimum}
+      not_inclusive: 日期必須早於 {minimum}
+    number:
+      exact: 數值必須為 {minimum}
+      inclusive: 數值不得小於 {minimum}
+      not_inclusive: 數值必須大於 {minimum}
+    set:
+      exact: 錯誤的輸入格式
+      inclusive: 錯誤的輸入格式
+      not_inclusive: 錯誤的輸入格式
+    string:
+      exact: 文本長度必須為 {minimum} 個字元
+      inclusive: 文本長度不得少於 {minimum} 個字元
+      not_inclusive: 文本長度必須超過 {minimum} 個字元
+  unrecognized_keys: '對象中的鍵無法識別: {keys}'
+types:
+  array: 數組
+  bigint: 大整數
+  boolean: 布爾值
+  date: 日期
+  float: 浮點數
+  function: 函數
+  integer: 整數
+  map: 字典
+  nan: 非數
+  never: 不存在
+  'null': 空對象
+  number: 數字
+  object: 對象
+  promise: Promise
+  set: 集合
+  string: 字串
+  symbol: 符號
+  undefined: 未定義
+  unknown: 未知
+  void: 空
+validations:
+  cuid: cuid
+  datetime: 日期時間
+  email: 郵件
+  regex: 正則運算式
+  url: 鏈接
+  uuid: uuid

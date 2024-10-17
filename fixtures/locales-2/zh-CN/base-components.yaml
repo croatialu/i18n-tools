@@ -1,0 +1,26 @@
+default-empty-text: 暂无数据
+file-upload:
+  click-to-upload: 点击上传
+  drag-into-file: 或者拖放
+  exceed-max-count-with-count: '超过文件数量限制: {count}个'
+  exceed-max-size: 超过文件大小限制
+  invalid-file-type: 不支持的文件类型
+  release-to-upload: 松手上传
+  retry: 再试一次
+  upload-failure: 上传失败，请重试
+input:
+  default-placeholder: 请输入
+  placeholder: 请输入{0}
+modal:
+  default-cancel-text: 取消
+  default-ok-text: 确定
+pagination:
+  next-text: 下一页
+  prev-text: 上一页
+select:
+  default-placeholder: 请选择
+  placeholder: 请选择{0}
+textarea:
+  default-placeholder: 请输入
+toast:
+  operate-success: 操作成功

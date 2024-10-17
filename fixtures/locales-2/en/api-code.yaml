@@ -1,0 +1,437 @@
+'0': Successful
+E100001: Null order
+E100003: Null job
+E100006: End station of job is null
+E100007: Fail to continue or pause order because there is no robot be assigned to it.
+E100012: Fail to continue or skip  because there is no robot be assigned to it.
+E100013: Order is completed
+E100015: Order can not queue out
+E100016: Order can not queue in
+E100017: Fail to pause order because it's not executing
+E100019: Fail to continue order because it's not paused
+E100021: Fail to pause order or skip job because it's not suspended
+E101005: Robot is null
+E101007: Plate is not uplifted
+E103001: Invalid parameter
+E104012: Null request
+E104013: Abnormal robot
+E104014: Abnormal in parsing map
+E104021: Null elevator direction
+E106008: Robot is enabled
+E106009: Robot is executing order
+E106010: Uncompleted order still using this map
+E106011: Null station of order in current map
+E106012: Action is executing when apply for new path
+E106016: Robot is not right on station when resume or skip suspended order
+E106017: Move job can not be skiped
+E106018: Failed to varify robot orientation deviation form station direction
+E106019: Fail to find nearest node when plan path for robot
+E106020: Fail to find nearest edge when plan path for robot
+E106021: >-
+  Fail to regress to nearest edge while it exceed the maximium regression
+  distance
+E106022: Fail to delete robot while it? enabled
+E106023: Fail to delete robot while it? executing
+E106025: Null start station when link map
+E106026: >-
+  Robot is not on the station （reffer to seetting NO.5002）when continue
+  suspended order
+E106028: Value is not in reauired range
+E106029: Device is offline
+E107001: Abnormal in executing
+E107002: Unreachable path
+E107003: Behavior tree structure has some problem, check first!
+E107004: Fail to skip job while suspended order miss edge
+E107005: Fail to resume order while suspended order miss edge
+E107006: The same robot is executing muti-orders
+E110001: Illegal priority value
+E110002: Fail to designate robot and robot group at the same time
+E110003: ID and status of robot be reserved should match
+E110004: Null job type
+E110005: End station and map should not be null in move job
+E110006: Parameter should not be null in action job
+E110007: Repeted upper key
+E110008: Map does not exist in move job
+E110009: End station does not exist in move job
+E110010: Fail to reserve robot while previous order already release it
+E110011: Designated robot does not exist
+E110012: Designated robot group does not exist
+E110014: Null order
+E110015: Unknown job type
+E110016: Job should not be null
+E112016: Value of operation for SEER action should not be null
+E112017: Order tag should not contain "|"
+E112018: Total number of order tag should not greater than 64
+E112019: Size of tag list in a order should not greater than 10
+E112020: Order tag should not be empty
+E112021: Total number of order tag is already greater than {limit}
+E112022: Length of string in action parameter is too long
+E112023: Parameter in custome action should be Json format
+E120001: Traffic control area already be reserved
+E120002: URL of traffic control arbitration is null
+E120003: Response from traffic control arbitration is null
+E120004: Response code {code} from traffic control arbitration is not 0
+E120005: Traffic control area code ({trafficAreaCode}) does not exist
+E120006: Traffic control area already be reserved by system Id:{systemId}
+E120007: >-
+  Could not find the traffic control area code ({trafficAreaCode}) and system Id
+  ({systemId})
+E120008: >-
+  Map ({mapName}) and edge group ({groupName}) already are included in another
+  traffic control area
+E120009: Could not find the traffic control area id ({id})
+E120010: >-
+  In traffic control area module, it fails to delete robot {vehicleName} while
+  be assigned to executing order {taskKey}
+E120011: Traffic control area is repeat
+E130000: Robot is offline
+E130001: Robot is not in automatic mode
+E130002: Robot is moving or rotating
+E130003: Robot is pausing
+E130004: Robot is in E-stop
+E130005: Robot position is not initialized
+E130006: Robot is in disable
+E130007: Robot is not in idle
+E130008: Robot is loaded while be assigned to another order
+E130009: Robot is in low battery
+E130010: Robot shoule be fully charged
+E130011: Robot is charging and current battery charge is below to work
+E130012: Robot is already assigned to other order
+E130013: Robot is executing and can not be interrupted or re-assigned
+E130014: Robot does not exist
+E130015: Robot is in abnormal
+E130016: Robot is in battery priority mode
+E130027: Robot is moving
+E130028: Robot is charging
+E131000: Order does not exist
+E131001: Order is not dispatchable
+E131002: Order is not work order
+E131003: Order is part of robot reserve sequence which alreay exist another robot
+E131004: Order is already be assigned to another robot
+E131005: Order is finished
+E131006: Order and robot can be dispathed normally
+E132000: Robot can not reach start station while it can execute order
+E132001: Order designate robot group, while this robot is not include
+E132002: Robot is already reserved by another order
+E132003: Order is already pre-dispatched to another robot
+E132004: Robot is already assigned to unfinished order sequence
+E132005: Robot is already pre-assigned to order in order queue
+E132010: Robot is executing order
+E132016: Order is already pre-dispatched to a robot
+E132022: Robot does not exist
+E132023: Fail to charge because disable charge when robot loaded while it is
+E132024: Robot meet the charging condition
+E132025: Robot meet the parking condition
+E132026: Fail to charge because disable parking when robot loaded while it is
+E132031: Should charge to full after robot begin to charge
+E132033: Robot should enable charge when idle
+E132034: Robot should enable park when idle
+E132039: Robot is not idle
+E132040: No avaliable charging station
+E132041: >-
+  Fail to be idle for robot just complete order while sitll not meet the time
+  span from executing to idle
+E132042: Fail to find nearest node when plan path for robot
+E132043: No avaliable parking station
+E132044: Robot is already on the parking station
+E132046: Fail to automatic charge while charging strategy has not be activated yet
+E132047: Charging strategy is out of the time range
+E132048: Fail to charge because disable charge when idle
+E132049: No avaliable charging strategy under current condition
+E132050: Current robot is not under any charging strategy
+E132051: Current battery charge is higher than high battery threshold
+E132052: No avaliable charging station even robot is under charging strategy
+E132053: Fail to park while robot is charging
+E132054: Unkonwn failure reason
+E132055: >-
+  Fail to idle park while robot does not meet the time span from executing to
+  idle
+E132056: Fail to execute order while robot is executing
+E140001: Should not change the data type of charging strategy
+E140002: Should not delete default charging strategy
+E140003: Fail to find charging strategy
+E140004: Low battery threshold is lower than limit
+E140005: High battery threshold is higher than limit
+E140006: Low battery + Charging limit should less than 100%
+E140007: 'Wrong battery limit: High battery > Normal battery > Low battery'
+E140008: Date and time of charging strategy should not be empty
+E140009: Start time should not later than end time of charging strategy
+E140010: Data type of charging strategy Should be custom data type
+E140011: Parameter should not less than 0
+E140012: There is repeat name of charging strategy
+E150001: Fail to delete job while it's executing
+E160001: There is repeat name of action template
+E160002: Action template does not exist
+E200000: >-
+  Could not find device while it's not in connection records,check deviceKey and
+  type first
+E200001: Abnormal device, check whether it's at work
+E200002: Operation ID should not be empty
+E200003: Operation command is wrong
+E200004: Data does not exist in deviceKey set
+E200005: Robot group does not exist
+E200006: Robot group name already exist
+E200007: Charging station does not exist
+E200008: Miss important Key
+E200009: Resource zone should not be empty
+E200010: Resource station should not be empty
+E200011: Resource station is already be occupied
+E200027: Device does not exist
+E200091: There is repeat name of resource station
+E201016: There is no avaliable charging station
+E201017: Several charging station need to configure robot group
+E201018: There is repeat charging station, check its name, IP or port first
+E201019: There is repeat robot in robot group when configures charging station
+E202012: Auto door does not exist
+E202013: Air shower does not exist
+E202014: Elevator does not exist
+E202015: There is repeat device configuration
+E202016: There is repeat floor configuration
+E202017: There is repeat resource configuration, check station and zone.
+E202018: There is repeat map in different floor
+E202019: Device could not change to be in maintenance
+E202020: IP, port error {host}、{port}
+E202021: There is repeat auto door, check first
+E202022: There is repeat IP/port of  auto door, check first
+E202023: There is repeat air shower, check first
+E202024: There is repeat IP/port of air shower, check first
+E202025: There is repeat elevator, check first
+E202026: There is repeat IP/port of elevator, check first
+E230001: Error in holding brake
+E230002: Robot is in manual mode
+E230003: Robot positioning is not initiated
+E230004: E-stop(emergency stop) is activated
+E230005: Robot is offline by bad connection
+E230006: Robot is offline by power off
+E240001: >-
+  Fail to delete robot({vehicleName}) while robot is a member of robot group
+  ({resourceName})
+E240002: >-
+  Fail to delete robot group ({groupName}) while one robot is executing order
+  ({resourceName})
+E240003: >-
+  Fail to delete robot group ({groupName}) while robot is using station
+  ({resourceName}) charging station ({chargerName})
+E300001: Invalid parameter
+E300002: Configuration does not exist
+E301002: Value is not on the reauired range
+E301003: Parameter should be number
+E301004: Parameter should be URL
+E301005: Parameter should be time
+E301006: Parameter should be integrater
+E301007: Parameter should be float
+E301008: Parameter should be IP address
+E310001: Error happened when uploading file
+E310004: Could not find the file
+E310005: Fail to compress file
+E310006: Error happened when copy file
+E310007: There is repeat file
+E310008: Invalid file format
+E310009: Fail to upload file, while size of SROS package is larger than 20MB
+E320001: Invalid parameter
+E320002: Invalid language type
+E320003: Resource does not exist
+E320004: There is repeat resource
+E320005: Requst mapping info handler is null
+E320006: Bean does not exist
+E320007: There is repeat name,check first
+E320008: Invalid parameter type or format
+E320500: Unknown error,contact with engineer to fix
+E320501: Request error happend when request 3rd-party interface
+E500008: File does not exist
+E500010: Invalid file name or suffix
+E500011: Fail to operate file
+E500014: Fail to decrypt update package
+E500016: Fail to access this page while license is expired or invalid
+E500018: License is expired
+E500019: >-
+  Robot count is more than license limit,which is pre-configured by Standard
+  Robots Co.,Ltd
+E500020: License mismatch with machine code, check license and machine code
+E510001: Fail to access while already log out or token is expired
+E510002: Have no releated permission
+E510003: Fail to delete role while there is account still configured as this role
+E510004: >-
+  Fail to delete permission while there is role still configured as this
+  permision
+E510005: Invalid parameter
+E510006: Account does not exist
+E510007: Incorrect password
+E510008: Incorrect username or password
+E510009: Token is expired!
+E510010: Account is disabled
+E510011: Incorrect password
+E510012: User has no data permission
+E510013: Error happend when parase SQL statement
+E510014: Data table does not exist
+E510015: Fail to delete default role
+E510016: User details is not initiated
+E510017: Role permission is null
+E510018: Data permission of this role is null
+E510019: Data rule group related to data permission of role is null
+E510020: Data rule group is null
+E510021: Data rule gruop or role and record of data rule is null
+E510022: Data rule or role is null
+E510023: Batch sync user is null
+E510024: Username should not be null when sync user
+E510025: Fail to update or save user resource
+E510026: Fail to log in
+E510027: Default user should not be deleted
+E510028: URL of athentication is null
+E510029: Username and password should not be null
+E510030: Fail to verify token from 3rd-party software
+E510031: Could not edit permission of administrator
+E600001: Should not operate again during log is downloading
+E600002: Narrow time range while too broad date range
+E600003: Fail to export log
+E610911: CPU usage exceeds CPU usage threshold
+E610912: Memory usage exceeds memory usage threshold
+E610913: Disk usage exceeds disk usage threshold
+E610914: Backup server is offline, resluting invalid of dual-device hot backup
+E610915: Server swamp is activated
+E610916: CPU usage exceeds CPU usage threshold. Duration:{time}s
+E610917: Memory usage exceeds Memory usage threshold. Duration:{time}s
+E610920: 'Robot {name} is abnormal, error code: {errors}'
+E610921: 'Robot {name} is obstacle avoiding, duration: {time}s'
+E610922: 'Robot {name} is traffic controlling, duration: {time}s'
+E610923: 'Robot {name} is offline for a long time during executing, duration: {time}s'
+E610924: Robot {name} is not in automatic mode
+E610925: Robot brake of {name} is released
+E610926: Robot E-stop of {name} is activated
+E610930: Order {orderKey} is suspended
+E610931: Order {orderKey} does not be assigned for a long time, duration:{time}s
+E610940: Auto door {name} is offline for a long time, duration:{time}s
+E610941: Air shower {name} is offline for a long time, duration:{time}s
+E610942: Elevator {name} is offline for a long time, duration:{time}s
+E610943: Charging station {name} is offline for a long time, duration:{time}s
+E610950: '{source}:{msg}'
+E620001: IP should not be null
+E620002: IP/port should not be null
+E620003: Notification data format has error
+E639999: Multi template has error
+E640001: Error happend when update, check file format first
+E800001: >-
+  Edge group- Map {mapName} miss required edge while disable edge group ID is
+  {resourceName}
+E800002: >-
+  Edge group- Map {mapName} miss required edge while disable edge group ID is
+  {resourceName}
+E800003: >-
+  Edge group- Map {mapName} miss required edge while edge group ID is
+  {resourceName}
+E800004: >-
+  Edge group- Map {mapName} miss required edge while station ID is
+  {resourceName}
+E800005: >-
+  Integrated equipment- Map {mapName} miss zone, while auto door {doorName} is
+  using {resourceName}
+E800006: >-
+  Integrated equipment- Map {mapName} miss zone, while elevator {elevatorName}
+  is using {resourceName}
+E800007: >-
+  Integrated equipment- Map {mapName} miss zone, while air shower {airDoorName}
+  is using {resourceName}
+E800008: >-
+  Integrated equipment- Map {mapName} miss station, while elevator
+  {elevatorName} is using {resourceName}
+E800009: >-
+  Integrated equipment- Map {mapName} miss station, while air shower
+  {airDoorName} is using {resourceName}
+E800010: >-
+  Integrated equipment- Map {mapName} miss station, while charging station
+  {chargerName} is using {resourceName}
+E800011: >-
+  Integrated equipment- Map {mapName} miss station, while charging station
+  {chargerName} is using station {resourceName}
+E800012: >-
+  Integrated equipment- Map {mapName} miss zone, while charging station
+  {chargerName} is using {resourceName}
+E800013: >-
+  Traffic controll area- Map {mapName} miss edge group, while shared traffic
+  control area {trafficName} is using edge group ID {resourceName}
+E800014: >-
+  Traffic controll area- Fail to delete map {mapName}, while shared traffic
+  control area is using this map {resourceName}
+E800015: >-
+  Edge group- Fail to delete map {mapName}, while edge group is using this map
+  {resourceName}
+E800016: >-
+  Edge group- Fail to delete map {mapName}, while edge group is using this map
+  {resourceName}
+E800017: >-
+  Dispatch- Fail to delete map {mapName}, while order is using this map
+  {resourceName}
+E800018: >-
+  Integrated equipment- Fail to delete {mapName}, while charging station is
+  using this map {resourceName}
+E800020: >-
+  Integrated equipment- Fail to delete {mapName}, while air shower is using this
+  map {resourceName}
+E800021: >-
+  Integrated equipment- Fail to delete {mapName}, while auto door is using this
+  map {resourceName}
+E800022: Error happend when link map
+E800023: Station is null
+E800024: Map name is null
+E800025: Map from robot is null
+E800026: File name mismatch
+E800027: Map already exist
+E800028: Map file is null
+E800029: Invalid map file format
+E800030: Node {nodeId} is repeat in map json file
+E800031: Start node of edge {edgeId} is repeat in map json file
+E800032: End node of edge {edgeId} is repeat in map json file
+E800033: Start and end node of edge {edgeId} is same in map json file
+E800034: Node coordinate-x {nodeId} is null in map json file
+E800035: Node coordinate-y {nodeId} is null in map json file
+E800036: There is null node id in map file
+E800037: There is null edge id in map file
+E800038: There is null edge type of {edgeId} in map file
+E800039: There is null start node {nodeId} of edge {edgeId} in map file
+E800040: There is null end node {nodeId} of edge {edgeId} in map file
+E800041: There is null station {stationId} of edge {edgeId} in map file
+E800042: There is no node between start node {sNodeId} and {eNodeId} in map file
+E800043: >-
+  The distance between node {sNodeId} and {eNodeId} is less than 10mm in map
+  json file
+E800044: There is repeat station {stationId} in map json file
+E800045: Station does not exist in map json file
+E800046: Edge related to station {stationId} is null
+E800047: Node parameter is illegal
+E800048: Fail to delete map while it already be used in edge group
+E800049: Fail to update map while will make link map disappear
+E800050: Name of edge group is null
+E800051: Edge group name does already exist
+E800052: Edge group resource is null
+E800053: Edge does not exist
+E800054: Type of edge group is null
+E800055: Edge group is null
+E800056: Edge group does not exist
+E800057: Multi edge group should include at least 2 different maps
+E800058: Robot does not exist
+E800059: Edge group name is null
+E800060: Edge in edge group is null
+E800061: Edge group name already exist
+E800062: Map sync sub-record is null
+E800063: Map sync sub-record is not failed
+E800064: Map sync record is null
+E800065: Json data is null
+E800066: There is repeat edge in edge group
+E800067: There is repeat map in edge group
+E800068: Current map mismatch with robot map {fMd5}>{sMd5}, the map name is {fileName}
+E800069: Map data format should be json
+E800070: Fail to uncompress map file,check the file first
+E800071: Map- There is repeat edge group {edgeGroupId}
+E800072: Map- There is repeat edge {edgeId}
+E800073: Map- The {edgeId} in edge group does not exist
+E800074: Timeout when get map {mapName} from robot
+E800075: Map does not exist
+E800076: There is repeat station {stationName} in map json file
+E800077: Edge Id {edgeId} should not be minus in map json file
+E800078: Id {stationId} of station {stationName} should not be minus in map json file
+E800079: Node parameter of edge is illegal
+E800080: There is repeat name {stationName}
+E800081: Node {nodeId} of edge {edgeId} has parameter error
+E80019: >-
+  Integrated equipment- Fail to delete map {mapName}, while elevator is using
+  thi map {resourceName}

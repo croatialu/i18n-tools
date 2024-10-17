@@ -1,0 +1,101 @@
+errors:
+  custom: Invalid data format
+  invalid_arguments: Invalid format of argument
+  invalid_date: Invalid date format
+  invalid_enum_value: Invalid enum value '{received}', can enter {options}
+  invalid_intersection_types: Can not merge the different result format
+  invalid_literal: Invalid literal value, can enter {expected}
+  invalid_return_type: Invalid return data type
+  invalid_string:
+    cuid: Invalid {validation} data type
+    datetime: Invalid {validation} data type
+    email: Invalid {validation} data type
+    endsWith: テキストは「{endsWith}」で終わる必要があります
+    ip: Invalid IP address format
+    regex: Invalid data type
+    startsWith: テキストは「{startsWith}」で始まる必要があります
+    url: Invalid {validation} data format
+    uuid: Invalid {validation} data format
+  invalid_type: Expect to enter {expected}，while you enter {received}
+  invalid_type_received_null: Required
+  invalid_type_received_undefined: Required
+  invalid_union: Invalid data in union selector
+  invalid_union_discriminator: Identifier can not be the same. Enter {options}
+  not_finite: Value should be finit
+  not_multiple_of: Value should be the multiple of {multipleOf}
+  password:
+    confirm: Password must match
+    invalid-symbol: Password contain illegal characters
+    pure-alphabetic: Password is unsafe if only contain alphabet
+    pure-number: Password is unsafe if only contain number
+  too_big:
+    array:
+      exact: Array size must be greater than {maximum}
+      inclusive: Array size must not be larger than {maximum}
+      not_inclusive: Array size must be smaller than {maximum}
+    date:
+      exact: Date should be {maximum}
+      inclusive: Date should not be earlier than {maximum}
+      not_inclusive: Date should be later than {maximum}
+    number:
+      exact: Number should be {maximum}
+      inclusive: Number should be not greater than {maximum}
+      not_inclusive: Number shoud be less than {maximum}
+    set:
+      exact: Invalid data type
+      inclusive: Invalid data type
+      not_inclusive: Invalid data type
+    string:
+      exact: String length should be {maximum}
+      inclusive: String length should not be greater than {maximum}
+      not_inclusive: String length should be less than {maximum}
+  too_small:
+    array:
+      exact: Array size should be {minimum}
+      inclusive: Array size should not be less than {minimum}
+      not_inclusive: Array size should be greater than {minimum}
+    date:
+      exact: Date should be {minimum}
+      inclusive: Date should not be later than {minimum}
+      not_inclusive: Date should be earlier than {minimum}
+    number:
+      exact: Number should be {minimum}
+      inclusive: Number should not be less than {minimum}
+      not_inclusive: Number should be greater than {minimum}
+    set:
+      exact: Invalid data type
+      inclusive: Invalid data type
+      not_inclusive: Invalid data type
+    string:
+      exact: String length should be {minimum}
+      inclusive: String length shoud not be less than {minimum}
+      not_inclusive: String length should be greater than {minimum}
+  unrecognized_keys: 'Key in object can not be recognized: {keys}'
+types:
+  array: Array
+  bigint: Bigint
+  boolean: Bool
+  date: Date
+  float: Float
+  function: Function
+  integer: Integer
+  map: Dictionary
+  nan: Nan
+  never: Missing
+  'null': 'Null'
+  number: Number
+  object: Object
+  promise: Promise
+  set: Set
+  string: String
+  symbol: Symbol
+  undefined: Undefined
+  unknown: Unkonwm
+  void: Void
+validations:
+  cuid: Cuid
+  datetime: Time
+  email: Email
+  regex: Regex
+  url: URL
+  uuid: Uuid

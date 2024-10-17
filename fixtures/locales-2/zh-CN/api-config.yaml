@@ -1,0 +1,271 @@
+systemConfig:
+  name: 系统配置
+  children:
+    enableStandBy:
+      name: 启用双机热备
+      description: 启用双机热备
+    standByServerIp1:
+      name: 双机热备服务器1 IP地址
+      description: 双机热备服务器1 IP地址
+    standByServerIp2:
+      name: 双机热备服务器2 IP地址
+      description: 双机热备服务器2 IP地址
+    enableDataRecord:
+      name: 开启时序数据库相关功能
+      description: 记录数据到时序数据库，支撑回放、数据统计等功能。需依赖其他组件，windows系统需关闭
+    thirdAuthTokenUrl:
+      name: 单点登录鉴权接口地址
+      description: 单点登录鉴权接口地址
+    tokenExpirationTime:
+      name: token过期时间(单位分钟)
+      description: 保存token过期时间(单位分钟)
+    thirdRedirectUrl:
+      name: 单点登录鉴权失败后跳转页面地址
+      description: 单点登录鉴权失败后跳转页面地址
+    musicIdWhenOrderHang:
+      name: 订单挂起时播放音乐ID
+      description: 订单挂起时播放音乐ID
+    orderTagQuantityThreshold:
+      name: 订单标签数量阈值
+      description: 订单标签数量阈值 下单时检测标签数量超阈值提示报错
+parkConfig:
+  name: 停靠配置
+  children:
+    enableVehicleIdlePark:
+      name: 启用机器人空闲停靠功能
+      description: 启用机器人空闲停靠功能
+    idleVehicleToParkingWaitingTime:
+      name: 机器人空闲后生成停靠任务时间
+      description: 机器人完成订单后，在等待时间内没有分配到新的订单，将会自动生成前往停靠点的停靠任务
+    enableLoadStateCanPark:
+      name: 机器人在载货状态下可生成停靠任务
+      description: 机器人在载货状态下可生成停靠任务
+chargeConfig:
+  name: 充电配置
+  children:
+    enableLoadStateCanCharge:
+      name: 机器人在载货状态下可生成充电任务
+      description: 机器人在载货状态下可生成充电任务
+dispatchConfig:
+  name: 订单分配
+  children:
+    idleVehiclesRedispatchInterval:
+      name: 订单分配时间间隔(单位:毫秒)
+      description: 订单分配时间间隔(单位:毫秒)
+    assignTimePriority:
+      name: 订单排队时间对订单分配影响的级别
+      description: 优先级越高，排队时间长的订单被提前分配的概率越高
+    enableDispatchByLoading:
+      name: 机器人在载货状态下可分配新任务
+      description: 机器人在载货状态下可分配新任务
+orderTaskConfig:
+  name: 订单配置
+  children:
+    stationDistanceVehicleNear:
+      name: 移动任务完成后距离校验允许的偏移量
+      description: 在机器人返回移动任务结束后，会对当前机器人的坐标和角度与发送的坐标做二次校验，此配置为允许的坐标偏移量
+    changeMapTimeout:
+      name: 切换地图指令超时时间
+      description: 在乘坐电梯等场景，会给机器人发送切换地图指令，超过该配置时间，将认为切换地图失败，订单会挂起
+    hangOrderTaskOperateToCheckVehicleCoordinate:
+      name: 恢复挂起状态订单时校验机器人坐标和角度
+      description: 防止在订单挂起后，人为移动机器人，导致恢复订单挂起状态时，机器人没有在对接点，造成掉料的情况
+    argActionRetryCount:
+      name: 动作任务执行失败后自动重试次数
+      description: 动作任务执行失败后自动重试次数
+    moveOperateVehicleAngleNear:
+      name: 移动任务完成后角度校验允许的偏移量
+      description: 在机器人返回移动任务结束后，会对当前机器人的坐标和角度与发送的坐标做二次校验，此配置为允许的角度偏移量
+vehicleConfig:
+  name: 机器人配置
+  children:
+    vehicleLength:
+      name: 机器人长度
+      description: 机器人长度
+    vehicleWidth:
+      name: 机器人宽度
+      description: 机器人宽度
+    vehicleLoadLength:
+      name: 机器人载货状态长度
+      description: 机器人载货状态长度
+    vehicleLoadWidth:
+      name: 机器人载货状态宽度
+      description: 机器人载货状态宽度
+    vehicleSpeed:
+      name: 机器人未载货时最大速度
+      description: 机器人未载货时最大速度
+    vehicleLoadSpeed:
+      name: 机器人载货时最大速度
+      description: 机器人载货时最大速度
+trafficConfig:
+  name: 交管配置
+  children:
+    mergeStepMinLength:
+      name: 路径在计算交管时被合并申请的长度阈值
+      description: 在申请资源时，如果路径长度小于该配置值时，会继续申请下一段路，直到申请的资源大于该配置值，防止由于路径过短导致机器人走走停停
+    agvModelIncremental:
+      name: agv模型的增量(mm)
+      description: agv交管模型的增量
+    minGenCircleRadian:
+      name: 机器人原地旋转时，生成旋转交管区域的最小角度值
+      description: 机器人原地旋转时，生成旋转交管区域的最小角度值，旋转角度大于这个值会生成对应旋转角度的旋转交管区域
+    twoEdgeRoadSafeStopDistance:
+      name: 双向路口安全停车距离(mm)
+      description: 载货后最大尺寸的车的旋转半径加一半车长
+    arbitrationServerEnable:
+      name: 启用第三方作为外部交管仲裁方
+      description: 启用第三方作为外部交管仲裁服务，true时结合外部交管仲裁服务地址使用，false时RIOT作为交管仲裁方
+    outsideArbitrationServerUrl:
+      name: 外部交管仲裁服务地址
+      description: >-
+        例如，http://127.0.0.1:8089/outsideTraffic?command={'%'}s&areaCode={'%'}s&systemId={'%'}s，GET请求,command值为apply或release,areaCode为区域id,systemId为系统id;响应成功{'{'}code:0{'}'}
+    autoKeepDistanceCheckEnable:
+      name: 自动保持车距开关
+      description: 自动保持车距开关
+routeConfig:
+  name: 路径规划
+  children:
+    maxReturnDistance:
+      name: 机器人坐标偏离路径时可回归到路径的最大垂直距离（mm）
+      description: 机器人坐标偏离路径时可回归到路径的最大垂直距离（mm），超过这个距离就不会生成回归路径，移动任务失败
+    returnByDistanceThreshold:
+      name: 机器人在节点上的距离判定范围(mm)
+      description: 执行任务时，机器人距离节点大于该范围，会生成回归路径。该值必须小于单机参数955
+    stationNodeDeviateThreshold:
+      name: 站点节点偏离阈值(mm)
+      description: 大于这个距离的站点和节点无法绑定
+    rerouteEnable:
+      name: 启用动态路径规划
+      description: 启用动态路径规划
+    enableVehicleObstacleReroute:
+      name: 启用机器人避障后重新规划
+      description: 启用机器人避障后重新规划，机器人会自动规划路线绕过障碍物
+    tdsppEnable:
+      name: 启用时间相关路径规划
+      description: 时间相关路径规划开关
+    tdsppCostMode:
+      name: 时间相关代价计算模式
+      description: 时间相关代价计算模式:路径长度;简单旅行时间;静态旅行时间;诱导因子;时变旅行旅游时间
+    tdsppOnEdgeTolerance:
+      name: 判断距离是否在边容忍度
+      description: 判断距离是否在边容忍度
+    tdsspMaxSpeedCount:
+      name: 路况-最大速度持续次数
+      description: 路况-最大速度持续次数
+    shortestPathAlg:
+      name: 最短路径算法
+      description: 最短路径算法:迪杰斯特拉算法;A星算法
+    rerouteMode:
+      name: 重路由模式
+      description: 重路由模式:取消模式;追加模式
+    tdsspRoadSensitiveTime:
+      name: 路况-更新敏感时间
+      description: 路况-更新路况信息频率,每次更新的时间,
+    tdsspRoadDurationTime:
+      name: 路况-更新持续时间
+      description: 路况-更新时取速度信息的时间范围,此时间到当前时间段取平均值计算
+noticeConfig:
+  name: 通知配置
+  children:
+    dingTalkEnable:
+      name: 启用钉钉推送通知
+      description: 启用钉钉推送通知
+    dingTalkUrl:
+      name: 钉钉推送URL
+      description: 钉钉推送URL
+    dingTalkKeyWord:
+      name: 钉钉推送关键词
+      description: 钉钉推送关键词
+interfaceConfig:
+  name: 接口配置
+  children:
+    thirdPartyUrl:
+      name: 中控系统 URL
+      description: 设置中控系统接口URL时,需要输入完整URL，例如http://127.0.0.1/api
+    requestUrlFailRetryCount:
+      name: 中控系统接口请求失败后的重试次数
+      description: 中控回调接口重试次数,当回调接口返回HTTP状态码非200时，重试回调的次数
+    requestUrlTimeOut:
+      name: 请求中控系统URL超时时间
+      description: 与中控系统http通讯的超时时间
+    authHeadKey:
+      name: 请求中控系统Auth请求头KEY
+      description: 请求中控系统Auth请求头KEY
+    authHeadValue:
+      name: 请求中控系统Auth请求头值
+      description: 请求中控系统Auth请求头值
+vda5050DiscoverConfig:
+  name: Vda5050-AGV发现器配置
+  children:
+    enable:
+      name: 启用vda5050 mqtt 发现器
+      description: 启用vda5050 mqtt 发现器
+    brokerUrl:
+      name: vda5050 mqtt服务URL
+      description: mqtt Broker地址需要输入完整URL，例如tcp://127.0.0.1:1883
+    userName:
+      name: vda5050 mqtt服务 用户名
+      description: 设置用于mqtt broker连接的用户名
+    password:
+      name: vda5050 mqtt服务密码
+      description: 设置用于mqtt broker连接的密码
+archiveConfig:
+  name: 历史数据归档配置
+  children:
+    enable:
+      name: 启用历史数据归档
+      description: 归档开关,历史数据归档只支持Mysql
+    maxRecordSize:
+      name: 触发归档的最大记录数
+      description: 超出最大记录数后归档
+    minRecordSize:
+      name: 触发归档的最小记录数
+      description: 超过归档时间但数量小于该值时不触发归档,剩下的已过期记录数小于该值不能触发归档
+    maxHistoryDay:
+      name: 数据过期时间
+      description: 触发归档任务后，根据该时间范围确定原数据表需要保留的数据，早于该时间的数据将被归档备份并删除
+    archiveTableSize:
+      name: 单张归档表最大记录数
+      description: 单张归档表最大记录数
+    tableSet:
+      name: 需要归档的数据表
+      description: 归档的数据表名, order_mission是关联表不需要填写
+    mode:
+      name: 归档方式
+      description: 归档方式
+    fixedDelay:
+      name: 延时执行时间
+      description: 延时执行时间
+realtimeAlarmConfig:
+  name: 实时告警配置
+  children:
+    taskUnallocatedThreshold:
+      name: 订单长时间未分配阈值
+      description: 订单长时间未分配阈值,-1代表关闭该提示
+    robotObstacleThreshold:
+      name: 机器人长时间处于避障阈值
+      description: 机器人长时间处于避障阈值,-1代表关闭该提示
+    robotTrafficThreshold:
+      name: 机器人长时间处于交管阈值
+      description: 机器人长时间处于交管阈值,-1代表关闭该提示
+    robotOfflineThreshold:
+      name: 机器人在执行任务过程长时间处于离线阈值
+      description: 机器人在执行任务过程长时间处于离线阈值,-1代表关闭该提示
+    serverMemoryUsedThreshold:
+      name: 服务器长时间处于内存占用率超过高阈值
+      description: 服务器长时间处于内存占用率超80{'%'}的阈值
+    serverCpuUsedThreshold:
+      name: 服务器长时间处于CPU占用率超过高阈值
+      description: 服务器长时间处于CPU占用率超80{'%'}的阈值
+    doorOfflineThreshold:
+      name: 自动门长时间处于离线阈值
+      description: 自动门长时间处于离线阈值,-1代表关闭该提示
+    airDoorOfflineThreshold:
+      name: 风淋门长时间处于离线阈值
+      description: 风淋门长时间处于离线阈值,-1代表关闭该提示
+    elevatorOfflineThreshold:
+      name: 电梯长时间处于离线阈值
+      description: 电梯长时间处于离线阈值,-1代表关闭该提示
+    chargeOfflineThreshold:
+      name: 充电桩(联网)长时间处于离线阈值
+      description: 充电桩(联网)长时间处于离线阈值,-1代表关闭该提示

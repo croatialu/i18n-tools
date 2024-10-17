@@ -1,0 +1,1648 @@
+'403':
+  no-permission: 403 No permission
+'404':
+  404-not-found: 404 Not Found
+  back-to-home: Return to Home
+  description: Let's explore this page later!
+common:
+  copy-fail: Copy failed
+  copy-success: Copy successfully
+components:
+  behavior-tree:
+    node-detail:
+      desc: Remark
+      params: Params
+    node:
+      agv-act: Action
+      agv-move: Move
+      always-failure: AlwaysFailure
+      always-success: AlwaysSuccess
+      comm-dev-comparer: DevComparer
+      comm-dev-setter: DevSetter
+      delay: Delay
+      eq: Equal
+      expression: Expression
+      fallback: Selector
+      force-failure: ForceFailure
+      force-success: ForceSuccess
+      hang-sequence: SuspendSequence
+      http-act: HttpAct
+      http-wait: HttpWait
+      if-then-else: IfThenElse
+      inverter: Inverter
+      parallel: Parallel
+      parallel-all: ParallelAll
+      reactive-sequence: ReactiveSequence
+      retry-until-successful: RetryUntilSuccessful
+      sequence: Sequence
+      sequence-with-memory: SequenceWithMemory
+      set-blackboard: SetBlackboard
+      sub-tree: SubTree
+      switch: Switch
+      while-do-else: WhileDoElse
+  data-empty-short:
+    description: No available data
+  modals:
+    language:
+      content:
+        current-language: Language
+      title: Language
+    quick-create-order:
+      content:
+        action-form:
+          action-template-list: Action template
+          enum:
+            'false': No
+            'true': Yes
+          mission-template-list: Job template
+          move-action:
+            map-name-placeholder: Enter and search map
+            station-name-placeholder: Enter and search station
+          selected-mission: Selected Jobs
+          title: Order
+        basic-form:
+          execute-type-label: Designated Robot
+          execute-type-radio:
+            not-specify: None
+            robot: Robot
+            robot-group: Robot group
+          execute-type-robot-group-label: robot group
+          execute-type-robot-group-placeholder-with-name: Select {name}
+          execute-type-robot-label: robot
+          execute-type-robot-placeholder-with-name: Select {name}
+          priority-label: Priority
+          title: Basic Information
+        enum:
+          action-type:
+            move: Move
+            seer-custom: SEER action
+            std-custom: SR action
+          priority:
+            high: High priority
+            low: Low priority
+            medium: Medium priority
+        toast:
+          error-types: Parameter type error
+          invalid-json: JSON data is invalid!
+          invalid-parameter: The data is illegal!
+          none-actions: Please add job
+          none-fields: Parameter cannot be empty
+          success: Create order successfully
+      title: Create order
+    robot-selector:
+      content:
+        labels:
+          filter-by-map-version: by Map Version
+          filter-by-robot-group: by Robot Group
+          filter-by-robot-group-items-title: All robots
+          filter-by-robot-type: by Robot Model
+          filter-by-robot-type-items-title: All robots
+          filter-by-sros-version: by SROS Version
+          total-with-number: '{number}'
+        placeholder:
+          filter-by-map-version: Robot/Map version
+          filter-by-robot-group: Robot/Group name
+          filter-by-robot-type: Robot name
+          filter-by-sros-version: Robot/SROS version
+      title: Select Robots
+    user-profile:
+      confirm-new-password: Confirm new password
+      my-profile: Your Account
+      new-password: New Password
+      nickname: Nickname
+      old-password: Password
+      password: Password
+      role: Role
+      update-password: Change Password
+      update-success: Edited successfully
+      update-user-nickname: Change Nickname
+      username: Username
+  robot-state-block:
+    avoid-state: Obstacle avoiding
+    break-sw-state: Brake released
+    charging-state: Charging
+    crowd-state: Group
+    emergency-state: E-stop
+    idle-state: Idle
+    low-battery-state: Low charge
+    manual-state: Manual control
+    need-location-state: Need position
+    offline-state: Offline
+    online-state: Online
+    order-hang-state: Suspended
+    order-held-state: Paused
+    running-state: Move
+    save-mode-state: Low power
+    standby-state: Idle
+    traffic-control-state: Traffic controlling
+  std-map:
+    abnormal: Abnormal
+    backward-edge: Backward edge
+    brake-released: Brake released
+    charging: Charging
+    current-path: Current path
+    disabled-edge: Disable edge
+    edge-group: Edge group
+    elements:
+      all-occupy: Occupied path
+      edge-congestion-level: Display path congestion level
+      func-area: Function zone
+      map-axis: Map coordinate system
+      map-background: Grid map
+      map-grid: Map grid
+      node: Node
+      offline-robot: Offline robot without path
+      removed-edges: Disable edge
+      resource-zone: Occupied bounding space
+      show-text: Path name
+      station: Station
+    executing: Executing
+    forward-edge: Forward edge
+    idle: Idle
+    input-robot-name-station-name-and-id-to-search: Search by robot name or station name/ID
+    legend: Legend
+    load-state: Load
+    loaded-robot-restricted-edge: Loaded edge
+    map-edge: Edge
+    normal-execution: Executing
+    'obstacle-avoiding ': Obstacles avoiding
+    occupied-path: Traffic controlling
+    offline: Offline
+    operation:
+      full-screen: Full-screen
+      reset-view: Origin view
+      zoom-in: Zoom in
+      zoom-out: Zoom out
+    order: Order
+    order-pause: Order Paused
+    order-suspended: Order Suspended
+    placeholder:
+      select-edge-group: Edge group
+      select-map: Map name
+      show-map-elements: Show map elements
+    robot: Robot
+    robot-detail:
+      action-status: Speed
+      charging: Charging
+      copy-obj-id: Click to Copy
+      current-station-name: Current station
+      location-position: Coordinate
+      locked-robots: Conflict objects
+      order-detail: Order details
+      order-id: Order ID
+      order-name: Order name
+      order-state: Order status
+      robot-group: Group
+      robot-status: Running Status
+      rotate-theta: Rotation angle
+      traffic-detail: Applied path
+      traffic-status: Traffic controlling
+      traffic-time: Occurred time
+      traffic-type: Type
+    robot-info: Robot Information
+    select-edge-group: Edge group
+    setting: Setting
+    setting-modal:
+      default-value: '(default: {0})'
+      edge-width: Edge width
+      map-font-size: Map font size
+      robot-font-size: Robot name size
+      robot-zoom: Robot icon magnification
+      setting: Setting
+      station-radius: Station radius
+      station-width: Station direction arrow width
+    start-station-to-end-station: Start-End
+    toast:
+      operate-success: Operated successfully
+    traffic-controlling: Traffic controlling
+    unloaded-robot-restricted-edge: Unloaded edge
+  system-notification:
+    title: System abnormality alarm
+  uploaders:
+    base-file-uploader:
+      cancelled: Canceled
+    sros-file-uploader:
+      upload-sros-file: Upload SROS package
+composables:
+  use-confirm:
+    cancel-text: Cancel
+    ok-text: Apply
+    title: Notification
+constants:
+  action-template:
+    action-template-name: Tempalte name
+    action-template-type: Action template
+  device-type:
+    air-shower-door: Air shower
+    charger: Charging station
+    common: General equipment
+    door: Auto door
+    elevator: Elevator
+  driver-config:
+    air-shower:
+      zlan: ZhuoLan- Air shower
+    autodoor:
+      zlan: ZhuoLan- Auto door
+    charing-station:
+      titan: Titan Charging station
+    elevator:
+      wanglong: Wanglong Elevator
+      zlan: Zhuolan Elevator
+    host: IP
+    maximum-timeout-times: Maximum request times
+    polling-mills: State frequency
+    port: Port
+    request-timeout: Timeout
+    robot:
+      seer: SEER
+      seer-ports:
+        config-port: Configuration module port
+        control-port: Control module port
+        navigator-port: Navigation module port
+        push-port: Post port
+        state-port: Status module port
+      standard: SR
+    selection-label: Driver
+    slave-id: Slave address
+integrated-equipment:
+  air-shower:
+    actions:
+      change-state-disable: >-
+        This air shower door status will be set to maintenance. In the
+        maintenance state, the air shower door will be regarded as normally
+        open, and no control signal will be sent when robot passing through the
+        air shower.
+      change-state-enable: Please confirm to change the air shower door status to work?
+    add-shower: Air shower
+    air-shower-control: Air shower control
+    back-door: Inside door
+    confirm-delete-shower: This air shower will be deleted
+    edit-shower-door: Edit Air Shower
+    execute-stations: Air shower station
+    front-door: Outside door
+    inner-door-area: Inside zone
+    inner-door-close: Close inside door
+    inner-door-close-status: Inside door open
+    inner-door-close-tip: Inside door will be close
+    inner-door-open: Open inside door
+    inner-door-open-status: Inside door open
+    inner-door-open-tip: Inside door will be open
+    inner-door-release-tip: Inside door will be set always open
+    is-execute-operate: Control air shower
+    is-execute-shower: Air shower will start
+    manual-shower: Start air shower
+    no: No
+    operate-failed: Operation failed
+    out-door-area: Outside zone
+    out-door-close: Close outside door
+    out-door-close-status: Outside door close
+    out-door-open: Open outside door
+    out-door-open-status: Outside door open
+    out-door-open-tip: Outside door will open
+    out-door-release-tip: Outside door will be set always open
+    outer-door-close-tip: Outside door will close
+    please-select-stations: Select air shower station
+    select-shower-action-site: Air shower station
+    shower-action: Control air shower
+    shower-door-detail: Details
+    shower-door-name: Name
+    shower-manage: Air Shower
+    yes: Yes
+  autodoor:
+    '':
+      open-successful: Opened successfully
+      port: Port
+    actions:
+      change-state-disable: >-
+        This auto door will be set to maintenance.
+
+        In maintenance state, the auto door will be regarded as normally open,
+        and no control signal will be sent when robot passing the auto door.
+      change-state-enable: This auto door will be set as work
+    add-door: Auto door
+    add-successful: Created successfully
+    area-name: Zone
+    autodoor: Auto Door
+    autodoor-control: Control (only available under Maintenance)
+    autodoor-deetail: Auto Door
+    autodoor-man: Name
+    autodoor-status: Status
+    close-door: Close
+    close-failed: Closed failed
+    close-ok: Close
+    close-status: Close status
+    close-successful: Closed successfully
+    close-tip: The door will close
+    connected: Online
+    delete: Delete
+    delete-autodoor: The door will be deleted
+    delete-success: Deleted successfully
+    detail: Details
+    device-name: Name
+    edit: Edit
+    edit-autodoor: Edit Auto Door
+    edit-autodoor-status: The door will be in
+    edit-success: Edited successfully
+    fault: Abnormal
+    fix: Maintenance
+    idle: Idle
+    in-maintenance: Maintenance
+    inner-map-area: Inside zone
+    ip: IP
+    ip-port: IP/Port
+    ip-search: Search by IP
+    link-status: Connection status
+    map: Map
+    map-area: Zone
+    map-name: Map name
+    name-search: Search by name
+    nomally-open-tip: The door will be set always open
+    normally-open: Always open
+    online: Work
+    open-door: Open
+    open-failed: Open failed
+    open-not-ok: None
+    open-ok: Open
+    open-status: Open status
+    open-successful: Open successfully
+    open-tip: The door will open
+    operate: Operation
+    operate-success: Operated successful
+    out-door-map-area: Outside zone
+    please-input-device-name: Enter auto door name
+    please-select: Select
+    please-select-in-door-map-area: Select the inside zone
+    please-select-map: Select map
+    please-select-map-area: Select zone
+    please-select-out-map-area: Select the outside zone
+    port: Port
+    release: Release
+    release-failed: Failed to release
+    release-resources: Released successfully
+    resource-occupation: Occupied by
+    running: Running
+    select-map-name: Select map name
+    sure-release: The door will be released
+    unconected: Offline
+    unknown: Unknown
+    work-status: Work status
+    working: Work
+  charging-station:
+    abnormal: Abnormal
+    actions:
+      change-state-disable: >-
+        This charging station will be set to maintenance?
+
+        In maintenance state, The charging station will be unavailable, and the
+        charging task will not be assigned to it.
+      change-state-enable: This charging station will be set as work
+    add-charge: Charging station
+    be-occupied: Occupied
+    booking: Reserved
+    charge-detail: Details
+    charge-manage: Charging Station
+    charge-name: Name
+    charge-station-config: Station
+    charge-status: Charging status
+    charging-pile-control: Control (only available in Maintenance)
+    compressed: Plug in
+    driver-name: Driver
+    edit-charge: Edit Charging Station
+    error: Error
+    input-search-charge-name: Search by name
+    not-compacted: No
+    not-retracted: No
+    occupied: Occupied
+    online: Online
+    pffline: Offline
+    placing: Placing
+    plug-in: Plug in
+    plug-into: Plug into
+    pre-occupancy: Reserved
+    retracted: Yes
+    site-name: Station name
+    sure-delete-charge: This Charging station will be deleted
+    sure-is-execute-electricity-push: Charging station will unplug
+    sure-is-execute-plug-in: This charging station will plug in
+    unplug: Unplug
+    work: Work
+  elevator:
+    actions:
+      change-state-disable: >-
+        This elevator will be set to maintenance?
+
+        In maintenance state, the elevator is unavailable, and cross-floor job
+        may fail.
+      change-state-enable: Please confirm to change the elevator status to online?
+    add-charge-station: New charging station
+    add-elevator: Elevator
+    add-floor: New floor
+    all-floor: Floor
+    base-info: Basic information
+    call-elevator: Apply elevator
+    call-elevator-failed: Failed to apply for elevator
+    call-elevator-successful: Apply for elevator successfully
+    charge-station: Station
+    charge-station-name: Station name
+    edit-elevator: Edit elevator
+    elevator-area: Zone
+    elevator-detail: Details
+    elevator-manage: Elevator
+    elevator-name: Name
+    elevator-operate: Control (only available in Maintenance)
+    elevator-station: Boarding station
+    floor: Floor
+    floor-config: Floor
+    floor-name: Name
+    floor-no: Floor number
+    inner-door-close-ok: Inside door close
+    inner-door-open-ok: Inside door open
+    input-charge-station-name: Enter the charging station name
+    input-floor: Enter floor
+    input-floor-name: Enter the floor name
+    input-relative-floor: Enter the floor number
+    match-is-not-whole: Configuration is not be completed
+    networking: Network
+    no-internet: Standalone
+    out-door-close-ok: Outside door close
+    out-door-open-ok: Outside door open
+    quit-station: Exit station
+    relative-floor: Floor number
+    relative-map: Map
+    select-charge-station: Select a charging station
+    select-elevator-area: Select the elevator zone
+    select-elevator-board-point: Select a boarding station inside the elevator
+    select-quit-site: Select exit station
+    select-relative-map: Select the Map
+    select-specified-vehicle-group: Select the designated robot group
+    select-type: Select type
+    specified-vehicle-group: Designated robot group
+    submit: Apply
+    sure-delete-elevator: The elevator will be deleted
+    type: Type
+    use-status: Work status
+map:
+  edge-group:
+    actions:
+      confirm-delete:
+        content: The edge group will be deleted
+      create-path-group: Edge group
+      delete-path-group: Delete
+      edit-path-group: Edit
+    enums:
+      edge-group-type:
+        same-direction-only: Single direction only
+        single-vehicle-only: Single robot only
+    modals:
+      path-group:
+        content:
+          actions:
+            add-map-edge-group: Add maps and edges
+          enums:
+            edge-with-number: Edge {number}
+          form:
+            custom-message:
+              edge-ids-min: Edge group cannot be empty!
+              map-edge-group-resource-min: At least 2 edges are required!
+              map-id-min: Map name is required!
+              map-name-min: Map name is required!
+            labels:
+              edge-group-type: Type
+              map-edge-group-name: Name
+              map-edge-group-resources: Selected edges
+            placeholder:
+              edge-group-type: Select edge group type
+              map-edge-group-name: Enter edge group name
+              map-name: Select map
+          toast:
+            create-success: Created successfully
+            update-success: Edited successfully
+        title:
+          add: Edge group
+          edit: Edit Edge Group
+    placeholder:
+      map-edge-group-name: Search by edge group name
+    table-columns:
+      edge-group-type: Type
+      id: ID
+      map-edge-group-name: Name
+      map-edge-group-resources: Related [Map-Edge] list
+      operate: Operation
+    toast:
+      delete-success: Deleted successfully
+    tooltips:
+      map-edge-group-resources:
+        body:
+          description-with-name-number: 【{name}】:{number} edges;
+        content:
+          title-with-name-id: 【{name}】:{id};
+          title-with-number: Related to {number} edges
+  list:
+    actions:
+      clear-out: Disable path
+      confirm-delete:
+        content-with-name: Will you delete the map [{name}]?
+        ok-text: Delete
+      delete: Delete
+      edit-map: Edit
+      export: Export
+      import-map: Import from server
+      pull-map: Upload from robot
+    enums:
+      map-info-state:
+        activated: Enable
+        inactivated: Disable
+      source:
+        fetch: Upload from robot
+        new-CAD: New CAD
+        upload: Upload
+    modals:
+      clear-out-form:
+        content:
+          enums:
+            edge-with-name: Edge {name}
+          form:
+            custom-message:
+              map-removed-edge-group-list-no-empty: Select at least 1 edge!
+            labels:
+              map-removed-edge-group-list: Edge group
+              map-removed-edge-group-name: Edge group name
+            placeholder:
+              map-removed-edge-group-list: Select edge group
+              map-removed-edge-group-name: Enter edge group name
+          toast:
+            create-success: Created successfully
+            update-success: Edited successfully
+        title:
+          add: New edge group
+          edit: Edit edge group
+      clear-out:
+        content:
+          actions:
+            able-status: Enable
+            confirm-delete:
+              content: The edge group will be deleted
+            confirm-switch-status:
+              content:
+                able-status: The edge group will be disabled
+                disable-status: The edge group will be enabled
+            create-clear-out: New edge group
+            delete: Delete
+            disable-status: Disable
+            edit: Edit
+          enums:
+            edge-with-name: Edge {name}
+          table-columns:
+            map-removed-edge-group-list: Disable edge group
+            map-removed-edge-group-name: Disable edge group
+            operator: Operation
+          table-placeholder:
+            map-removed-edge-group-name: Search by edge group name
+          toast:
+            delete-success: Deleted successfully
+            update-status-success: Operated successful
+        title: Edge group
+      map-detail-form:
+        content:
+          enum:
+            disable: Disable
+            enable: Enable
+          form:
+            custom-message:
+              floor-max: The floor number cannot be greater than 100
+              floor-min: The floor number must be greater than 0
+            labels:
+              description: Description
+              floor: Floor
+              map-info-state: Status
+              map-name: File name
+            placeholder:
+              description: Enter map description
+              floor: Enter floor number
+              map-name: Enter file name
+          toast:
+            update-success: Edited successfully
+        title: Edit
+      map-import:
+        content:
+          toast:
+            upload-success: Upload successful
+        ok-text: Upload
+        title: Import map
+      map-pull:
+        content:
+          form:
+            labels:
+              map-name: Select map
+              vehicle-key: Select robot
+          toast:
+            download-success: Uploaded successfully
+        ok-text: Apply
+        title: Upload from Robot
+    placeholder:
+      map-name: Search by map name
+    table-columns:
+      floor: Floor
+      gmt-modified: Update time
+      group: Version
+      id: ID
+      map-info-state: Status
+      map-name: Name
+      modified-by: Update by
+      operate: Operation
+      source: Source
+    toast:
+      delete-success: Delete successfully
+      export-success: Export successfully
+  traffic:
+    actions:
+      confirm-delete:
+        content-with-name: The shared traffic control area {name} will be deleted
+      confirm-release:
+        content: This shared traffic control area will be released
+      create-traffic-outside: Shared Traffic Control Area
+      delete: Delete
+      edit: Edit
+      release: Release
+    modals:
+      traffic:
+        content:
+          form:
+            labels:
+              map: Select map
+              traffic-area-code: Area code
+              traffic-area-name: Area name
+              traffic-edge-group: Edge group name
+            placeholder:
+              map: Select map
+              traffic-area-code: Enter shared traffic control area code
+              traffic-area-name: Enter name
+          toast:
+            create-success: Created successfully
+            update-success: Edited successfully
+        title: Traffic control area
+    placeholder:
+      traffic-area-name: Enter the traffic control area name
+    table-columns:
+      id: ID
+      map-name: Map name
+      operate: Operation
+      traffic-apply-name: Occupied by
+      traffic-area-code: Traffic control area code
+      traffic-area-name: Name
+      traffic-edge-group-name: Edge group name
+    toast:
+      delete-success: Deleted successfully
+      traffic-outside-success: Operated successfully
+order:
+  action-template:
+    actions:
+      confirm-delete-action-template:
+        content: This action template will be deleted
+      create-action-template: Action template
+      delete-action-template: Delete
+      edit-action-template: Edit
+    modals:
+      action-template-modal:
+        content:
+          json-invalid: JSON data is invalid!
+          parameter-invalid: The data is illegal!
+        title:
+          create: New action template
+          edit: Edit action template
+    placeholder:
+      keyword: Please enter template name
+    table-columns:
+      actionName: Template name
+      gmtCreate: Creation time
+      id: ID
+      operator: Operation
+    toast:
+      create-action-template-success: Create action template successfully
+      delete-action-template-success: Delete action template successfully
+      edit-action-template-success: Edit action template successfully
+  transport-order:
+    actions:
+      detail: Details
+      order-cancel: Cancel
+      order-continue-form-hang: Continue
+      order-continue-form-rejected: Queue in
+      order-held: Pause
+      order-jump-form-hang: Skip
+      order-rejected: Queue out
+      order-simulation: Assignment test
+      quick-create-form: Order
+    components:
+      dropdown-menu:
+        toast:
+          operate-success: Operated successful
+    modals:
+      behavior-tree-log-table:
+        columns:
+          cur-status: Status
+          film-time: Time
+          msg: Node details
+          uid: Node number
+        enums:
+          cur-status-bb:
+            clear: Clear
+            remove: Delete
+            set: Set
+          cur-status-bt-node:
+            failure: Failed
+            idle: Pending
+            running: Executing
+            success: Success
+          cur-status-sub-task:
+            cancelled: Canceled
+            checking: Checking
+            failed: Failed
+            finished: Completed
+            pristine: Initial
+            processing: Executing
+          cur-status-task:
+            assign-next-sub-task: Executing
+            cancelled: Canceled
+            failed: Failed
+            hang: Suspended
+            held: Paused
+            in-queue: Pending
+            in-queue-priority: Pending(Priority)
+            out-queue: Queueout
+            processing: Executing
+            raw: Initial
+            succeeded: Success
+          node-type:
+            bb: Blackboard
+            bt-node: BT Node
+            na: NA
+            sub-task: Job
+            task: Order
+        placeholders:
+          select-node-type: Show log elements
+      order-cancel:
+        content:
+          description-disable-with-name: Enable or disable {name} after canceling this order
+          description-with-order-name: The order " {name} " will be canceled,,
+          description-without-order-name: Operate carefully to executing or suspended order
+          items-false: Enable
+          items-true: Disable
+          option-all: All Robots
+          option-current: Current Robot
+        ok-text: This order will be canceled
+        title: Notification
+      order-continue-form-rejected:
+        content: This order will be set to pending?
+        ok-text: Apply
+      order-continue-from-hang:
+        content: Make sure the reason of order suspended have been fixed.
+        ok-text: Apply
+      order-continue-from-held:
+        content: Make sure the reason of order paused have been fixed.
+        ok-text: Apply
+      order-detail:
+        content:
+          act-content-with-name: 'Action: {name}'
+          columns:
+            appoint-vehicle-group-name: Designated robot group
+            appoint-vehicle-name: Designated robot
+            cancel-reason: Failure message
+            execute-vehicle-name: Robot
+            final-time: Completion time
+            gmt-create: Creation time
+            modified-by: Operator
+            order-key: ID
+            order-name: Name
+            order-priority: Priority
+            order-state: Status
+            order-type: Type
+            start-execute-time: Assigned time
+            station-name: Start-End station
+            tags: Tags
+          enums:
+            order-state:
+              assign-next-sub-task: Executing
+              cancelled: Canceled
+              checking: Checking
+              failed: Failed
+              finished: Completed
+              hang: Suspended
+              held: Paused
+              in-queue: Pending
+              in-queue-priority: Pending(priority)
+              na: NA
+              out-queue: Queueout
+              processing: Executing
+              succeeded: Success
+            order-type:
+              battery-maintain: Battery maintenance
+              charge: Charging order
+              park: Parking order
+              work: Work order
+            priority:
+              high: High priority
+              highest: Top priority
+              low: Low priority
+              medium: Medium priority
+          items-title: Basic Information
+          move-content-with-name: 'Move: {name}'
+          operations-title: Order operations
+          title: Details
+        open-bt: Behavior tree
+        title: Details
+      order-jump:
+        content:
+          input-placeholder: Enter authorization code
+          subtitle: Authorization code
+          title: Be careful to skip current action
+          toast-invalid-code: Wrong authorization code!
+        ok-text: Apply
+        title: Notification
+      order-pause:
+        content: This order will be suspended
+        ok-text: Apply
+      order-rejected:
+        content: This order will be queue out
+        ok-text: Apply
+      order-simulation:
+        content:
+          combobox-placeholder: Designated robot
+          notice-title: >-
+            The order will not be actually assigned, just for figuring out why
+            it don't be assigned successfully
+          result: 'Result: {result}'
+          toast-none-device-key: No
+        ok-text: Apply
+        title: Notification
+    placeholder:
+      created-by: Select creation account
+      execute-vehicle-key: Select robot
+      keywords: Please enter order ID or order name
+      tags: Please enter filter tag
+    table-columns:
+      created-by: Create by
+      detail: Job status
+      execute-vehicle-name: Robot
+      gmt-create: Creation time
+      operator: Operation
+      order-key: ID
+      order-name: Name
+      order-state: Status
+      order-type: Type
+      progress: Progress
+      station-name: Start-End Station
+    tabs:
+      all: All
+      cancelled: Canceled
+      failed: Failed
+      hang: Suspended
+      held: Paused
+      in-queue: Pending
+      out-queue: Queueout
+      processing: Executing
+      succeeded: Completed
+robot-batch:
+  actions:
+    create-batch-operation: New batch operation
+  components:
+    table-operator-column:
+      actions:
+        cancel-batch-operate: Cancel
+        confirm-cancel-batch-operate: This batch operation will be canceled
+        view-detail: Details
+      toast:
+        operate-success: Operated successfully
+  enums:
+    batch-task-operation-type:
+      cancel: Cancel
+      delete: Delete
+      pause: Pause
+      resume: Continue
+      retry: Retry
+    batch-task-status:
+      cancelled: Canceled
+      completed: Completed
+      executing: Executing
+      failed: Failed
+      partial-completed: Partial success
+      paused: Paused
+      pending: Pending
+    batch-task-type:
+      batch-task-map: Sync map
+      batch-task-SROS: Update SROS
+  modals:
+    batch-sync-map:
+      content:
+        actions:
+          more-config: More
+          selected-robot: Select robot
+        description:
+          selected-robot: 'Selected robot:'
+        enums:
+          'false': No
+          'true': Yes
+        form:
+          labels:
+            max-concurrent-count: Maximum of simultaneous update
+            selected-map-id: Map to be synced
+            selected-map-version: Map version
+            selected-robot: Target robot
+            to-parking-upgrade: Update at parking station
+          placeholder:
+            selected-map-id: Select map
+            selected-map-version: Select map
+      title: Sync Map in Batch
+    batch-task-detail:
+      content:
+        enums:
+          'false': No
+          'true': Yes
+        table-columns:
+          agv-name: Robot name
+          gmt-create: Start time
+          gmt-modified: Update time
+          message: Details
+          work-state: Status
+        task-detail:
+          map-name: Map name
+          max-work-quantity: Maximum of simultaneous update
+          need-to-park-station: Update at parking station
+          os-file-url: SROS package version
+      title: Details
+    batch-upgrade-SROS:
+      content:
+        actions:
+          more-config: More
+          selected-robot: Select robot
+        description:
+          selected-robot: 'Selected robot:'
+        enums:
+          'false': No
+          'true': Yes
+        form:
+          labels:
+            max-concurrent-count: Maximum of simultaneous update
+            selected-robot: Target robot
+            selected-SROS-id: SROS package to be updated
+            to-parking-upgrade: Update at parking station
+          placeholder:
+            selected-SROS-id: Select SROS package
+      title: Update SROS in Batch
+  placeholder:
+    batch-task-status: Filter by status
+    batch-task-type: Filter by type
+  table-columns:
+    end-time: Completion time
+    execute-work-key: Type
+    id: ID
+    operator: Operation
+    process: Progress
+    start-time: Start time
+    work-state: Status
+robot-charging-ploy:
+  actions:
+    confirm-delete-content: This charging strategy will be deleted
+    confirm-update-strategy-state-invalid-with-name: Disable charging strategy "{name}"
+    confirm-update-strategy-state-valid-with-name: Enable charging strategy "{name}"
+    create-charging-play: Charging strategy
+    delete: Delete
+    edit: Edit
+    strategy-state-invalid: Disable
+    strategy-state-valid: Enable
+  enum:
+    custom-strategy: Common strategy
+    default-strategy: Default strategy
+    strategy-state-invalid: Disable
+    strategy-state-valid: Enable
+    strategy-type-high-efficiency: Order mode
+    strategy-type-hold-battery: Power mode
+  modals:
+    charging-plot:
+      content:
+        actions:
+          add-robot-group: Robot group to apply this strategy
+          confirm-none-group-id-list: >-
+            This charging strategy apply to all robot if not select any robot
+            group
+          confirm-remove-robot-group: This robot group will removed from this strategy
+          remove-robot-group: Delete
+        form:
+          custom-message:
+            critical-threshold-min: Low charge should be > 10%
+            fully-threshold-min: High charge should be > 10%
+            idle-charge-frequency-max: Only supports 0s ~ 300s
+            idle-charge-frequency-min: Only supports 0s ~ 300s
+            increment-battery-max: Only supports 0% ~ 100%
+            increment-battery-min: Only supports 0% ~ 100%
+            number-int: Value should be an integer
+            sufficiently-threshold-min: Medium charge should be > 10%
+            threshold-max: This value should be ≤ 100%
+            threshold-step: 'Battery limit: High battery > Normal battery > Low battery'
+            threshold-total-max: 'Battery limit: Low battery + Charging limit < 100{''%''}'
+            time-rage: 'Time limit: End time should be late than start time'
+          labels:
+            begin-time: Start time
+            critical-threshold: Low battery threshold (%)
+            end-time: End time
+            fully-threshold: High battery threshold (%)
+            group-able: Designate to robot group
+            idle-charge-frequency: Time span from idle to charge (s)
+            increment-battery: Minimum charging limit （%）
+            strategy-name: Charging strategy name
+            strategy-type: Charging strategy mode priority
+            sufficiently-threshold: Medium battery threshold (%)
+          placeholder:
+            critical-threshold: Enter the low battery threshold (%)
+            fully-threshold: Enter the high battery threshold (%)
+            idle-charge-frequency: Enter the time span from idle to charge (s)
+            increment-battery: Enter the minimum charging limit (%)
+            strategy-name: Enter the charging strategy name
+            strategy-type: Select charging strategy mode
+            sufficiently-threshold: Enter the medium battery threshold (%)
+        table:
+          table-columns:
+            id: ID
+            name: Robot group name
+        toast:
+          create-success: Added successfully
+          update-success: Edited successfully
+        tooltips:
+          hight-efficiency:
+            critical-threshold: Prefer charging to executing
+            description: >-
+              Order mode: prefer more robots working. Only when the battery
+              charge falls below the low battery threshold will it be forced to
+              charge.
+            extra-full-threshold: Will not create charging order automatically
+            fully-threshold: >-
+              The robot can go to charge when it is idle, and the charging order
+              will be canceled by work order.
+            sufficiently-threshold: >-
+              The robot can go to charge when it is idle, and the charging order
+              will NOT be canceled by work order.
+          hold-battery:
+            critical-threshold: Prefer charging to executing
+            description: >-
+              Power mode: prefer more charging station working, and to increase
+              the average battery charge level of the robot group.
+            extra-full-threshold: Will not create charging order automatically
+            fully-threshold: >-
+              The robot can go to charge when it is idle, and the charging order
+              will be canceled by work order.
+            sufficiently-threshold: >-
+              According to the order of remaining power from low to high, all
+              the charging stations will be working. The charging order can NOT
+              be canceled by work order.
+      title:
+        add: New Charging Strategy
+        edit: Edit Charging Strategy
+    robot-group:
+      content:
+        search-placeholder: Search by robot group name
+        table:
+          table-columns:
+            child-devices: Member count
+            id: ID
+            name: Robot group name
+            robot-name: Robot name
+      title: Select robot group
+  table-columns:
+    begin-time: Start time
+    end-time: End time
+    gmt-create: Creation time
+    group-names-text: Robot group
+    id: ID
+    operator: Operation
+    strategy-name: Charging strategy name
+    strategy-state: status
+    strategy-type: Charging strategy mode
+  toast:
+    delete-success: Deleted successfully
+    update-success: Updated successfully
+robot-SROS-version-mgt:
+  actions:
+    confirm-delete-package:
+      content: This SROS package will be deleted
+      title: Delete SROS package
+    delete-package: Delete
+    upload-package: New SROS package
+  table-columns:
+    filename: Name
+    gmt-create: Upload time
+    id: ID
+    operator: Operation
+robot:
+  actions:
+    entity-table:
+      cancel-emergency: Deactivate E-stop
+      cancel-task: Cancel order
+      clean-path-resource: Clear path occupancy
+      continue-move: Continue move
+      continue-task: Continue order
+      create-charge-task: Charging
+      create-park-task: Parking
+      create-robot-manual: Manual
+      create-robot-scan: Scan
+      delete: Delete
+      pass: Release
+      pause-move: Pause move
+      pause-task: Pause order
+      schedule-disable: Disable
+      schedule-enable: Enable
+      trigger-emergency: Activate E-stop
+    group-table:
+      create-group: Group
+      delete: Delete
+      edit: Edit
+  components:
+    popover:
+      group-children-devices:
+        loading: Loading...
+        none-data: No data
+        none-data-after-searching: No data available under current filter
+      robot-selector:
+        actions:
+          select: Select
+          trigger-text: by Serial Number
+        table-columns:
+          device-type: Model
+          manufacturer: Manufacturer
+          operator: Operation
+          serial-number: SN
+        table-search-placeholder: Search by SN
+  enum:
+    entity-table:
+      connection-state:
+        connection-broken: Offline
+        offline: Offline
+        online: Online
+        unknown: Unknown
+      scheduled:
+        offline: Disable
+        online: Enable
+  modals:
+    robot-create-scan:
+      content:
+        form:
+          labels:
+            device-name: Robot name
+            device-type: Robot type
+            interface-name: Protocol version
+            manufacturer: Manufacturer
+            timestamp: Subscription time
+          placeholder:
+            device-name: Enter robot name
+            device-type: Enter robot model
+            interface-name: Enter protocol version
+            manufacturer: Enter the manufacturer
+            timestamp: Enter the subscription time
+      title: Scan to new robot
+      toast:
+        create-success: Created successfully
+    robot-create:
+      form:
+        labels:
+          name: Name
+      title: New robot manually
+      toast:
+        create-success: Created successfully
+    robot-group:
+      form:
+        custom-message:
+          none-childIds: Group members can not be empty
+        labels:
+          base-info: Basic information
+          child-ids: Members
+          group-info: Member setting
+          group-name: Group name
+          group-parameter-length: Robot length (mm)
+          group-parameter-length-loaded: Loaded robot length (mm)
+          group-parameter-width: Robot width (mm)
+          group-parameter-width-loaded: Loaded robot width (mm)
+          more-info: More
+        placeholder:
+          child-ids: Add member
+          group-name: Enter group name
+          group-parameter-length: Enter the robot length (mm)
+          group-parameter-length-loaded: Enter the loaded robot length (mm)
+          group-parameter-width: Enter the robot width (mm)
+          group-parameter-width-loaded: Enter the loaded robot width (mm)
+      title:
+        add: New robot group
+        edit: Edit group
+      toast:
+        create-success: Created successfully
+        edit-success: Edited successfully
+  placeholder:
+    group-table:
+      group-name-search: Enter group name
+  table-columns:
+    entity-table:
+      action-state: Action
+      battery-percentage: Battery charge
+      connection-state: Connection status
+      current-map-name: Current map
+      current-map-station-id: Current station
+      device-key: Device KEY
+      device-name: Name
+      movement-state: Move
+      operator: Operation
+      order-key: Order ID
+      order-name: Order name
+      scheduled: Enable/Disable
+      status: Status
+    group-table:
+      child-devices: Member count
+      id: ID
+      name: Name
+      operator: Operation
+  tabs:
+    entity: Individual
+    group: Group
+  toast:
+    entity-table:
+      delete-success: Deleted successfully
+      operate-success: Operated successfully
+    group-table:
+      delete-success: Deleted successfully
+      operate-success: Operated successfully
+routes:
+  auth:
+    login: Log In
+    sys-activate: System activation
+  home:
+    index: Home
+  integrated-equipment:
+    air-shower: Air Shower
+    autodoor: Auto Door
+    charging-station: Charging Station
+    elevator: Elevator
+  map:
+    edge-group: Edge Group
+    list: Map List
+    traffic: Traffic Control Area
+  order:
+    action-template: Action Template
+    transport: Order List
+  robot:
+    batch-operation: Batch Operation
+    charging-ploy: Charging Strategy
+    list: Robot List
+    sros-version-mgt: SROS Version
+  system:
+    account: Account
+    debug-tool: Tools
+    dispatch: Dispatch Setting
+    log-manage: System Log
+    message-manage: Notification List
+    monitor: Server Monitoring
+    operation-log: Operation Log
+    playback-monitor: Playback
+    upgrade: Update
+scene-monitoring:
+  actions:
+    3D-monitoring: 3D monitoring
+    cancel-emergency: Deactivate E-stop
+    close-order-list: Close order list
+    open-order-list: Show order list
+    schedule-disable: Disable
+    schedule-enable: Enable
+    trigger-emergency: Activate E-stop
+  components:
+    side-bar:
+      battery-with-percent: 'Battery Charge: {percent}{''%''}'
+      enums:
+        anomalies: Abnormal
+        offlines: Offline
+        onlines: Online
+        standbys: Idle
+        workings: Executing
+      toast:
+        not-found: Can not find the map of current robot
+        operate-success: Operation successfully
+  modals:
+    device-operate:
+      content:
+        description-with-name: All robots will be {name}?
+      toast:
+        device-operate-success-with-name: '{name} successfully'
+  toast:
+    operate-success-with-name: '{name} was executed successfully'
+side-menu:
+  debug-tool: Tools
+  home: Home
+  integrated-equipment: Integrated Equipment
+  language: Language
+  logout: Log Out
+  logout-content: Will you to log out?
+  map: Map
+  message: Notification
+  order: Order
+  robot: Robot
+  system: System
+  system-utils: Tool
+  user-profile: Edit
+system:
+  account:
+    actions:
+      create-account: Account
+    components:
+      dropdown:
+        account-item:
+          actions:
+            authorized-administrator: Assign admin
+            delete-user: Delete
+            disable-user: Disable
+            edit-user: Edit
+            enable-user: Enable
+            reset-password: Reset password
+            unauthorized-administrator: Revoke admin
+    composables:
+      user-account:
+        actions:
+          confirm-change-status:
+            content:
+              disable-with-name: Will disable the account [{name}]?
+              enable-with-name: Will enable the account [{name}]?
+          confirm-delete-account:
+            content-with-name: Confirm to delete account [{name}] ?
+            ok-text: Delete
+        toast:
+          delete-account-success: Delete successfully
+          update-account-role-success: Operation successfully
+          update-account-status-success: Operation successfully
+    enums:
+      role-name:
+        admin: Admin
+        default: User
+        super-admin: Super admin
+    modals:
+      create-account:
+        content:
+          form:
+            labels:
+              nickname: Nickname
+              password: Password
+              password-confirm: Confirm Password
+              role-name: Role
+              username: Username
+            placeholder:
+              nickname: Enter nickname
+              password: Enter password
+              password-confirm: Confirm password
+              role-name: Select role
+              username: Enter username
+          toast:
+            create-success: Created successfully
+        title: New account
+      reset-password:
+        content:
+          form:
+            labels:
+              password: Password
+              password-confirm: Confirm Password
+            placeholder:
+              password: Enter password
+              password-confirm: Confirm password
+          toast:
+            update-success: Submission successfully
+        title: Reset password
+      update-account:
+        content:
+          form:
+            custom-message:
+              nickname-max: Nickname is too long
+              username-max: Username is too long
+            labels:
+              nickname: Nickname
+              username: Username
+            placeholder:
+              nickname: Enter nickname
+              username: Enter username
+          toast:
+            update-success: Submission successfully
+        title: Edit
+    placeholder:
+      keywords: Search by keywords
+    table-columns:
+      nickname: Nickname
+      operator: Operation
+      role-name: Role
+      username: Username
+  debug-tool:
+    advanced-options: More
+    binary-system: Binary
+    clear: Clear
+    connect: Connect
+    data-log: Data log
+    data-send: Send
+    debug-tool: Tools
+    disconnect: Disconnect
+    display-type: Data format
+    hexadecimal: Hexadecimal
+    input-ip: Enter IP address
+    input-port: Enter the port
+    ping-tool: PING
+    please-input: Enter
+    port: Port
+    protocol-type: Protocol type
+    send: Send
+    socket-tool: Socket
+    start: Test
+    string: String
+  dispatch:
+    actions:
+      edit-config: Edit
+    enterprise-info:
+      action:
+        update-enterprise-info: Save
+      table-columns:
+        icon: Web Icon
+        icon-subtitle: (Recommended resolution is 32*32, should be  .ico, less than 1MB)
+        logo: Company Logo
+        logo-subtitle: (Recommended resolution is 88*32, should be .png, less than 1MB)
+      toast:
+        update-enterprise-info-success: Updated Logo successfully
+        upload-icon-file-success: Icon file uploaded successfully
+        upload-logo-file-success: Logo uploaded successfully
+    modals:
+      sys-config:
+        content:
+          form:
+            labels:
+              config-key-desc: Description
+              config-key-name: Configuration name
+              config-type: Configuration type
+              config-value: Current value
+              config-value-range: Value range
+              config-value-unit: Unit
+              default-config-value: Default value
+        title: Edit configuration
+    table-columns:
+      config-key: Configure KEY
+      config-key-name: Configuration name
+      config-value: Current value
+      id: ID
+      operator: Operation
+    tabs:
+      enterprise-info: Update logo
+      https-config: HTTPS configuration
+      system-config: System settings
+  message:
+    critical: Critical
+    deadly: Fatal
+    device: Equipment
+    error-code: Error code
+    happened-time: Occurred time
+    input-order-id: Enter order ID
+    major-alarm: Notification
+    message-manage: Notification
+    normal: Warning
+    operate: Operation
+    operate-tip: Operation tips
+    order: Order
+    order-id: Order ID
+    read: Read
+    read-status: Read
+    read-unread: Read
+    read-width-one-click: All read
+    robot: Robot
+    select-level: Select level
+    select-warn-type: Select source type
+    server: Server
+    success: Operation successfully
+    unread: Unread
+    view: Details
+    warn-description: Description
+    warn-type: Source type
+    warning: Error
+  monitor:
+    alternate-ip: Backup server IP
+    attribute: Property
+    available-memory: Free memory
+    available-size: Free
+    current-idle-rate: Idle
+    device-hot-backup-status: Dual-device hot backup
+    disk-status: Disk
+    drive-path: Drive letter path
+    drive-type: Drive letter
+    file-system: File system
+    internal-memory: Memory
+    number-of-cores: Cores
+    operating-system: OS
+    operational-info: Running Status
+    percentage-used: Usage
+    running-time: Elapsed time
+    secondary-serve-status: Backup server status
+    server-info: Server Information
+    server-ip: Server IP
+    server-monitor: Server monitoring
+    server-name: Server name
+    system-architecture: Architecture
+    system-usage: System usage
+    total-memory: Total memory
+    total-size: Total
+    used-size: Used
+    user-utilization-rate: User usage
+    userd-memory: Used memory
+    utilization-rate: Usage
+  operation-log:
+    actions:
+      detail: Details
+      detail-default-message: Unknown data
+      detail-default-title: Details
+    enums:
+      operate-success:
+        'false': Failed
+        'true': Success
+    placeholder:
+      operate-ip: Enter IP address
+      operate-module: Module
+      operate-module-detail: Action
+      operate-sub-name: Enter the operation object
+      operate-user-name: Enter the operator
+    table-columns:
+      gmt-modified: Operation time
+      operate-data: Request details
+      operate-ip: Operation IP
+      operate-module: Module
+      operate-module-detail: Action
+      operate-sub-name: Object
+      operate-success: Result
+      operate-user-name: Operator
+  playback:
+    1-speed: 1x
+    2-speed: 2x
+    4-speed: 4x
+    advance-5-second: Forward 5s
+    back-5-second: Backward 5s
+    current-time: Current time
+    half-speed: 0.5x
+    pause: Pause
+    play: Play
+    speed: Speed
+  system-log:
+    actions:
+      export-log: Export
+    title-columns:
+      operator: Operation
+      size-label: Log size
+      time: Log time
+    toast:
+      downloading: Downloading
+      export-success: Export successfully
+  upgrade:
+    actions:
+      auth-mgt:
+        update-license: Update authorization file
+      system-upgrade:
+        confirm-reboost-after-upload:
+          content: The upload is successful. Do you want to restart the service?
+          ok-text: Restart
+          title: Restart
+        confirm-reboost:
+          content: Restart the service?
+          title: Restart
+        confirm-rollback:
+          content: Will you roll back to this version?
+          title: Rollback
+        current-version: Current version
+        reboost: Restart
+        rollback-version: Rollback
+        upgrade-version: Update
+    components:
+      sys-activate-info:
+        enums:
+          business-info:
+            items:
+              company-name: End-user organization
+              order-id: Order NO.
+              sales-name: Account manager
+            title: Business detail
+          license-info:
+            items:
+              display-version: License version
+              expire-date-str: Expiration time
+              license-id: License file ID
+              limit-vehicle-quantity: Maximum robot capacity
+              machine-id: Machine code
+              valid-days: Remaining available time
+              valid-days-with-number: '{number} days'
+            title: License detail
+    enums:
+      auth-mgt: License
+      system-upgrade: System update
+    table-columns:
+      system-upgrade:
+        display-version: Version
+        gmt-modified: Update time
+        modified-by: Update by
+        operator: Operation
+    toast:
+      auth-mgt:
+        update-success: License updated successfully
+      system-upgrade:
+        reboost-success: Service restarted successfully
+        rollback-success-with-version: >-
+          The service has rolled back to {version}, Click "Restart" and wait for
+          a minute.

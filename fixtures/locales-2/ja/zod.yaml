@@ -1,0 +1,101 @@
+errors:
+  custom: 入力形式が間違っています
+  invalid_arguments: 関数パラメータの形式が間違っています
+  invalid_date: 間違った日付形式
+  invalid_enum_value: 不正な列挙値 '{received}'。 {options}を入力してください
+  invalid_intersection_types: クロスタイプの結果はマージできません
+  invalid_literal: リテラル値が正しくありません。{expected} を入力してください
+  invalid_return_type: 関数の戻り値の形式が間違っています
+  invalid_string:
+    cuid: 不正な {validation} 形式
+    datetime: 不正な {validation} 形式
+    email: 不正な {validation} 形式
+    endsWith: 文本必須以 "{endsWith}" 結尾
+    ip: IPアドレスの形式が間違っています
+    regex: 間違った形式
+    startsWith: 文本必須以 "{startsWith}" 開頭
+    url: 不正な {validation} 形式
+    uuid: 不正な {validation} 形式
+  invalid_type: 予期された入力は {expected} でしたが、入力は {received} でした
+  invalid_type_received_null: 必須
+  invalid_type_received_undefined: 必須
+  invalid_union: 共用体型のオプションが満たされていません
+  invalid_union_discriminator: ID 値を区別することはできません。 {options}を入力してください
+  not_finite: 価値は制限されなければならない
+  not_multiple_of: 値は {multipleOf} の倍数である必要があります
+  password:
+    confirm: 2回入力したパスワードは一致しません
+    invalid-symbol: パスワードに不正な文字を含めることはできません
+    pure-alphabetic: パスワードに文字だけを含めることはできません
+    pure-number: パスワードに数字のみを含めることはできません
+  too_big:
+    array:
+      exact: 配列要素は {maximum} である必要があります
+      inclusive: 配列には {maximum} 個を超える要素を含めることはできません
+      not_inclusive: 配列要素は {maximum} 未満である必要があります
+    date:
+      exact: 日付は {maximum} である必要があります
+      inclusive: 日付は {maximum} より前であってはなりません
+      not_inclusive: 日付は {maximum} 以降である必要があります
+    number:
+      exact: 値は {maximum} である必要があります
+      inclusive: 値は {maximum} を超えてはなりません
+      not_inclusive: 値は {maximum} 未満である必要があります
+    set:
+      exact: 入力形式が間違っています
+      inclusive: 入力形式が間違っています
+      not_inclusive: 入力形式が間違っています
+    string:
+      exact: テキストの長さは {maximum} 文字である必要があります
+      inclusive: テキストの長さは {maximum} 文字以下にしてください
+      not_inclusive: テキストの長さは {maximum} 文字未満である必要があります
+  too_small:
+    array:
+      exact: 配列要素は {minimum} である必要があります
+      inclusive: 配列には少なくとも {minimum} 個の要素が必要です
+      not_inclusive: 配列要素は {minimum} を超える必要があります
+    date:
+      exact: 日付は {minimum} である必要があります
+      inclusive: 日付は {minimum} 以降である必要があります
+      not_inclusive: 日付は {minimum} より前である必要があります
+    number:
+      exact: 値は {minimum} である必要があります
+      inclusive: 値は少なくとも {minimum} である必要があります
+      not_inclusive: 値は {minimum} より大きくなければなりません
+    set:
+      exact: 入力形式が間違っています
+      inclusive: 入力形式が間違っています
+      not_inclusive: 入力形式が間違っています
+    string:
+      exact: テキストの長さは {minimum} 文字である必要があります
+      inclusive: テキストの長さは少なくとも {minimum} 文字である必要があります
+      not_inclusive: テキストは {minimum} 文字より長くなければなりません
+  unrecognized_keys: 'オブジェクト内の認識できないキー: {keys}'
+types:
+  array: 配列
+  bigint: 大きな整数
+  boolean: ブール値
+  date: 日付
+  float: 浮動小数点数
+  function: 関数
+  integer: 整数
+  map: 辞書
+  nan: 数字ではありません
+  never: 存在しません
+  'null': 空のオブジェクト
+  number: 番号
+  object: 物体
+  promise: 約束
+  set: 集める
+  string: 弦
+  symbol: シンボル
+  undefined: 未定義
+  unknown: 未知
+  void: ヌル
+validations:
+  cuid: キュイド
+  datetime: 日付時刻
+  email: 郵便
+  regex: 正規表現
+  url: リンク
+  uuid: uuid

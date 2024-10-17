@@ -1,0 +1,26 @@
+default-empty-text: No avaliable data
+file-upload:
+  click-to-upload: Click
+  drag-into-file: ' or Drop'
+  exceed-max-count-with-count: ''
+  exceed-max-size: File size limit exceeded
+  invalid-file-type: Unsupported file types
+  release-to-upload: Release to upload
+  retry: try again
+  upload-failure: Upload failed, please try again
+input:
+  default-placeholder: Enter
+  placeholder: Enter {0}
+modal:
+  default-cancel-text: Cancel
+  default-ok-text: Apply
+pagination:
+  next-text: Next page
+  prev-text: Previous page
+select:
+  default-placeholder: Select
+  placeholder: Select {0}
+textarea:
+  default-placeholder: Enter
+toast:
+  operate-success: Success

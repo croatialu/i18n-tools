@@ -1,0 +1,1623 @@
+'403':
+  no-permission: ''
+'404':
+  404-not-found: 404 見つかりません
+  back-to-home: ホームページに戻る
+  description: 後でこの先のエリアを探索しましょう！
+common:
+  copy-fail: コピーに失敗しました
+  copy-success: 正常にコピーされました
+components:
+  behavior-tree:
+    node-detail:
+      desc: 述べる
+      params: Params
+    node:
+      agv-act: AgvAct
+      agv-move: AgvMove
+      always-failure: AlwaysFailure
+      always-success: AlwaysSuccess
+      comm-dev-comparer: CommDevComparer
+      comm-dev-setter: CommDevSetter
+      delay: Delay
+      eq: Eq
+      expression: Expression
+      fallback: Fallback
+      force-failure: ForceFailure
+      force-success: ForceSuccess
+      hang-sequence: HangSequence
+      http-act: HttpAct
+      http-wait: HTTP Wait
+      if-then-else: IfThenElse
+      inverter: Inverter
+      parallel: Parallel
+      parallel-all: ParallelAll
+      reactive-sequence: ReactiveSequence
+      retry-until-successful: RetryUntilSuccessful
+      sequence: Sequence
+      sequence-with-memory: SequenceWithMemory
+      set-blackboard: SetBlackboard
+      sub-tree: SubTree
+      switch: Switch
+      while-do-else: WhileDoElse
+  data-empty-short:
+    description: ''
+  modals:
+    language:
+      content:
+        current-language: 言語
+      title: 言語を選択してください
+    quick-create-order:
+      content:
+        action-form:
+          action-template-list: アクションテンプレート
+          enum:
+            'false': いいえ
+            'true': はい
+          mission-template-list: タスクテンプレートリスト
+          move-action:
+            map-name-placeholder: 検索マップを入力してください
+            station-name-placeholder: 検索サイトを入力してください
+          selected-mission: 選択したタスク
+          title: タスクリスト
+        basic-form:
+          execute-type-label: 実行タイプ
+          execute-type-radio:
+            not-specify: 指定されていない
+            robot: ロボットの指定
+            robot-group: ロボットグループの指定
+          execute-type-robot-group-label: ロボットグループ
+          execute-type-robot-group-placeholder-with-name: '{name}を選択してください'
+          execute-type-robot-label: ロボット
+          execute-type-robot-placeholder-with-name: '{name}を選択してください'
+          priority-label: 注文の優先順位
+          title: 基本情報
+        enum:
+          action-type:
+            move: 動く
+            seer-custom: SEER カスタム アクション
+            std-custom: STD カスタム アクション
+          priority:
+            high: 優先度が高い
+            low: 優先度が低い
+            medium: 中優先度
+        toast:
+          error-types: パラメータタイプエラー
+          invalid-json: JSON データが無効です。
+          invalid-parameter: ''
+          none-actions: タスクを追加してください
+          none-fields: パラメータの内容を空にすることはできません
+          success: すぐに注文を正常に作成する
+      title: すぐに注文する
+    robot-selector:
+      content:
+        labels:
+          filter-by-map-version: マップバージョンで選ぶ
+          filter-by-robot-group: ロボットグループから選ぶ
+          filter-by-robot-group-items-title: すべてのロボット
+          filter-by-robot-type: ロボット機種から選ぶ
+          filter-by-robot-type-items-title: すべてのロボット
+          filter-by-sros-version: SROS バージョン番号で選択する
+          total-with-number: '{number} 個のアイテム'
+        placeholder:
+          filter-by-map-version: ロボット/マップバージョン
+          filter-by-robot-group: ロボット/グループ名
+          filter-by-robot-type: ロボット/ロボットモデル
+          filter-by-sros-version: ロボット/SROS バージョン番号
+      title: ロボットの選択
+    user-profile:
+      confirm-new-password: 新しいパスワードを確認します
+      my-profile: 私のアカウント
+      new-password: 新しいパスワード
+      nickname: ユーザー名
+      old-password: 以前のパスワード
+      password: パスワード
+      role: 役割
+      update-password: パスワードを変更する
+      update-success: 変更が成功しました
+      update-user-nickname: ユーザー名の変更
+      username: ユーザーアカウント
+  robot-state-block:
+    avoid-state: 障害物回避状態
+    break-sw-state: ブレーキ解除状態
+    charging-state: 充電状態
+    crowd-state: グループ
+    emergency-state: ''
+    idle-state: アイドル状態
+    low-battery-state: バッテリー残量低下ステータス
+    manual-state: 手動制御状態
+    need-location-state: 測位ステータスが必要
+    offline-state: オフライン状態
+    online-state: オンラインステータス
+    order-hang-state: 注文保留中
+    order-held-state: 注文が一時停止されました
+    running-state: 移動状態
+    save-mode-state: 低電力状態
+    standby-state: 待機する
+    traffic-control-state: 交通規制状況
+  std-map:
+    abnormal: 状態異常
+    backward-edge: 裏道
+    brake-released: ブレーキのロックを解除します
+    charging: 充電
+    current-path: 現在計画されているパス
+    disabled-edge: パスを無効にする
+    edge-group: エッジ結合パスを選択してください
+    elements:
+      all-occupy: 占有されているすべてのリソース
+      edge-congestion-level: パスの混雑度を表示
+      func-area: リボン
+      map-axis: ''
+      map-background: 白黒のベースマップ
+      map-grid: ''
+      node: ノード
+      offline-robot: リソースが解放されたオフライン車両
+      removed-edges: パスを無効にする
+      resource-zone: 車両リソースエリアを表示
+      show-text: 道路網名を表示
+      station: サイト
+    executing: 任務中
+    forward-edge: 進む道
+    idle: アイドル状態
+    input-robot-name-station-name-and-id-to-search: ロボット名とサイト名/IDを入力して検索して見つけてください
+    legend: ''
+    load-state: 貨物状況
+    loaded-robot-restricted-edge: 完全にロードされたパス
+    map-edge: マップパス
+    normal-execution: 通常通り実行する
+    'obstacle-avoiding ': 障害物の回避
+    occupied-path: 交通管制の職業
+    offline: オフライン
+    operation:
+      full-screen: 全画面表示
+      reset-view: 原点に戻る
+      zoom-in: 拡大する
+      zoom-out: ズームアウト
+    order: 注文
+    order-pause: 注文が一時停止されました
+    order-suspended: 注文保留中
+    placeholder:
+      select-edge-group: エッジの組み合わせを選択してください
+      select-map: マップを選択
+      show-map-elements: マップ要素を表示する
+    robot: ロボット
+    robot-detail:
+      action-status: 走行速度
+      charging: 充電
+      copy-obj-id: 「オブジェクトIDをコピー」をクリックします。
+      current-station-name: 現在のサイト
+      location-position: 位置
+      locked-robots: 交通規制オブジェクト
+      order-detail: 注文の詳細
+      order-id: 注文ID
+      order-name: 注文名
+      order-state: 注文状況
+      robot-group: グループ
+      robot-status: ロボットの状態
+      rotate-theta: 回転角度
+      traffic-detail: 交通管理リソース
+      traffic-status: 交通規制状況
+      traffic-time: 交通規制時間
+      traffic-type: 交通管制の種類
+    robot-info: ロボット情報
+    select-edge-group: ''
+    setting: 設定
+    setting-modal:
+      default-value: '(デフォルト: {0})'
+      edge-width: パスの線幅
+      map-font-size: 地図のフォントサイズ
+      robot-font-size: 車名フォント
+      robot-zoom: ''
+      setting: 設定
+      station-radius: サイト半径
+      station-width: サイトの線幅
+    start-station-to-end-station: 始点-終点
+    toast:
+      operate-success: 操作は成功しました
+    traffic-controlling: 交通規制
+    unloaded-robot-restricted-edge: 空の道
+  system-notification:
+    title: システム異常警報
+  uploaders:
+    base-file-uploader:
+      cancelled: キャンセル
+    sros-file-uploader:
+      upload-sros-file: SROSファイルをアップロードする
+composables:
+  use-confirm:
+    cancel-text: キャンセル
+    ok-text: もちろん
+    title: 親切なヒント
+constants:
+  action-template:
+    action-template-name: ''
+    action-template-type: ''
+  device-type:
+    air-shower-door: エリア管理機器 - エアシャワードア
+    charger: エリア管理機器充電杭
+    common: 一般的な設備
+    door: エリア管理機器・自動ドア
+    elevator: エリア管理設備・エレベーター
+  driver-config:
+    air-shower:
+      zlan: ''
+    autodoor:
+      zlan: ''
+    charing-station:
+      titan: ''
+    elevator:
+      wanglong: ''
+      zlan: ''
+    host: IPアドレス
+    maximum-timeout-times: リクエストのタイムアウトの最大数
+    polling-mills: 状態周波数
+    port: ポート
+    request-timeout: 単一リクエストのタイムアウト
+    robot:
+      seer: ''
+      seer-ports:
+        config-port: モジュールポートの構成
+        control-port: 制御モジュールポート
+        navigator-port: ナビゲーションモジュールポート
+        push-port: ポートをアクティブにレポートする
+        state-port: ステータスモジュールポート
+      standard: ''
+    selection-label: ドライブ
+    slave-id: 子局番号
+integrated-equipment:
+  air-shower:
+    actions:
+      change-state-disable: |-
+        エアシャワードアのステータスをメンテナンス中へ変更することを確認してください?
+        メンテナンス状態では、エアシャワードアは常時開状態とみなされ、エアシャワードア通過時にドア開閉信号やエアシャワー信号は送信されません。
+      change-state-enable: エアシャワードアのステータスをオンラインに変更することを確認してください?
+    add-shower: ''
+    air-shower-control: ''
+    back-door: ''
+    confirm-delete-shower: ''
+    edit-shower-door: ''
+    execute-stations: ''
+    front-door: ''
+    inner-door-area: ''
+    inner-door-close: ''
+    inner-door-close-status: ''
+    inner-door-close-tip: ''
+    inner-door-open: ''
+    inner-door-open-status: ''
+    inner-door-open-tip: ''
+    inner-door-release-tip: ''
+    is-execute-operate: ''
+    is-execute-shower: ''
+    manual-shower: ''
+    no: ''
+    operate-failed: ''
+    out-door-area: ''
+    out-door-close: ''
+    out-door-close-status: ''
+    out-door-open: ''
+    out-door-open-status: ''
+    out-door-open-tip: ''
+    out-door-release-tip: ''
+    outer-door-close-tip: ''
+    please-select-stations: ''
+    select-shower-action-site: ''
+    shower-action: ''
+    shower-door-detail: ''
+    shower-door-name: ''
+    shower-manage: ''
+    yes: ''
+  autodoor:
+    '':
+      open-successful: ''
+      port: ''
+    actions:
+      change-state-disable: |-
+        自動ドアの状態をメンテナンスに変更するかどうかを確認してください。
+        メンテナンス状態の場合、自動ドアは通常開状態とみなされ、自動ドア通過時にドア開閉信号は送信されません。
+      change-state-enable: 自動ドアのステータスをオンラインに変更するかどうかを確認してください。
+    add-door: ''
+    add-successful: ''
+    area-name: ''
+    autodoor: ''
+    autodoor-control: ''
+    autodoor-deetail: ''
+    autodoor-man: ''
+    autodoor-status: ''
+    close-door: ''
+    close-failed: ''
+    close-ok: ''
+    close-status: ''
+    close-successful: ''
+    close-tip: ''
+    connected: ''
+    delete: ''
+    delete-autodoor: ''
+    delete-success: ''
+    detail: ''
+    device-name: ''
+    edit: ''
+    edit-autodoor: ''
+    edit-autodoor-status: ''
+    edit-success: ''
+    fault: ''
+    fix: ''
+    idle: ''
+    in-maintenance: ''
+    inner-map-area: ''
+    ip: ''
+    ip-port: ''
+    ip-search: ''
+    link-status: ''
+    map: ''
+    map-area: ''
+    map-name: ''
+    name-search: ''
+    nomally-open-tip: ''
+    normally-open: ''
+    online: ''
+    open-door: ''
+    open-failed: ''
+    open-not-ok: ''
+    open-ok: ''
+    open-status: ''
+    open-successful: 正常に開きました
+    open-tip: ''
+    operate: ''
+    operate-success: ''
+    out-door-map-area: ''
+    please-input-device-name: ''
+    please-select: ''
+    please-select-in-door-map-area: ''
+    please-select-map: ''
+    please-select-map-area: ''
+    please-select-out-map-area: ''
+    port: ''
+    release: ''
+    release-failed: ''
+    release-resources: ''
+    resource-occupation: ''
+    running: ''
+    select-map-name: ''
+    sure-release: ''
+    unconected: ''
+    unknown: ''
+    work-status: ''
+    working: ''
+  charging-station:
+    abnormal: ''
+    actions:
+      change-state-disable: |-
+        充電パイルのステータスをメンテナンスに変更することを確認してください?
+        メンテナンス中は充電パイルは利用できず、充電タスクはこの充電パイルに割り当てられません。
+      change-state-enable: 充電パイルのステータスをオンラインに変更することを確認してください?
+    add-charge: ''
+    be-occupied: ''
+    booking: ''
+    charge-detail: ''
+    charge-manage: ''
+    charge-name: ''
+    charge-station-config: ''
+    charge-status: ''
+    charging-pile-control: ''
+    compressed: ''
+    driver-name: ''
+    edit-charge: ''
+    error: ''
+    input-search-charge-name: ''
+    not-compacted: ''
+    not-retracted: ''
+    occupied: ''
+    online: ''
+    pffline: ''
+    placing: ''
+    plug-in: ''
+    plug-into: ''
+    pre-occupancy: ''
+    retracted: ''
+    site-name: ''
+    sure-delete-charge: ''
+    sure-is-execute-electricity-push: ''
+    sure-is-execute-plug-in: ''
+    unplug: ''
+    work: ''
+  elevator:
+    actions:
+      change-state-disable: |-
+        エレベーターのステータスをメンテナンス中へ変更することを確認してください?
+        メンテナンス中はエレベーターが利用できなくなり、フロアをまたぐ作業ができなくなる場合があります。
+      change-state-enable: エレベーターのステータスをオンラインに変更することを確認してください?
+    add-charge-station: ''
+    add-elevator: ''
+    add-floor: ''
+    all-floor: ''
+    base-info: ''
+    call-elevator: ''
+    call-elevator-failed: ''
+    call-elevator-successful: ''
+    charge-station: ''
+    charge-station-name: ''
+    edit-elevator: ''
+    elevator-area: ''
+    elevator-detail: ''
+    elevator-manage: ''
+    elevator-name: ''
+    elevator-operate: ''
+    elevator-station: ''
+    floor: ''
+    floor-config: ''
+    floor-name: ''
+    floor-no: ''
+    inner-door-close-ok: ''
+    inner-door-open-ok: ''
+    input-charge-station-name: ''
+    input-floor: ''
+    input-floor-name: ''
+    input-relative-floor: ''
+    match-is-not-whole: ''
+    networking: ''
+    no-internet: ''
+    out-door-close-ok: ''
+    out-door-open-ok: ''
+    quit-station: ''
+    relative-floor: ''
+    relative-map: ''
+    select-charge-station: ''
+    select-elevator-area: ''
+    select-elevator-board-point: ''
+    select-quit-site: ''
+    select-relative-map: ''
+    select-specified-vehicle-group: ''
+    select-type: ''
+    specified-vehicle-group: ''
+    submit: ''
+    sure-delete-elevator: ''
+    type: ''
+    use-status: ''
+map:
+  edge-group:
+    actions:
+      confirm-delete:
+        content: 選択したパス グループを削除してもよろしいですか?
+      create-path-group: 新しいパスグループを作成する
+      delete-path-group: 消去
+      edit-path-group: 編集
+    enums:
+      edge-group-type:
+        same-direction-only: 一方向に運転する
+        single-vehicle-only: サイクリング
+    modals:
+      path-group:
+        content:
+          actions:
+            add-map-edge-group: マップとエッジを追加する
+          enums:
+            edge-with-number: サイド {number}
+          form:
+            custom-message:
+              edge-ids-min: マップ パス グループ リソースを空にすることはできません。
+              map-edge-group-resource-min: 少なくとも 2 つのマップ パス グループが必要です。
+              map-id-min: 選んだマップをクリアしよう！
+              map-name-min: 選んだマップをクリアしよう！
+            labels:
+              edge-group-type: パスグループの種類
+              map-edge-group-name: パスグループ名
+              map-edge-group-resources: マップとエッジが選択されました
+            placeholder:
+              edge-group-type: パスグループのタイプを選択してください
+              map-edge-group-name: パスグループ名を入力してください
+              map-name: 地図を選択してください
+          toast:
+            create-success: 正常に作成されました
+            update-success: 正常に編集されました
+        title:
+          add: 新しいパスグループを作成する
+          edit: パスグループの編集
+    placeholder:
+      map-edge-group-name: 検索するパスグループ名を入力してください
+    table-columns:
+      edge-group-type: パスグループの種類
+      id: ID
+      map-edge-group-name: パスグループ名
+      map-edge-group-resources: 関連する[マップエッジ]リスト
+      operate: 操作する
+    toast:
+      delete-success: 正常に削除されました
+    tooltips:
+      map-edge-group-resources:
+        body:
+          description-with-name-number: 【{name}]:{number} エッジ;
+        content:
+          title-with-name-id: 【{name}]:{id};
+          title-with-number: 合計 {number} 個のマップ エッジが関連付けられています
+  list:
+    actions:
+      clear-out: パスを無効にする
+      confirm-delete:
+        content-with-name: マップ [{name}] を削除してもよろしいですか?
+        ok-text: 消去
+      delete: 消去
+      edit-map: ステータスの変更
+      export: 輸出
+      import-map: マップをインポートする
+      pull-map: ロボットからマップを取得する
+    enums:
+      map-info-state:
+        activated: 開始しました
+        inactivated: 無効
+      source:
+        fetch: ボットから取得
+        new-CAD: 手動で作成する
+        upload: インポートファイル
+    modals:
+      clear-out-form:
+        content:
+          enums:
+            edge-with-name: エッジ {name}
+          form:
+            custom-message:
+              map-removed-edge-group-list-no-empty: 少なくとも 1 つのパスを選択してください。
+            labels:
+              map-removed-edge-group-list: パス収集を無効にする
+              map-removed-edge-group-name: パスコレクション名を無効にする
+            placeholder:
+              map-removed-edge-group-list: 無効なパスを選択してください
+              map-removed-edge-group-name: 無効なパス コレクション名を入力してください
+          toast:
+            create-success: 正常に作成されました
+            update-success: 正常に編集されました
+        title:
+          add: 新しい無効なパス コレクションを作成する
+          edit: 無効なパスコレクションを編集する
+      clear-out:
+        content:
+          actions:
+            able-status: 有効にする
+            confirm-delete:
+              content: 選択した無効なパス コレクションを削除してもよろしいですか?
+            confirm-switch-status:
+              content:
+                able-status: 選択した無効なパスを有効にしてもよろしいですか?
+                disable-status: 選択した無効なパスを無効にしてもよろしいですか?
+            create-clear-out: 新しい無効なパス コレクションを作成する
+            delete: 消去
+            disable-status: 無効にする
+            edit: 編集
+          enums:
+            edge-with-name: エッジ {name}
+          table-columns:
+            map-removed-edge-group-list: パス収集を無効にする
+            map-removed-edge-group-name: パスコレクション名を無効にする
+            operator: 操作する
+          table-placeholder:
+            map-removed-edge-group-name: パス コレクション名の検索を無効にするを入力してください
+          toast:
+            delete-success: 正常に削除されました
+            update-status-success: 操作は成功しました
+        title: パス収集を無効にする
+      map-detail-form:
+        content:
+          enum:
+            disable: 無効にする
+            enable: 有効にする
+          form:
+            custom-message:
+              floor-max: フロア数は 100 を超えることはできません
+              floor-min: フロア数は 1 以上である必要があります
+            labels:
+              description: マップの説明
+              floor: 床
+              map-info-state: マップステータス
+              map-name: マップファイル名
+            placeholder:
+              description: 地図の説明を入力してください
+              floor: フロアを入力してください
+              map-name: マップファイル名を入力してください
+          toast:
+            update-success: 変更が成功しました
+        title: マップステータスを変更する
+      map-import:
+        content:
+          toast:
+            upload-success: アップロード成功
+        ok-text: アップロード
+        title: マップをインポートする
+      map-pull:
+        content:
+          form:
+            labels:
+              map-name: マップを選択
+              vehicle-key: ロボットの選択
+          toast:
+            download-success: プルが成功しました
+        ok-text: 保存
+        title: マップをプルする
+    placeholder:
+      map-name: マップ名を入力して検索します
+    table-columns:
+      floor: 床
+      gmt-modified: 更新時間
+      group: バージョン番号
+      id: ID
+      map-info-state: 州
+      map-name: マップ名
+      modified-by: アップデーター
+      operate: 操作する
+      source: マップソース
+    toast:
+      delete-success: 正常に削除されました
+      export-success: エクスポートに成功しました
+  traffic:
+    actions:
+      confirm-delete:
+        content-with-name: 外部トラフィック管理 {name} を削除するかどうかを確認してください?
+      confirm-release:
+        content: このエリアのリソース使用量をクリアするかどうかを確認してください。
+      create-traffic-outside: 外部ゾーン管理の作成
+      delete: 消去
+      edit: 編集
+      release: 明確な占有率
+    modals:
+      traffic:
+        content:
+          form:
+            labels:
+              map: マップを選択
+              traffic-area-code: 交通管制の市外局番
+              traffic-area-name: 名前
+              traffic-edge-group: パスグループ名
+            placeholder:
+              map: 地図を選択してください
+              traffic-area-code: 交通管制の市外局番を入力してください
+              traffic-area-name: 名前を入力してください
+          toast:
+            create-success: 正常に追加されました
+            update-success: 正常に編集されました
+        title: 交通規制エリア
+    placeholder:
+      traffic-area-name: 交通規制区域の名前を入力してください
+    table-columns:
+      id: ID
+      map-name: マップ名
+      operate: 操作する
+      traffic-apply-name: 資源占有
+      traffic-area-code: 交通管制の市外局番
+      traffic-area-name: 名前
+      traffic-edge-group-name: パスグループ名
+    toast:
+      delete-success: 正常に削除されました
+      traffic-outside-success: 操作は成功しました
+order:
+  action-template:
+    actions:
+      confirm-delete-action-template:
+        content: 削除を確認しますか?
+      create-action-template: 新しいアクションテンプレートを作成する
+      delete-action-template: 消去
+      edit-action-template: 編集
+    modals:
+      action-template-modal:
+        content:
+          json-invalid: JSON データが無効です。
+          parameter-invalid: データは違法です!
+        title:
+          create: 新しいアクションテンプレートを作成する
+          edit: アクションテンプレートの編集
+    placeholder:
+      keyword: テンプレート名を入力してください
+    table-columns:
+      actionName: テンプレート名
+      gmtCreate: 作成時間
+      id: ID
+      operator: ''
+    toast:
+      create-action-template-success: アクションテンプレートが正常に作成されました
+      delete-action-template-success: アクションテンプレートが正常に削除されました
+      edit-action-template-success: アクションテンプレートを正常に編集しました
+  transport-order:
+    actions:
+      detail: 詳細を確認する
+      order-cancel: 注文をキャンセルする
+      order-continue-form-hang: 続く
+      order-continue-form-rejected: キューに戻ります
+      order-held: 一時停止
+      order-jump-form-hang: 飛び越える
+      order-rejected: キューから削除
+      order-simulation: 割り当てをシミュレートする
+      quick-create-form: すぐに注文する
+    components:
+      dropdown-menu:
+        toast:
+          operate-success: 操作は成功しました
+    modals:
+      behavior-tree-log-table:
+        columns:
+          cur-status: 実行状況
+          film-time: 時間
+          msg: ノード情報
+          uid: ノード番号
+        enums:
+          cur-status-bb:
+            clear: クリア
+            remove: 消去
+            set: 設定
+          cur-status-bt-node:
+            failure: 失敗
+            idle: 未実行
+            running: 実行中
+            success: 成功
+          cur-status-sub-task:
+            cancelled: キャンセル
+            checking: 検査中
+            failed: 失敗
+            finished: 仕上げる
+            pristine: イニシャル
+            processing: サブタスクが実行中です
+          cur-status-task:
+            assign-next-sub-task: 次のサブタスクを割り当てる
+            cancelled: キャンセル
+            failed: 失敗
+            hang: 下がる
+            held: 一時停止
+            in-queue: キューにいます
+            in-queue-priority: キュー内の手動優先度
+            out-queue: キュー外
+            processing: 注文は実行中です
+            raw: 初期状態
+            succeeded: 成功
+          node-type:
+            bb: Blackboard
+            bt-node: BT Node
+            na: NA
+            sub-task: Sub Task
+            task: Order
+        placeholders:
+          select-node-type: ログ表示タイプ
+      order-cancel:
+        content:
+          description-disable-with-name: 注文をキャンセルするときに {name} を無効にするかどうか
+          description-with-order-name: 确认取消「 {name} 」订单吗？
+          description-without-order-name: 執行中または保留中の注文については注意して進めてください。
+          items-false: 無効ではありません
+          items-true: 無効にする
+          option-all: すべてのロボット
+          option-current: 現在のAGV
+        ok-text: 注文キャンセルの確認
+        title: 親切なヒント
+      order-continue-form-rejected:
+        content: キューに戻してもよろしいですか?
+        ok-text: 戻ることを確認する
+      order-continue-from-hang:
+        content: まずはご注文を停止する原因となった異常要因が解消されていることをご確認ください。
+        ok-text: ''
+      order-continue-from-held:
+        content: まずはご注文を停止する原因となった異常要因が解消されていることをご確認ください。
+        ok-text: 注文を続行することを確認します
+      order-detail:
+        content:
+          act-content-with-name: 'アクションタスク: {name}'
+          columns:
+            appoint-vehicle-group-name: ロボットグループの指定
+            appoint-vehicle-name: ロボットの指定
+            cancel-reason: 失敗の理由
+            execute-vehicle-name: 処刑ロボット
+            final-time: 注文完了時間
+            gmt-create: 注文時間の作成
+            modified-by: 操作ユーザー
+            order-key: 注文ID
+            order-name: 注文名
+            order-priority: 注文の優先順位
+            order-state: 現在の状況
+            order-type: 注文タイプ
+            start-execute-time: 注文執行開始時刻
+            station-name: 始点 > 終点
+            tags: ラベル
+          enums:
+            order-state:
+              assign-next-sub-task: 次のサブタスクが割り当てられるのを待っています
+              cancelled: キャンセル
+              checking: 検査中
+              failed: 失敗した
+              finished: 仕上げる
+              hang: 保留中
+              held: 一時停止
+              in-queue: キューにいます
+              in-queue-priority: キュー中（優先）
+              na: 開始予定
+              out-queue: キュー外
+              processing: 実行中
+              succeeded: 成功しました
+            order-type:
+              battery-maintain: バッテリーメンテナンスの指示
+              charge: 充電順序
+              park: ドックの順序
+              work: 作業命令
+            priority:
+              high: 優先度が高い
+              highest: 最優先
+              low: 優先度が低い
+              medium: 中優先度
+          items-title: 引越しの注文に関する基本情報
+          move-content-with-name: 'モバイルタスク: {name}'
+          operations-title: 注文操作
+          title: 実行の詳細
+        open-bt: ビヘイビアツリー表示
+        title: 注文の詳細
+      order-jump:
+        content:
+          input-placeholder: 認証コードを入力してください
+          subtitle: 認証コード
+          title: ロボットの現在の動作は非常に危険です。確認しますか?
+          toast-invalid-code: 認証コードが間違っています!
+        ok-text: スキップアクションの確認
+        title: 親切なヒント
+      order-pause:
+        content: 注文を一時停止してもよろしいですか?
+        ok-text: 停止命令を確認する
+      order-rejected:
+        content: キューから削除してもよろしいですか?
+        ok-text: 削除の確認
+      order-simulation:
+        content:
+          combobox-placeholder: ロボットの指定
+          notice-title: 'ヒント: 注文は実際には実行されません。注文が割り当てられない理由を見つけるために割り当てをシミュレートするためにのみ使用されます。'
+          result: '結果: {name}'
+          toast-none-device-key: ロボットが指定されていません
+        ok-text: 提出する
+        title: 親切なヒント
+    placeholder:
+      created-by: 運用アカウントを選択してください
+      execute-vehicle-key: ロボットを選択してください
+      keywords: 注文IDまたは注文名を入力してください
+      tags: フィルタタグを入力してください
+    table-columns:
+      created-by: クリエイター
+      detail: 実行タスクのステータス
+      execute-vehicle-name: 処刑ロボット
+      gmt-create: 作成時間
+      operator: ''
+      order-key: 注文ID
+      order-name: 注文名
+      order-state: 現在の状況
+      order-type: 注文タイプ
+      progress: 完成進捗状況
+      station-name: 始点 > 終点
+    tabs:
+      all: すべての注文
+      cancelled: キャンセル
+      failed: 失敗した
+      hang: 保留中
+      held: 一時停止中
+      in-queue: キューイング
+      out-queue: キュー外
+      processing: 実行中
+      succeeded: 完了しました
+robot-batch:
+  actions:
+    create-batch-operation: 新しいバッチタスクを作成する
+  components:
+    table-operator-column:
+      actions:
+        cancel-batch-operate: キャンセル
+        confirm-cancel-batch-operate: このバッチ タスクをキャンセルしてもよろしいですか?
+        view-detail: 実行の詳細
+      toast:
+        operate-success: 操作は成功しました
+  enums:
+    batch-task-operation-type:
+      cancel: キャンセル
+      delete: 消去
+      pause: 一時停止
+      resume: 続く
+      retry: もう一度やり直してください
+    batch-task-status:
+      cancelled: キャンセル
+      completed: すべて完了しました
+      executing: 実行中
+      failed: 失敗
+      partial-completed: 部分的に完成した
+      paused: 一時停止
+      pending: 開始されていません
+    batch-task-type:
+      batch-task-map: バッチ同期マップ
+      batch-task-SROS: SROS をバッチでアップグレードする
+  modals:
+    batch-sync-map:
+      content:
+        actions:
+          more-config: その他の構成
+          selected-robot: ロボットの選択
+        description:
+          selected-robot: '選択した AGV:'
+        enums:
+          'false': いいえ
+          'true': はい
+        form:
+          labels:
+            max-concurrent-count: 同時に実行されるタスクの最大数
+            selected-map-id: 同期する地図を選択してください
+            selected-map-version: マップバージョン
+            selected-robot: アップグレードされたロボットを選択してください
+            to-parking-upgrade: アップグレードするために停留所に行くかどうか
+          placeholder:
+            selected-map-id: 地図を選択してください
+            selected-map-version: 地図を選択してください
+      title: バッチ同期マップ
+    batch-task-detail:
+      content:
+        enums:
+          'false': いいえ
+          'true': はい
+        table-columns:
+          agv-name: ロボット名
+          gmt-create: タスクの開始時刻
+          gmt-modified: タスクの更新時間
+          message: 実行の詳細
+          work-state: 実行状況
+        task-detail:
+          map-name: 同期マップ名
+          max-work-quantity: 同時に実行されるタスクの最大数
+          need-to-park-station: アップグレードするために停留所に行くかどうか
+          os-file-url: SROS アップグレード パッケージのバージョン番号
+      title: 実行の詳細
+    batch-upgrade-SROS:
+      content:
+        actions:
+          more-config: その他の構成
+          selected-robot: ロボットの選択
+        description:
+          selected-robot: '選択した AGV:'
+        enums:
+          'false': いいえ
+          'true': はい
+        form:
+          labels:
+            max-concurrent-count: 同時に実行されるタスクの最大数
+            selected-robot: アップグレードされたロボットを選択してください
+            selected-SROS-id: 同期された SROS アップグレード パッケージを選択します
+            to-parking-upgrade: アップグレードするために停留所に行くかどうか
+          placeholder:
+            selected-SROS-id: アップグレード パッケージを選択してください
+      title: SROS をバッチでアップグレードする
+  placeholder:
+    batch-task-status: タスクのステータスを選択してください
+    batch-task-type: タスクの種類を選択してください
+  table-columns:
+    end-time: 終了時間
+    execute-work-key: タスクの種類
+    id: ID
+    operator: 操作する
+    process: 実行の進行状況
+    start-time: 開始時間
+    work-state: タスクのステータス
+robot-charging-ploy:
+  actions:
+    confirm-delete-content: この課金ポリシーを削除してもよろしいですか?
+    confirm-update-strategy-state-invalid-with-name: 課金ポリシー「{name}」を無効にする
+    confirm-update-strategy-state-valid-with-name: 課金ポリシー「{name}」を有効にする
+    create-charging-play: 新しい課金戦略を追加する
+    delete: 消去
+    edit: 編集
+    strategy-state-invalid: 無効にする
+    strategy-state-valid: 有効にする
+  enum:
+    custom-strategy: 共通戦略
+    default-strategy: デフォルトポリシー
+    strategy-state-invalid: 無効にする
+    strategy-state-valid: 有効にする
+    strategy-type-high-efficiency: 注文優先モデル
+    strategy-type-hold-battery: 電力優先モード
+  modals:
+    charging-plot:
+      content:
+        actions:
+          add-robot-group: このポリシーを使用してボット グループを追加します
+          confirm-none-group-id-list: 特定のロボット グループを指定しない場合、課金ポリシーはすべてのロボットに有効になります。
+          confirm-remove-robot-group: このボット グループをこの課金ポリシーから削除しますか?
+          remove-robot-group: 消去
+        form:
+          custom-message:
+            critical-threshold-min: バッテリー残量が 10% 以上である必要があります
+            fully-threshold-min: バッテリー残量が 10% 以上である必要があります
+            idle-charge-frequency-max: 0～300までのみ対応
+            idle-charge-frequency-min: 0～300までのみ対応
+            increment-battery-max: 0% ～ 100% の間のみをサポートします
+            increment-battery-min: 0% ～ 100% の間のみをサポートします
+            number-int: 整数でなければなりません
+            sufficiently-threshold-min: 通常の電力は 10% 以上である必要があります
+            threshold-max: バッテリー値は 100% 以内である必要があります
+            threshold-step: 'バッテリー制限: バッテリー残量が多い > 通常のバッテリー > バッテリーが少ない'
+            threshold-total-max: 'バッテリー制限: バッテリー残量低下、販売済みバッテリー < 100 %'
+            time-rage: '制限時間: 終了時間は開始時間より後でなければなりません'
+          labels:
+            begin-time: 作戦開始時間
+            critical-threshold: バッテリー残量低下しきい値 (%)
+            end-time: 戦略終了時間
+            fully-threshold: バッテリ高しきい値 (%)
+            group-able: 指定したロボットグループを有効にする
+            idle-charge-frequency: アイドル充電判定時間閾値（秒）
+            increment-battery: バッテリーが低下していないロボットが充電パイルを放棄するための最小バッテリー増加量 (%)
+            strategy-name: 課金戦略名
+            strategy-type: 課金戦略モード
+            sufficiently-threshold: 通常の電力しきい値 (%)
+          placeholder:
+            critical-threshold: バッテリー残量低下しきい値 (%) を入力してください
+            fully-threshold: バッテリー上限しきい値 (%) を入力してください
+            idle-charge-frequency: アイドル充電判定時間の閾値(秒)を入力してください
+            increment-battery: バッテリー残量が低下していないロボットが充電パイルを放棄するための最小バッテリー増分 (%) を入力してください。
+            strategy-name: 課金戦略名を入力してください
+            strategy-type: ''
+            sufficiently-threshold: 通常の電力しきい値 (%) を入力してください
+        table:
+          table-columns:
+            id: ID
+            name: ロボットグループ名
+        toast:
+          create-success: 正常に追加されました
+          update-success: 変更が成功しました
+        tooltips:
+          hight-efficiency:
+            critical-threshold: タスクを実行せずに強制充電する
+            description: '順序優先モード: ロボットのバッテリー電力が特定の最小値を下回った場合にのみ、できるだけ多くのロボットが動作することを優先します。'
+            extra-full-threshold: 充電タスクは自動生成されません
+            fully-threshold: ロボットはアイドル状態でも充電でき、充電タスクは作業タスクによって中断されます。
+            sufficiently-threshold: ロボットはアイドル状態でも充電でき、充電タスクが作業タスクによって中断されることはありません。
+          hold-battery:
+            critical-threshold: タスクを実行せずに強制充電する
+            description: >-
+              バッテリー優先モード: すべての充電パイルが動作および充電していることを優先し、ロボット
+              グループ全体の平均バッテリー電力を増加させます。
+            extra-full-threshold: 充電タスクは自動生成されません
+            fully-threshold: ロボットはアイドル状態でも充電でき、充電タスクは作業タスクによって中断されます。
+            sufficiently-threshold: >-
+              低電力から高電力の順に、充電パイルは完全に占有されており、充電パイルに割り当てられたロボットの充電タスクは中断できず、残りのロボットは通常どおりタスクを実行します。
+      title:
+        add: 課金戦略を追加する
+        edit: 課金戦略を編集する
+    robot-group:
+      content:
+        search-placeholder: ボットグループ名で検索
+        table:
+          table-columns:
+            child-devices: 会員数
+            id: ID
+            name: ロボットグループ名
+            robot-name: ロボット名
+      title: ロボットグループの選択
+  table-columns:
+    begin-time: 作戦開始時間
+    end-time: 戦略終了時間
+    gmt-create: 作成時間
+    group-names-text: ロボットグループ
+    id: ID
+    operator: ''
+    strategy-name: 課金戦略名
+    strategy-state: 州
+    strategy-type: 課金戦略モード
+  toast:
+    delete-success: 正常に削除されました
+    update-success: 更新に成功しました
+robot-SROS-version-mgt:
+  actions:
+    confirm-delete-package:
+      content: ファイルの削除を確認しますか?
+      title: ファイルの削除
+    delete-package: 消去
+    upload-package: 新しいファイルをアップロードする
+  table-columns:
+    filename: ファイル名
+    gmt-create: アップロード時間
+    id: ID
+    operator: 操作する
+robot:
+  actions:
+    entity-table:
+      cancel-emergency: 非常停止を解除する
+      cancel-task: 注文をキャンセルする
+      clean-path-resource: クリアなパス占有率
+      continue-move: 動き続ける
+      continue-task: 注文を続ける
+      create-charge-task: 急速充電
+      create-park-task: ワンクリックでドッキング
+      create-robot-manual: 手動で追加
+      create-robot-scan: スキャンして追加
+      delete: 消去
+      pass: 車両リリース
+      pause-move: 動きを一時停止する
+      pause-task: 注文を一時停止する
+      schedule-disable: オフラインでのスケジュール設定
+      schedule-enable: オンラインでスケジュールを立てる
+      trigger-emergency: 緊急停止のトリガー
+    group-table:
+      create-group: グループの作成
+      delete: 消去
+      edit: 編集
+  components:
+    popover:
+      group-children-devices:
+        loading: 読み込み中...
+        none-data: データなし
+        none-data-after-searching: 現在のフィルター条件のデータはありません
+      robot-selector:
+        actions:
+          select: 選択
+          trigger-text: 車両のシリアル番号を選択してください
+        table-columns:
+          device-type: デバイスモデル
+          manufacturer: メーカー名
+          operator: 操作する
+          serial-number: シリアルナンバー
+        table-search-placeholder: 検索
+  enum:
+    entity-table:
+      connection-state:
+        connection-broken: 接続が中断されました
+        offline: オフライン
+        online: オンライン
+        unknown: 未知
+      scheduled:
+        offline: オフライン
+        online: オンラインに接続する
+  modals:
+    robot-create-scan:
+      content:
+        form:
+          labels:
+            device-name: デバイス名
+            device-type: デバイスモデル
+            interface-name: プロトコルのバージョン番号
+            manufacturer: メーカー
+            timestamp: 購読時間
+          placeholder:
+            device-name: デバイス名を入力してください
+            device-type: デバイスのモデルを入力してください
+            interface-name: プロトコルのバージョン番号を入力してください
+            manufacturer: メーカーを入力してください
+            timestamp: 購読時間を入力してください
+      title: スキャンしてロボットを追加
+      toast:
+        create-success: 無事作成されました！
+    robot-create:
+      form:
+        labels:
+          name: 名前
+      title: ボットを手動で追加する
+      toast:
+        create-success: 正常に作成されました
+    robot-group:
+      form:
+        custom-message:
+          none-childIds: グループメンバーを空にすることはできません
+        labels:
+          base-info: 基本情報
+          child-ids: グループメンバー
+          group-info: メンバー設定
+          group-name: グループ名
+          group-parameter-length: ロボット長さ(mm)
+          group-parameter-length-loaded: ロボット積載長さ(mm)
+          group-parameter-width: ロボット幅(mm)
+          group-parameter-width-loaded: ロボット積載幅(mm)
+          more-info: その他の構成
+        placeholder:
+          child-ids: メンバーを選択してください
+          group-name: グループ名を入力してください
+          group-parameter-length: ロボットの長さ(mm)を入力してください
+          group-parameter-length-loaded: ロボット積載長さ(mm)を入力してください
+          group-parameter-width: ロボット幅(mm)を入力してください
+          group-parameter-width-loaded: ロボット積載幅(mm)を入力してください
+      title:
+        add: グループを追加
+        edit: グループの編集
+      toast:
+        create-success: 正常に作成されました
+        edit-success: 正常に編集されました
+  placeholder:
+    group-table:
+      group-name-search: グループ名を入力してください
+  table-columns:
+    entity-table:
+      action-state: アクション状態
+      battery-percentage: バッテリー電源
+      connection-state: 接続状態
+      current-map-name: 現在の地図
+      current-map-station-id: 現在のサイトID
+      device-key: デバイスキー
+      device-name: 車名
+      movement-state: モバイルステータス
+      operator: ''
+      order-key: 注文キー
+      order-name: 注文
+      scheduled: オンラインとオフラインのステータス
+      status: システムステータス
+    group-table:
+      child-devices: 会員数
+      id: ''
+      name: 名前
+      operator: ''
+  tabs:
+    entity: 個人
+    group: ロボットグループ
+  toast:
+    entity-table:
+      delete-success: 削除が成功しました!
+      operate-success: 作戦成功！
+    group-table:
+      delete-success: 削除が成功しました!
+      operate-success: ''
+routes:
+  auth:
+    login: ログイン
+    sys-activate: システムのアクティベーション
+  home:
+    index: フロントページ
+  integrated-equipment:
+    air-shower: エアシャワードア
+    autodoor: 自動ドア
+    charging-station: 充電パイル
+    elevator: エレベーター
+  map:
+    edge-group: マップパスグループ
+    list: マップリスト
+    traffic: 外部エリアの交通規制
+  order:
+    action-template: アクションテンプレート
+    transport: 注文リスト
+  robot:
+    batch-operation: バッチ操作
+    charging-ploy: 課金戦略
+    list: ロボット一覧
+    sros-version-mgt: SROSのバージョン管理
+  system:
+    account: ユーザーアカウント
+    debug-tool: デバッグツール
+    dispatch: スケジュール設定
+    log-manage: ログ管理
+    message-manage: メッセージ一覧
+    monitor: サーバー監視
+    operation-log: 運用記録
+    playback-monitor: 再生モニタリング
+    upgrade: システムアップグレード
+scene-monitoring:
+  actions:
+    3D-monitoring: 3Dフィールドコントロール
+    cancel-emergency: ''
+    close-order-list: 注文リストを閉じる
+    open-order-list: 注文リストを見る
+    schedule-disable: ワンクリックでオフラインでスケジュール設定
+    schedule-enable: オンラインでワンクリックでスケジュール設定
+    trigger-emergency: ワンクリックで緊急停止をトリガー
+  components:
+    side-bar:
+      battery-with-percent: 'バッテリー容量: {percent}%'
+      enums:
+        anomalies: 異常な
+        offlines: オフライン
+        onlines: オンライン
+        standbys: 待機する
+        workings: 任務中
+      toast:
+        not-found: 現在のロボットの位置マップが見つかりませんでした
+        operate-success: 操作は成功しました
+  modals:
+    device-operate:
+      content:
+        description-with-name: すべての車両が {name} になることを確認しましたか?
+      toast:
+        device-operate-success-with-name: ''
+  toast:
+    operate-success-with-name: '{name} は正常に実行されました'
+side-menu:
+  debug-tool: ''
+  home: フロントページ
+  integrated-equipment: 内部機器
+  language: 言語を選択してください
+  logout: ログアウト
+  logout-content: ログアウトしてもよろしいですか?
+  map: 地図
+  message: 情報
+  order: 注文
+  robot: ロボット
+  system: システム
+  system-utils: 道具
+  user-profile: アカウント情報を変更する
+system:
+  account:
+    actions:
+      create-account: アカウントを追加
+    components:
+      dropdown:
+        account-item:
+          actions:
+            authorized-administrator: 認定管理者
+            delete-user: アカウントを削除する
+            disable-user: 無効にする
+            edit-user: ユーザーの編集
+            enable-user: 有効にする
+            reset-password: パスワードをリセットする
+            unauthorized-administrator: 管理者のキャンセル
+    composables:
+      user-account:
+        actions:
+          confirm-change-status:
+            content:
+              disable-with-name: '[{name}] アカウントを無効にしてもよろしいですか?'
+              enable-with-name: '[{name}] アカウントを有効にすることを確認しますか?'
+          confirm-delete-account:
+            content-with-name: '[{name}] アカウントを削除することを確認しますか?'
+            ok-text: 消去
+        toast:
+          delete-account-success: 正常に削除されました
+          update-account-role-success: 操作は成功しました
+          update-account-status-success: 操作は成功しました
+    enums:
+      role-name:
+        admin: 管理者
+        default: 一般会員
+        super-admin: スーパー管理者
+    modals:
+      create-account:
+        content:
+          form:
+            labels:
+              nickname: ニックネーム
+              password: ユーザーパスワード
+              password-confirm: パスワードを認証する
+              role-name: 役割
+              username: ユーザーアカウント
+            placeholder:
+              nickname: ニックネームを入力してください
+              password: ユーザーパスワードを入力してください
+              password-confirm: 確認用のパスワードを入力してください
+              role-name: あなたの役割を選択してください
+              username: ユーザーアカウントを入力してください
+          toast:
+            create-success: 正常に作成されました
+        title: アカウントを追加
+      reset-password:
+        content:
+          form:
+            labels:
+              password: パスワード
+              password-confirm: パスワードを認証する
+            placeholder:
+              password: パスワードを入力してください
+              password-confirm: パスワードをもう一度入力してください
+          toast:
+            update-success: 送信成功
+        title: パスワードをリセットする
+      update-account:
+        content:
+          form:
+            custom-message:
+              nickname-max: ニックネームが長すぎます
+              username-max: アカウントが長すぎます
+            labels:
+              nickname: ニックネーム
+              username: アカウント
+            placeholder:
+              nickname: ニックネームを入力してください
+              username: アカウントを入力してください
+          toast:
+            update-success: 送信成功
+        title: アカウント情報を変更する
+    placeholder:
+      keywords: キーワードを入力してください
+    table-columns:
+      nickname: ニックネーム
+      operator: 操作する
+      role-name: 役割
+      username: 口座番号
+  debug-tool:
+    advanced-options: 詳細オプション
+    binary-system: バイナリ
+    clear: クリア
+    connect: 接続する
+    data-log: データログ
+    data-send: データ送信
+    debug-tool: デバッグツール
+    disconnect: 切断する
+    display-type: 表示タイプ
+    hexadecimal: 16進数
+    input-ip: IPアドレスを入力してください
+    input-port: ポートを入力してください
+    ping-tool: pingツール
+    please-input: 入力してください
+    port: ポート
+    protocol-type: プロトコルの種類
+    send: 送信
+    socket-tool: ソケットツール
+    start: 始める
+    string: 弦
+  dispatch:
+    actions:
+      edit-config: 編集
+    enterprise-info:
+      action:
+        update-enterprise-info: 更新する
+      table-columns:
+        icon: ウェブアイコン
+        icon-subtitle: (解像度32*32が最適、ico形式、ファイルサイズ1Mb以内)
+        logo: システムロゴ
+        logo-subtitle: (解像度88*32が最適、png形式、ファイルサイズ1MB以内)
+      toast:
+        update-enterprise-info-success: ロゴ情報が正常に更新されました
+        upload-icon-file-success: アイコンファイルが正常にアップロードされました
+        upload-logo-file-success: ロゴファイルが正常にアップロードされました
+    modals:
+      sys-config:
+        content:
+          form:
+            labels:
+              config-key-desc: 説明する
+              config-key-name: 構成名
+              config-type: 構成タイプ
+              config-value: 現在値
+              config-value-range: 値の範囲
+              config-value-unit: ユニット
+              default-config-value: デフォルト値
+        title: システム構成の編集
+    table-columns:
+      config-key: キーの設定
+      config-key-name: 構成名
+      config-value: 現在値
+      id: ID
+      operator: ''
+    tabs:
+      enterprise-info: ロゴを置き換える
+      https-config: HTTPS設定
+      system-config: システム構成
+  message:
+    critical: 深刻な
+    deadly: 致命的
+    device: 装置
+    error-code: エラーコード
+    happened-time: 発生時刻
+    input-order-id: 注文IDを入力してください
+    major-alarm: 重度レベルの警報
+    message-manage: メッセージ管理
+    normal: 一般的に
+    operate: 操作する
+    operate-tip: 操作のヒント
+    order: 注文
+    order-id: 注文ID
+    read: 読む
+    read-status: 読み取りステータス
+    read-unread: 未読を読む
+    read-width-one-click: ワンクリックで読む
+    robot: ロボット
+    select-level: レベルを選択してください
+    select-warn-type: アラームの種類を選択してください
+    server: サーバ
+    success: 操作は成功しました
+    unread: 未読
+    view: チェック
+    warn-description: アラームの説明
+    warn-type: 警報の種類
+    warning: 警告する
+  monitor:
+    alternate-ip: 代替サーバーIP
+    attribute: 財産
+    available-memory: 使用可能なメモリ
+    available-size: 利用可能なサイズ
+    current-idle-rate: 現在のアイドル率
+    device-hot-backup-status: デュアルマシンホットスタンバイ状態
+    disk-status: ディスクのステータス
+    drive-path: ドライブ文字のパス
+    drive-type: ドライブ文字の種類
+    file-system: ファイルシステム
+    internal-memory: メモリ
+    number-of-cores: コア数
+    operating-system: オペレーティング·システム
+    operational-info: 運行情報
+    percentage-used: 使用率
+    running-time: RIOT経過時間
+    secondary-serve-status: スタンバイサーバーのステータス
+    server-info: サーバー情報
+    server-ip: サーバーIP
+    server-monitor: サーバー監視
+    server-name: サーバー名
+    system-architecture: システムアーキテクチャ
+    system-usage: システムの使用状況
+    total-memory: 総メモリ
+    total-size: 合計サイズ
+    used-size: 使用サイズ
+    user-utilization-rate: ユーザー利用率
+    userd-memory: 使用済みメモリ
+    utilization-rate: 使用率
+  operation-log:
+    actions:
+      detail: 詳細を確認する
+      detail-default-message: 未知のデータ
+      detail-default-title: 詳細
+    enums:
+      operate-success:
+        'false': 失敗
+        'true': 成功
+    placeholder:
+      operate-ip: IPアドレスを入力してください
+      operate-module: オペレーティングモジュールの選択
+      operate-module-detail: アクションの動作を選択する
+      operate-sub-name: 操作対象を入力してください
+      operate-user-name: 操作ユーザーを入力してください
+    table-columns:
+      gmt-modified: 稼働時間
+      operate-data: 元のリクエストデータ
+      operate-ip: オペレーションIP
+      operate-module: 操作モジュール
+      operate-module-detail: 動作動作
+      operate-sub-name: 操作対象
+      operate-success: 演算結果
+      operate-user-name: 操作ユーザー
+  playback:
+    1-speed: 1倍速
+    2-speed: 2倍速
+    4-speed: 4倍速
+    advance-5-second: 5秒進みます
+    back-5-second: バック 5 秒
+    current-time: 現在時刻
+    half-speed: 0.5倍速
+    pause: 一時停止
+    play: 遊ぶ
+    speed: 倍速
+  system-log:
+    actions:
+      export-log: 輸出
+    title-columns:
+      operator: 操作する
+      size-label: ログサイズ
+      time: ログ時間
+    toast:
+      downloading: ダウンロード中
+      export-success: エクスポートに成功しました
+  upgrade:
+    actions:
+      auth-mgt:
+        update-license: 認証ファイルを更新する
+      system-upgrade:
+        confirm-reboost-after-upload:
+          content: アップロードは成功しました。サービスを再起動しますか?
+          ok-text: 再起動
+          title: 再起動
+        confirm-reboost:
+          content: サービスを再起動してもよろしいですか?
+          title: 再起動
+        confirm-rollback:
+          content: このバージョンにロールバックしてもよろしいですか?
+          title: ロールバック
+        current-version: 現在のバージョン
+        reboost: サービスを再起動する
+        rollback-version: ロールバック
+        upgrade-version: アップグレード
+    components:
+      sys-activate-info:
+        enums:
+          business-info:
+            items:
+              company-name: 会社名
+              order-id: 注文番号
+              sales-name: 営業部長
+            title: ビジネス情報
+          license-info:
+            items:
+              display-version: 認証ファイルのバージョン番号
+              expire-date-str: 認証の有効期限
+              license-id: 認可ファイルID
+              limit-vehicle-quantity: 接続可能ロボット数
+              machine-id: マシンコード
+              valid-days: オーソリ残り有効時間
+              valid-days-with-number: '{number} 日'
+            title: 認可情報
+    enums:
+      auth-mgt: 認可管理
+      system-upgrade: システムアップグレード
+    table-columns:
+      system-upgrade:
+        display-version: バージョン番号
+        gmt-modified: 更新時間
+        modified-by: アップデーター
+        operator: 操作する
+    toast:
+      auth-mgt:
+        update-success: 認証ファイルが正常に更新されました
+      system-upgrade:
+        reboost-success: サービスが正常に再起動されました
+        rollback-success-with-version: バージョンは {version} にロールバックされました。手動で [サービスの再起動] をクリックしてください。

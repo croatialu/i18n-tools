@@ -1,0 +1,1620 @@
+'403':
+  no-permission: ''
+'404':
+  404-not-found: 404 Not Found
+  back-to-home: 回首頁
+  description: 前面的區域，以後再來探索吧！
+common:
+  copy-fail: 複製失敗
+  copy-success: 複製成功
+components:
+  behavior-tree:
+    node-detail:
+      desc: 備註
+      params: 參數
+    node:
+      agv-act: AGV動作
+      agv-move: AGV移動
+      always-failure: 總是失敗
+      always-success: 總是成功
+      comm-dev-comparer: 設備屬性比較
+      comm-dev-setter: 設備屬性設定
+      delay: 延遲
+      eq: 黑板值比較
+      expression: 比較表達式
+      fallback: 選擇
+      force-failure: 強制失敗
+      force-success: 強製成功
+      hang-sequence: 順序掛起
+      http-act: 中控
+      http-wait: HTTP等待
+      if-then-else: IfThenElse
+      inverter: 取反
+      parallel: 平行
+      parallel-all: 並行所有
+      reactive-sequence: 反應式順序
+      retry-until-successful: 重試
+      sequence: 順序
+      sequence-with-memory: 有記憶順序
+      set-blackboard: 黑板寫值
+      sub-tree: 子樹
+      switch: 分支
+      while-do-else: WhileDoElse
+  data-empty-short:
+    description: ''
+  modals:
+    language:
+      content:
+        current-language: 語言
+      title: 選擇語言
+    quick-create-order:
+      content:
+        action-form:
+          action-template-list: 動作模板
+          enum:
+            'false': 否
+            'true': 是
+          mission-template-list: 任務範本列表
+          move-action:
+            map-name-placeholder: 請輸入搜尋地圖
+            station-name-placeholder: 請輸入搜尋站點
+          selected-mission: 已選任務
+          title: 任務清單
+        basic-form:
+          execute-type-label: 執行類型
+          execute-type-radio:
+            not-specify: 不指定
+            robot: 指定機器人
+            robot-group: 指定機器人群組
+          execute-type-robot-group-label: 機器人群組
+          execute-type-robot-group-placeholder-with-name: 請選擇{name}
+          execute-type-robot-label: 機器人
+          execute-type-robot-placeholder-with-name: 請選擇{name}
+          priority-label: 訂單優先級
+          title: 基本訊息
+        enum:
+          action-type:
+            move: 移動
+            seer-custom: 仙工自訂動作
+            std-custom: 斯坦德自訂動作
+          priority:
+            high: 高優先級
+            low: 低優先權
+            medium: 中優先級
+        toast:
+          error-types: 參數類型錯誤
+          invalid-json: JSON 資料不合法！
+          invalid-parameter: ''
+          none-actions: 請新增任務
+          none-fields: 參數內容不能為空
+          success: 快速建單成功
+      title: 快速建單
+    robot-selector:
+      content:
+        labels:
+          filter-by-map-version: 按地圖版本選擇
+          filter-by-robot-group: 按機器人群組選擇
+          filter-by-robot-group-items-title: 全部機器人
+          filter-by-robot-type: 按機器人型號選擇
+          filter-by-robot-type-items-title: 全部機器人
+          filter-by-sros-version: 按SROS版本號選擇
+          total-with-number: '{number}項'
+        placeholder:
+          filter-by-map-version: 機器人/地圖版本
+          filter-by-robot-group: 機器人/群組名稱
+          filter-by-robot-type: 機器人/機器人型號
+          filter-by-sros-version: 機器人/SROS版本號
+      title: 選擇機器人
+    user-profile:
+      confirm-new-password: 確認新密碼
+      my-profile: 我的帳號
+      new-password: 新密碼
+      nickname: 使用者名稱
+      old-password: 舊密碼
+      password: 密碼
+      role: 角色
+      update-password: 修改密碼
+      update-success: 修改成功
+      update-user-nickname: 修改使用者名稱
+      username: 使用者帳號
+  robot-state-block:
+    avoid-state: 避障狀態
+    break-sw-state: 解抱閘狀態
+    charging-state: 充電狀態
+    crowd-state: 群組
+    emergency-state: 急停狀態
+    idle-state: 空閒狀態
+    low-battery-state: 低電量狀態
+    manual-state: 手動控制狀態
+    need-location-state: 需要定位狀態
+    offline-state: 離線狀態
+    online-state: 在線狀態
+    order-hang-state: 訂單掛起
+    order-held-state: 訂單暫停
+    running-state: 運動狀態
+    save-mode-state: 低功耗狀態
+    standby-state: 待命狀態
+    traffic-control-state: 交管狀態
+  std-map:
+    abnormal: 狀態異常
+    backward-edge: 後退路徑
+    brake-released: 解抱閘
+    charging: 充電中
+    current-path: 目前規劃路徑
+    disabled-edge: 禁用路徑
+    edge-group: 選擇邊組合路徑
+    elements:
+      all-occupy: 所有佔用的資源
+      edge-congestion-level: 顯示路徑擁塞程度
+      func-area: 功能區
+      map-axis: ''
+      map-background: 黑白底圖
+      map-grid: ''
+      node: 節點
+      offline-robot: 已釋放資源的離線車輛
+      removed-edges: 禁用路徑
+      resource-zone: 顯示車輛資源區域
+      show-text: 顯示路網名稱
+      station: 站點
+    executing: 執行任務中
+    forward-edge: 前進路徑
+    idle: 空閒中
+    input-robot-name-station-name-and-id-to-search: 請輸入機器人名稱、網站名稱/ID進行搜尋定位
+    legend: ''
+    load-state: 載貨狀態
+    loaded-robot-restricted-edge: 滿載路徑
+    map-edge: 地圖路徑
+    normal-execution: 執行正常
+    'obstacle-avoiding ': 避障中
+    occupied-path: 交管佔用
+    offline: 離線
+    operation:
+      full-screen: 全螢幕
+      reset-view: 回到原點
+      zoom-in: 放大
+      zoom-out: 縮小
+    order: 訂單
+    order-pause: 訂單暫停
+    order-suspended: 訂單掛起
+    placeholder:
+      select-edge-group: 請選擇邊組合
+      select-map: 選擇地圖
+      show-map-elements: 顯示地圖元素
+    robot: 機器人
+    robot-detail:
+      action-status: 行駛速度
+      charging: 充電中
+      copy-obj-id: 點選複製物件ID
+      current-station-name: 目前站點
+      location-position: 定位位置
+      locked-robots: 交管對象
+      order-detail: 訂單詳情
+      order-id: 訂單ID
+      order-name: 訂單名稱
+      order-state: 訂單狀態
+      robot-group: 群組
+      robot-status: 機器人狀態
+      rotate-theta: 旋轉角度
+      traffic-detail: 交管資源
+      traffic-status: 交管狀態
+      traffic-time: 交管時間
+      traffic-type: 交管類型
+    robot-info: 機器人訊息
+    select-edge-group: ''
+    setting: 設定
+    setting-modal:
+      default-value: （預設值：{0}）
+      edge-width: 路徑線寬
+      map-font-size: 地圖字體大小
+      robot-font-size: 車輛名稱字體
+      robot-zoom: ''
+      setting: 設定
+      station-radius: 站點半徑
+      station-width: 站點線寬
+    start-station-to-end-station: 起點-終點
+    toast:
+      operate-success: 操作成功
+    traffic-controlling: 交通管制中
+    unloaded-robot-restricted-edge: 空載路徑
+  system-notification:
+    title: 系統異常告警
+  uploaders:
+    base-file-uploader:
+      cancelled: 已取消
+    sros-file-uploader:
+      upload-sros-file: 上傳SROS文件
+composables:
+  use-confirm:
+    cancel-text: 取消
+    ok-text: 確定
+    title: 溫馨提示
+constants:
+  action-template:
+    action-template-name: ''
+    action-template-type: ''
+  device-type:
+    air-shower-door: 區域管理設備-風淋門
+    charger: 區域管理設備-充電樁
+    common: 一般裝置
+    door: 區域管理設備-自動門
+    elevator: 區域管理設備-電梯
+  driver-config:
+    air-shower:
+      zlan: ''
+    autodoor:
+      zlan: ''
+    charing-station:
+      titan: ''
+    elevator:
+      wanglong: ''
+      zlan: ''
+    host: IP位址
+    maximum-timeout-times: 最大請求超時次數
+    polling-mills: 狀態頻率
+    port: 連接埠
+    request-timeout: 單次請求超時時間
+    robot:
+      seer: ''
+      seer-ports:
+        config-port: 配置模組端口
+        control-port: 控制模組端口
+        navigator-port: 導航模組端口
+        push-port: 主動上報端口
+        state-port: 狀態模組端口
+      standard: ''
+    selection-label: 驅動
+    slave-id: 從站號
+integrated-equipment:
+  air-shower:
+    actions:
+      change-state-disable: |-
+        請確認將風淋門狀態修改為維修中？
+        維修狀態時風淋門將被視為常開狀態，經過風淋門將不會發送開關門訊號、風淋訊號
+      change-state-enable: 請確認將風淋門狀態修改為上線？
+    add-shower: 添加風淋門
+    air-shower-control: 風淋門控制
+    back-door: 內門
+    confirm-delete-shower: 確定要刪除該風淋門嗎？
+    edit-shower-door: 編輯風淋門
+    execute-stations: 執行風淋動作的站點
+    front-door: 外門
+    inner-door-area: 內門區域
+    inner-door-close: 內門關門
+    inner-door-close-status: 內門關門到位狀態
+    inner-door-close-tip: 請確認是否執行內門關門操作
+    inner-door-open: 內門開門
+    inner-door-open-status: 內門開門到位狀態
+    inner-door-open-tip: 請確認是否執行內門開門操作
+    inner-door-release-tip: ''
+    is-execute-operate: 是否執行風淋操作
+    is-execute-shower: 請確認是否執行手動風淋操作
+    manual-shower: 手動風淋
+    no: 否
+    operate-failed: 操作失敗
+    out-door-area: 外門區域
+    out-door-close: 外門關門
+    out-door-close-status: 外門關門到位狀態
+    out-door-open: 外門開門
+    out-door-open-status: 外門開門到位狀態
+    out-door-open-tip: 請確認是否執行外門開門操作
+    out-door-release-tip: ''
+    outer-door-close-tip: 請確認是否執行外門關門操作
+    please-select-stations: 請選擇執行風淋動作的站點
+    select-shower-action-site: 選擇風淋動作站點
+    shower-action: 執行風淋動作
+    shower-door-detail: 風淋門詳情
+    shower-door-name: 風淋門名稱
+    shower-manage: 風淋門管理
+    yes: 是
+  autodoor:
+    '':
+      open-successful: 開門成功
+      port: ''
+    actions:
+      change-state-disable: |-
+        請確認是否將自動門狀態修改為維修？
+        維修狀態時自動門將被視為常開狀態，經過自動門將不會發送開關門訊號
+      change-state-enable: 請確認是否將自動門狀態修改為上線？
+    add-door: 新增自動門
+    add-successful: 新增成功
+    area-name: 區域名稱
+    autodoor: 自動門管理
+    autodoor-control: 自動門控制（僅維修中可操作）
+    autodoor-deetail: 自動門詳情
+    autodoor-man: 自動門名稱
+    autodoor-status: 自動門狀態
+    close-door: 關門
+    close-failed: 關門失敗
+    close-ok: 關門到位
+    close-status: 關門到位狀態
+    close-successful: 關門成功
+    close-tip: 請確認是否執行關門操作
+    connected: 已連接
+    delete: 刪除
+    delete-autodoor: 確定要刪除該自動門嗎？
+    delete-success: 刪除成功
+    detail: 看詳情
+    device-name: 設備名稱
+    edit: 編輯
+    edit-autodoor: 編輯自動門
+    edit-autodoor-status: 請確認將自動門狀態修改為
+    edit-success: 編輯成功
+    fault: 故障
+    fix: 維修
+    idle: 空閒
+    in-maintenance: 維修中
+    inner-map-area: 內門地圖區域
+    ip: IP位址
+    ip-port: IP位址/連接埠
+    ip-search: 輸入ip地址搜尋
+    link-status: 連線狀態
+    map: 地圖
+    map-area: 地圖區域
+    map-name: 地圖名稱
+    name-search: 輸入名稱搜尋
+    nomally-open-tip: 請確認是否執行常開操作
+    normally-open: 常開
+    online: 上線
+    open-door: 開門
+    open-failed: 開門失敗
+    open-not-ok: 未到位
+    open-ok: 開門到位
+    open-status: 開門到位狀態
+    open-successful: 開門成功
+    open-tip: 請確認是否執行開門操作
+    operate: 操作
+    operate-success: 操作成功
+    out-door-map-area: 外門地圖區域
+    please-input-device-name: 請輸入設備名稱
+    please-select: 請選擇
+    please-select-in-door-map-area: 請選擇內門地圖區域
+    please-select-map: 請選擇地圖
+    please-select-map-area: 請選擇地圖區域
+    please-select-out-map-area: 請選擇外門地圖區域
+    port: 連接埠號
+    release: 釋放資源
+    release-failed: 釋放資源失敗
+    release-resources: 釋放資源成功
+    resource-occupation: 資源佔用
+    running: 運作中
+    select-map-name: 請選擇地圖名稱
+    sure-release: 請確認是否執行釋放資源操作
+    unconected: 未連接
+    unknown: 未知
+    work-status: 工作狀態
+    working: 工作中
+  charging-station:
+    abnormal: 例外
+    actions:
+      change-state-disable: |-
+        請確認將充電樁狀態修改為維修？
+        維修狀態時充電樁為不可用狀態，充電任務將不會分配此充電樁
+      change-state-enable: 請確認將充電樁狀態修改為上線？
+    add-charge: 添加充電樁
+    be-occupied: 被佔用
+    booking: 預定中
+    charge-detail: 充電樁詳情
+    charge-manage: 充電樁管理
+    charge-name: 充電樁名稱
+    charge-station-config: 充電站點配置
+    charge-status: 充電狀態
+    charging-pile-control: 充電樁控制（僅維修中可操作）
+    compressed: 已壓緊
+    driver-name: 驅動名稱
+    edit-charge: 編輯充電樁
+    error: 錯誤
+    input-search-charge-name: 輸入充電樁名稱搜尋
+    not-compacted: 未壓緊
+    not-retracted: 未縮回
+    occupied: 佔用中
+    online: 網路
+    pffline: 離線
+    placing: 放置中
+    plug-in: 電推伸出
+    plug-into: 電推壓緊
+    pre-occupancy: 預先佔用
+    retracted: 已縮回
+    site-name: 網站名稱
+    sure-delete-charge: 確定要刪除該充電樁嗎？
+    sure-is-execute-electricity-push: 請確認是否執行電推縮回操作
+    sure-is-execute-plug-in: 請確認是否執行電推伸出操作
+    unplug: 電推縮回
+    work: 工作
+  elevator:
+    actions:
+      change-state-disable: |-
+        請確認將電梯狀態修改為維修中？
+        維修狀態時電梯為不可用狀態，跨樓層任務可能失敗
+      change-state-enable: 請確認將電梯狀態修改為上線？
+    add-charge-station: 新充電站點
+    add-elevator: 添加電梯
+    add-floor: 新增樓層
+    all-floor: 所在樓層
+    base-info: 基本訊息
+    call-elevator: 呼梯
+    call-elevator-failed: 呼叫電梯失敗
+    call-elevator-successful: 呼叫電梯成功
+    charge-station: 充電站點
+    charge-station-name: 充電站名
+    edit-elevator: 編輯電梯
+    elevator-area: 電梯區域
+    elevator-detail: 電梯詳情
+    elevator-manage: 電梯管理
+    elevator-name: 電梯名稱
+    elevator-operate: 電梯操作（僅維修中可操作）
+    elevator-station: 電梯內搭乘梯點
+    floor: 樓層
+    floor-config: 樓層配置
+    floor-name: 樓層名稱
+    floor-no: 樓層號
+    inner-door-close-ok: ''
+    inner-door-open-ok: 內門開門到位
+    input-charge-station-name: 請輸入充電站點名稱
+    input-floor: 輸入樓層
+    input-floor-name: 請輸入樓層名稱
+    input-relative-floor: 請輸入關聯樓層
+    match-is-not-whole: 配置未填寫完整
+    networking: 聯網
+    no-internet: 不連網
+    out-door-close-ok: ''
+    out-door-open-ok: 外門開門到位
+    quit-station: 退出站點
+    relative-floor: 關聯樓層
+    relative-map: 關聯地圖
+    select-charge-station: 請選擇充電站點
+    select-elevator-area: 請選擇電梯區域
+    select-elevator-board-point: 請選擇電梯內搭乘梯點
+    select-quit-site: 請選擇退出站點
+    select-relative-map: 請選擇關聯地圖
+    select-specified-vehicle-group: 請選擇指定的車型組
+    select-type: 請選擇類型
+    specified-vehicle-group: 指定的車型組
+    submit: 提交
+    sure-delete-elevator: 確定要刪除該電梯嗎？
+    type: 類型
+    use-status: 使用狀態
+map:
+  edge-group:
+    actions:
+      confirm-delete:
+        content: 確定要刪除所選路徑組嗎？
+      create-path-group: 新路徑組
+      delete-path-group: 刪除
+      edit-path-group: 編輯
+    enums:
+      edge-group-type:
+        same-direction-only: 單方向行駛
+        single-vehicle-only: 單車行駛
+    modals:
+      path-group:
+        content:
+          actions:
+            add-map-edge-group: 新增地圖和邊
+          enums:
+            edge-with-number: 邊{number}
+          form:
+            custom-message:
+              edge-ids-min: 地圖路徑組資源不能為空!
+              map-edge-group-resource-min: 地圖路徑組至少要2個!
+              map-id-min: 清選擇地圖!
+              map-name-min: 清選擇地圖!
+            labels:
+              edge-group-type: 路徑組類型
+              map-edge-group-name: 路徑組名稱
+              map-edge-group-resources: 已選擇地圖和邊
+            placeholder:
+              edge-group-type: 請選擇路徑組類型
+              map-edge-group-name: 請輸入路徑組名稱
+              map-name: 請選擇地圖
+          toast:
+            create-success: 新建成功
+            update-success: 編輯成功
+        title:
+          add: 新路徑組
+          edit: 編輯路徑組
+    placeholder:
+      map-edge-group-name: 輸入路徑組名稱搜尋
+    table-columns:
+      edge-group-type: 路徑組類型
+      id: ID
+      map-edge-group-name: 路徑組名稱
+      map-edge-group-resources: 關聯【地圖-邊】列表
+      operate: 操作
+    toast:
+      delete-success: 刪除成功
+    tooltips:
+      map-edge-group-resources:
+        body:
+          description-with-name-number: 【{name}】:{number}條邊 ;
+        content:
+          title-with-name-id: 【{name}】:{id};
+          title-with-number: 共關聯{number}個地圖-邊
+  list:
+    actions:
+      clear-out: 禁用路徑
+      confirm-delete:
+        content-with-name: 確認刪除【{name}】地圖嗎？
+        ok-text: 刪除
+      delete: 刪除
+      edit-map: 修改狀態
+      export: 匯出
+      import-map: 導入地圖
+      pull-map: 從機器人拉取地圖
+    enums:
+      map-info-state:
+        activated: 已啟動
+        inactivated: 已停用
+      source:
+        fetch: 從機器人拉取
+        new-CAD: 手動建立
+        upload: 導入文件
+    modals:
+      clear-out-form:
+        content:
+          enums:
+            edge-with-name: 邊{name}
+          form:
+            custom-message:
+              map-removed-edge-group-list-no-empty: 請選擇至少一條路徑！
+            labels:
+              map-removed-edge-group-list: 禁用路徑集合
+              map-removed-edge-group-name: 禁用路徑集合名稱
+            placeholder:
+              map-removed-edge-group-list: 請選擇已停用的路徑
+              map-removed-edge-group-name: 請輸入禁用路徑集合名稱
+          toast:
+            create-success: 新建成功
+            update-success: 編輯成功
+        title:
+          add: 新建禁用路徑集合
+          edit: 編輯禁用路徑集合
+      clear-out:
+        content:
+          actions:
+            able-status: 啟用
+            confirm-delete:
+              content: 確定要刪除所選禁用路徑集合嗎？
+            confirm-switch-status:
+              content:
+                able-status: 確定要啟用所選停用路徑嗎？
+                disable-status: 確定要停用所選禁用路徑嗎？
+            create-clear-out: 新建禁用路徑集合
+            delete: 刪除
+            disable-status: 停用
+            edit: 編輯
+          enums:
+            edge-with-name: 邊{name}
+          table-columns:
+            map-removed-edge-group-list: 禁用路徑集合
+            map-removed-edge-group-name: 禁用路徑集合名稱
+            operator: 操作
+          table-placeholder:
+            map-removed-edge-group-name: 請輸入停用路徑集合名稱搜尋
+          toast:
+            delete-success: 刪除成功
+            update-status-success: 操作成功
+        title: 禁用路徑集合
+      map-detail-form:
+        content:
+          enum:
+            disable: 停用
+            enable: 啟用
+          form:
+            custom-message:
+              floor-max: 樓層數不得大於 100
+              floor-min: 樓層數必須大於等於 1
+            labels:
+              description: 地圖描述
+              floor: 所在樓層
+              map-info-state: 地圖狀態
+              map-name: 地圖檔名
+            placeholder:
+              description: 請輸入地圖描述
+              floor: 請輸入所在樓層
+              map-name: 請輸入地圖檔名
+          toast:
+            update-success: 修改成功
+        title: 修改地圖狀態
+      map-import:
+        content:
+          toast:
+            upload-success: 上傳成功
+        ok-text: 上傳
+        title: 導入地圖
+      map-pull:
+        content:
+          form:
+            labels:
+              map-name: 選擇地圖
+              vehicle-key: 選擇機器人
+          toast:
+            download-success: 拉取成功
+        ok-text: 儲存
+        title: 拉取地圖
+    placeholder:
+      map-name: 輸入地圖名稱搜尋
+    table-columns:
+      floor: 樓層
+      gmt-modified: 更新時間
+      group: 版本號
+      id: ID
+      map-info-state: 狀態
+      map-name: 地圖名稱
+      modified-by: 更新人
+      operate: 操作
+      source: 地圖來源
+    toast:
+      delete-success: 刪除成功
+      export-success: 匯出成功
+  traffic:
+    actions:
+      confirm-delete:
+        content-with-name: 請確認是否刪除外部交管{name}?
+      confirm-release:
+        content: 請確認是否清除該區域的資源佔用？
+      create-traffic-outside: 建立外部區域管理
+      delete: 刪除
+      edit: 編輯
+      release: 清除佔用
+    modals:
+      traffic:
+        content:
+          form:
+            labels:
+              map: 選擇地圖
+              traffic-area-code: 交管區域編碼
+              traffic-area-name: 名稱
+              traffic-edge-group: 路徑組名稱
+            placeholder:
+              map: 請選擇地圖
+              traffic-area-code: 請輸入交管區域編碼
+              traffic-area-name: 請輸入名稱
+          toast:
+            create-success: 新增成功
+            update-success: 編輯成功
+        title: 交管區域
+    placeholder:
+      traffic-area-name: 請輸入交管區域名稱
+    table-columns:
+      id: ID
+      map-name: 地圖名稱
+      operate: 操作
+      traffic-apply-name: 資源佔用
+      traffic-area-code: 交管區域編碼
+      traffic-area-name: 名稱
+      traffic-edge-group-name: 路徑組名稱
+    toast:
+      delete-success: 刪除成功
+      traffic-outside-success: 操作成功
+order:
+  action-template:
+    actions:
+      confirm-delete-action-template:
+        content: 確認刪除？
+      create-action-template: 新動作模板
+      delete-action-template: 刪除
+      edit-action-template: 編輯
+    modals:
+      action-template-modal:
+        content:
+          json-invalid: JSON 資料不合法！
+          parameter-invalid: 數據不合法！
+        title:
+          create: 新動作模板
+          edit: 編輯動作模板
+    placeholder:
+      keyword: 請輸入範本名稱
+    table-columns:
+      actionName: 模版名稱
+      gmtCreate: 創建時間
+      id: ID
+      operator: ''
+    toast:
+      create-action-template-success: 建立動作模板成功
+      delete-action-template-success: 刪除動作模板成功
+      edit-action-template-success: 編輯動作模板成功
+  transport-order:
+    actions:
+      detail: 看詳情
+      order-cancel: 取消訂單
+      order-continue-form-hang: 繼續
+      order-continue-form-rejected: 移回隊列中
+      order-held: 暫停
+      order-jump-form-hang: 跳過
+      order-rejected: 從隊列移除
+      order-simulation: 模擬分配
+      quick-create-form: 快速建單
+    components:
+      dropdown-menu:
+        toast:
+          operate-success: 操作成功
+    modals:
+      behavior-tree-log-table:
+        columns:
+          cur-status: 執行狀態
+          film-time: 時間
+          msg: 節點資訊
+          uid: 節點編號
+        enums:
+          cur-status-bb:
+            clear: 清空
+            remove: 刪除
+            set: 設定
+          cur-status-bt-node:
+            failure: 失敗
+            idle: 未執行
+            running: 執行中
+            success: 成功
+          cur-status-sub-task:
+            cancelled: 取消
+            checking: 檢查中
+            failed: 失敗
+            finished: 完成
+            pristine: 初始
+            processing: 子任務執行中
+          cur-status-task:
+            assign-next-sub-task: 分配下一個子任務
+            cancelled: 取消
+            failed: 失敗
+            hang: 掛起
+            held: 暫停
+            in-queue: 佇列中
+            in-queue-priority: 隊列中手動優先
+            out-queue: 隊列外
+            processing: 訂單執行中
+            raw: 初始狀態
+            succeeded: 成功
+          node-type:
+            bb: 黑板
+            bt-node: 行為樹節點
+            na: 其他類型
+            sub-task: 子任務
+            task: 訂單
+        placeholders:
+          select-node-type: 日誌展示類型
+      order-cancel:
+        content:
+          description-disable-with-name: 取消訂單的同時是否停用 {name}
+          description-with-order-name: 确认取消「 {name} 」订单吗？
+          description-without-order-name: 對於執行中或已掛起的訂單，請謹慎操作
+          items-false: 不禁用
+          items-true: 停用
+          option-all: 所有機器人
+          option-current: 目前AGV
+        ok-text: 確認取消訂單
+        title: 溫馨提示
+      order-continue-form-rejected:
+        content: 是否確定移回隊列中？
+        ok-text: 確定移回
+      order-continue-from-hang:
+        content: 請先確保導致訂單掛起的異常因素已被排除
+        ok-text: ''
+      order-continue-from-held:
+        content: 請先確保導致訂單暫停的異常因素已被排除
+        ok-text: 確定繼續訂單
+      order-detail:
+        content:
+          act-content-with-name: 動作任務：{name}
+          columns:
+            appoint-vehicle-group-name: 指定機器人群組
+            appoint-vehicle-name: 指定機器人
+            cancel-reason: 失敗原因
+            execute-vehicle-name: 執行機器人
+            final-time: 訂單完成時間
+            gmt-create: 建立訂單時間
+            modified-by: 操作用戶
+            order-key: 訂單ID
+            order-name: 訂單名稱
+            order-priority: 訂單優先級
+            order-state: 目前狀態
+            order-type: 訂單類型
+            start-execute-time: 訂單開始執行時間
+            station-name: 起點 > 終點
+            tags: 標籤
+          enums:
+            order-state:
+              assign-next-sub-task: 等待分配下一個子任務
+              cancelled: 已取消
+              checking: 檢查中
+              failed: 已失敗
+              finished: 完成
+              hang: 已掛起
+              held: 暫停
+              in-queue: 佇列中
+              in-queue-priority: 隊列中(優先)
+              na: 待開始
+              out-queue: 隊列外
+              processing: 執行中
+              succeeded: 已成功
+            order-type:
+              battery-maintain: 電池保養訂單
+              charge: 充電訂單
+              park: 停靠訂單
+              work: 工作訂單
+            priority:
+              high: 高優先級
+              highest: 最高優先權
+              low: 低優先級
+              medium: 中優先級
+          items-title: 搬運訂單基本訊息
+          move-content-with-name: 移動任務：{name}
+          operations-title: 訂單操作
+          title: 執行詳情
+        open-bt: 行為樹展示
+        title: 訂單詳情
+      order-jump:
+        content:
+          input-placeholder: 請輸入授權碼
+          subtitle: 授權碼
+          title: 機器人當前動作會被跳過，此操作具有極高風險，是否確認？
+          toast-invalid-code: 授權碼錯誤！
+        ok-text: 確定跳過動作
+        title: 溫馨提示
+      order-pause:
+        content: 是否確定暫停訂單？
+        ok-text: 確定暫停訂單
+      order-rejected:
+        content: 是否確定從隊列移除？
+        ok-text: 確定移除
+      order-simulation:
+        content:
+          combobox-placeholder: 指定機器人
+          notice-title: 提示：訂單不會實際執行，只用於模擬分配查找訂單不分配的原因
+          result: 結果：{result}
+          toast-none-device-key: 未指定機器人
+        ok-text: 提交
+        title: 溫馨提示
+    placeholder:
+      created-by: 請選擇操作帳號
+      execute-vehicle-key: 請選擇機器人
+      keywords: 請輸入訂單ID或訂單名稱
+      tags: 請輸入篩選標籤
+    table-columns:
+      created-by: 創建人
+      detail: 執行任務狀態
+      execute-vehicle-name: 執行機器人
+      gmt-create: 創建時間
+      operator: ''
+      order-key: 訂單ID
+      order-name: 訂單名稱
+      order-state: 目前狀態
+      order-type: 訂單類型
+      progress: 完成進度
+      station-name: 起點 > 終點
+    tabs:
+      all: 全部訂單
+      cancelled: 已取消
+      failed: 已失敗
+      hang: 已掛起
+      held: 已暫停
+      in-queue: 排隊中
+      out-queue: 隊列外
+      processing: 正在執行
+      succeeded: 已完成
+robot-batch:
+  actions:
+    create-batch-operation: 新建批次任務
+  components:
+    table-operator-column:
+      actions:
+        cancel-batch-operate: 取消
+        confirm-cancel-batch-operate: 確認取消該批次任務嗎
+        view-detail: 執行詳情
+      toast:
+        operate-success: 操作成功
+  enums:
+    batch-task-operation-type:
+      cancel: 取消
+      delete: 刪除
+      pause: 暫停
+      resume: 繼續
+      retry: 重試
+    batch-task-status:
+      cancelled: 被取消
+      completed: 全部完成
+      executing: 執行中
+      failed: 失敗
+      partial-completed: 部分完成
+      paused: 暫停
+      pending: 未開始
+    batch-task-type:
+      batch-task-map: 批量同步地圖
+      batch-task-SROS: 批量升級SROS
+  modals:
+    batch-sync-map:
+      content:
+        actions:
+          more-config: 更多配置
+          selected-robot: 選擇機器人
+        description:
+          selected-robot: 已選擇的AGV：
+        enums:
+          'false': 否
+          'true': 是
+        form:
+          labels:
+            max-concurrent-count: 最大同時執行任務數
+            selected-map-id: 選擇同步的地圖
+            selected-map-version: 地圖版本
+            selected-robot: 選擇升級的機器人
+            to-parking-upgrade: 前往停靠點升級
+          placeholder:
+            selected-map-id: 請選擇地圖
+            selected-map-version: 請選擇地圖
+      title: 批量同步地圖
+    batch-task-detail:
+      content:
+        enums:
+          'false': 否
+          'true': 是
+        table-columns:
+          agv-name: 機器人名稱
+          gmt-create: 任務開始時間
+          gmt-modified: 任務更新時間
+          message: 執行詳情
+          work-state: 執行狀態
+        task-detail:
+          map-name: 同步地圖名稱
+          max-work-quantity: 最大同時執行任務數
+          need-to-park-station: 前往停靠點升級
+          os-file-url: SROS升級包版本號
+      title: 執行詳情
+    batch-upgrade-SROS:
+      content:
+        actions:
+          more-config: 更多配置
+          selected-robot: 選擇機器人
+        description:
+          selected-robot: 已選擇的AGV：
+        enums:
+          'false': 否
+          'true': 是
+        form:
+          labels:
+            max-concurrent-count: 最大同時執行任務數
+            selected-robot: 選擇升級的機器人
+            selected-SROS-id: 選擇同步的SROS升級包
+            to-parking-upgrade: 前往停靠點升級
+          placeholder:
+            selected-SROS-id: 請選擇升級包
+      title: 批量升級SROS
+  placeholder:
+    batch-task-status: 請選擇任務狀態
+    batch-task-type: 請選擇任務類型
+  table-columns:
+    end-time: 結束時間
+    execute-work-key: 任務類型
+    id: ID
+    operator: 操作
+    process: 執行進度
+    start-time: 開始時間
+    work-state: 任務狀態
+robot-charging-ploy:
+  actions:
+    confirm-delete-content: 確定要刪除該充電策略嗎？
+    confirm-update-strategy-state-invalid-with-name: 停用充電策略“{name}”
+    confirm-update-strategy-state-valid-with-name: 啟用充電策略“{name}”
+    create-charging-play: 新增充電策略
+    delete: 刪除
+    edit: 編輯
+    strategy-state-invalid: 停用
+    strategy-state-valid: 啟用
+  enum:
+    custom-strategy: 普通策略
+    default-strategy: 預設策略
+    strategy-state-invalid: 停用
+    strategy-state-valid: 啟用
+    strategy-type-high-efficiency: 訂單優先模式
+    strategy-type-hold-battery: 電量優先模式
+  modals:
+    charging-plot:
+      content:
+        actions:
+          add-robot-group: 新增使用該策略的機器人群群組
+          confirm-none-group-id-list: 未指定特定的機器人群組，充電策略將在所有機器人上生效。
+          confirm-remove-robot-group: 要從該充電策略中移除該機器人群組嗎？
+          remove-robot-group: 刪除
+        form:
+          custom-message:
+            critical-threshold-min: 低電量必須 > 10%
+            fully-threshold-min: 高電量必須 > 10%
+            idle-charge-frequency-max: 僅支援 0s ~ 300s 之間
+            idle-charge-frequency-min: 僅支援 0s ~ 300s 之間
+            increment-battery-max: 僅支援 0% ~ 100% 之間
+            increment-battery-min: 僅支援 0% ~ 100% 之間
+            number-int: 必須為整數
+            sufficiently-threshold-min: 正常電量必須 > 10%
+            threshold-max: 電量值必須為 100% 以內
+            threshold-step: '電量限制: 高電量 > 正常電量 > 低電量'
+            threshold-total-max: '電量限制: 低電量 出讓電量 < 100%'
+            time-rage: '時間限制: 結束時間必須在開始時間之後'
+          labels:
+            begin-time: 策略開始時間
+            critical-threshold: 低電量閾值（%）
+            end-time: 策略結束時間
+            fully-threshold: 高電量閾值（%）
+            group-able: 使指定的機器人群組生效
+            idle-charge-frequency: 空閒充電判定時間閾值（秒）
+            increment-battery: 非低電量機器人讓出充電樁的最低電量增量（%）
+            strategy-name: 充電策略名稱
+            strategy-type: 充電策略模式
+            sufficiently-threshold: 正常電量閾值（%）
+          placeholder:
+            critical-threshold: 請輸入低電量閾值（%）
+            fully-threshold: 請輸入高電量閾值（%）
+            idle-charge-frequency: 請輸入空閒充電判定時間閾值（秒）
+            increment-battery: 請輸入非低電量機器人讓出充電樁的最低電量增量（%）
+            strategy-name: 請輸入充電策略名稱
+            strategy-type: ''
+            sufficiently-threshold: 請輸入正常電量閾值（%）
+        table:
+          table-columns:
+            id: ID
+            name: 機器人群群組名稱
+        toast:
+          create-success: 新增成功
+          update-success: 修改成功
+        tooltips:
+          hight-efficiency:
+            critical-threshold: 不執行任務，強制充電
+            description: 訂單優先模式：優先確保盡可能多的機器人在工作，只有機器人電量低於某個最低值才會強制充電
+            extra-full-threshold: 不會自動產生充電任務
+            fully-threshold: 機器人空閒時可充電，充電任務會被工作任務打斷
+            sufficiently-threshold: 機器人空閒時可充電，充電任務不會被工作任務打斷
+          hold-battery:
+            critical-threshold: 不執行任務，強制充電
+            description: 電量優先模式：優先確保充電樁全部在工作充電，提高機器人群組的整體平均電量
+            extra-full-threshold: 不會自動產生充電任務
+            fully-threshold: 機器人空閒時可充電，充電任務會被工作任務打斷
+            sufficiently-threshold: 依照電量從低到高的順序，把充電樁佔滿，被分配到充電樁的機器人充電任務不可打斷，其餘的機器人正常執行任務
+      title:
+        add: 新增充電策略
+        edit: 編輯充電策略
+    robot-group:
+      content:
+        search-placeholder: 按機器人群群組名稱搜尋
+        table:
+          table-columns:
+            child-devices: 成員數量
+            id: ID
+            name: 機器人群群組名稱
+            robot-name: 機器人名稱
+      title: 選擇機器人群組
+  table-columns:
+    begin-time: 策略開始時間
+    end-time: 策略結束時間
+    gmt-create: 創建時間
+    group-names-text: 機器人群組
+    id: ID
+    operator: ''
+    strategy-name: 充電策略名稱
+    strategy-state: 狀態
+    strategy-type: 充電策略模式
+  toast:
+    delete-success: 刪除成功
+    update-success: 更新成功
+robot-SROS-version-mgt:
+  actions:
+    confirm-delete-package:
+      content: 確認刪除檔案？
+      title: 刪除文件
+    delete-package: 刪除
+    upload-package: 上傳新文件
+  table-columns:
+    filename: 檔案名稱
+    gmt-create: 上傳時間
+    id: ID
+    operator: 操作
+robot:
+  actions:
+    entity-table:
+      cancel-emergency: 解除急停
+      cancel-task: 取消訂單
+      clean-path-resource: 清除路徑佔用
+      continue-move: 繼續移動
+      continue-task: 繼續訂單
+      create-charge-task: 快速充電
+      create-park-task: 一鍵停靠
+      create-robot-manual: 手動新增
+      create-robot-scan: 掃描添加
+      delete: 刪除
+      pass: 車輛放行
+      pause-move: 暫停移動
+      pause-task: 暫停訂單
+      schedule-disable: 調度下線
+      schedule-enable: 調度上線
+      trigger-emergency: 觸發急停
+    group-table:
+      create-group: 建立群組
+      delete: 刪除
+      edit: 編輯
+  components:
+    popover:
+      group-children-devices:
+        loading: 載入中...
+        none-data: 無數據
+        none-data-after-searching: 目前篩選條件無數據
+      robot-selector:
+        actions:
+          select: 選取
+          trigger-text: 選擇車輛序號
+        table-columns:
+          device-type: 設備型號
+          manufacturer: 廠商名稱
+          operator: 操作
+          serial-number: 序號
+        table-search-placeholder: 搜尋
+  enum:
+    entity-table:
+      connection-state:
+        connection-broken: 連線中斷
+        offline: 離線
+        online: 網路
+        unknown: 未知
+      scheduled:
+        offline: 下線
+        online: 上線
+  modals:
+    robot-create-scan:
+      content:
+        form:
+          labels:
+            device-name: 設備名稱
+            device-type: 設備型號
+            interface-name: 協議版本號
+            manufacturer: 廠商
+            timestamp: 訂閱時間
+          placeholder:
+            device-name: 請輸入設備名稱
+            device-type: 請輸入設備型號
+            interface-name: 請輸入協議版本號
+            manufacturer: 請輸入廠商
+            timestamp: 請輸入訂閱時間
+      title: 掃描添加機器人
+      toast:
+        create-success: 創建成功！
+    robot-create:
+      form:
+        labels:
+          name: 名稱
+      title: 手動新增機器人
+      toast:
+        create-success: 創建成功
+    robot-group:
+      form:
+        custom-message:
+          none-childIds: 群組成員不能為空
+        labels:
+          base-info: 基本訊息
+          child-ids: 群組成員
+          group-info: 成員設定
+          group-name: 群組名稱
+          group-parameter-length: 機器人長度(mm)
+          group-parameter-length-loaded: 機器人載貨長度(mm)
+          group-parameter-width: 機器人寬度(mm)
+          group-parameter-width-loaded: 機器人載貨寬度(mm)
+          more-info: 更多配置
+        placeholder:
+          child-ids: 請選擇成員
+          group-name: 請輸入群組名稱
+          group-parameter-length: 請輸入機器人長度(mm)
+          group-parameter-length-loaded: 請輸入機器人載貨長度(mm)
+          group-parameter-width: 請輸入機器人寬度(mm)
+          group-parameter-width-loaded: 請輸入機器人載貨寬度(mm)
+      title:
+        add: 新增群組
+        edit: 編輯群組
+      toast:
+        create-success: 創建成功
+        edit-success: 編輯成功
+  placeholder:
+    group-table:
+      group-name-search: 請輸入群組名稱
+  table-columns:
+    entity-table:
+      action-state: 動作狀態
+      battery-percentage: 電池電量
+      connection-state: 連線狀態
+      current-map-name: 目前地圖
+      current-map-station-id: 目前站點ID
+      device-key: 設備KEY
+      device-name: 車輛名稱
+      movement-state: 移動狀態
+      operator: ''
+      order-key: 訂單Key
+      order-name: 訂單
+      scheduled: 上下線狀態
+      status: 系統狀態
+    group-table:
+      child-devices: 成員數量
+      id: ''
+      name: 名稱
+      operator: ''
+  tabs:
+    entity: 個體
+    group: 機器人群組
+  toast:
+    entity-table:
+      delete-success: 刪除成功！
+      operate-success: 操作成功！
+    group-table:
+      delete-success: 刪除成功！
+      operate-success: ''
+routes:
+  auth:
+    login: 登入
+    sys-activate: 系統啟用設定
+  home:
+    index: 首頁
+  integrated-equipment:
+    air-shower: 風淋門
+    autodoor: 自動門
+    charging-station: 充電樁
+    elevator: 電梯
+  map:
+    edge-group: 地圖路徑組
+    list: 地圖列表
+    traffic: 外部區域交管
+  order:
+    action-template: 動作模板
+    transport: 訂單列表
+  robot:
+    batch-operation: 批量操作
+    charging-ploy: 充電策略
+    list: 機器人列表
+    sros-version-mgt: SROS 版本管理
+  system:
+    account: 使用者帳號
+    debug-tool: 偵錯工具
+    dispatch: 調度配置
+    log-manage: 日誌管理
+    message-manage: 訊息清單
+    monitor: 伺服器監控
+    operation-log: 操作記錄
+    playback-monitor: 回放監控
+    upgrade: 系統升級
+scene-monitoring:
+  actions:
+    3D-monitoring: 3D 場控
+    cancel-emergency: ''
+    close-order-list: 關閉訂單列表
+    open-order-list: 查看訂單列表
+    schedule-disable: 一鍵調度下線
+    schedule-enable: 一鍵調度上線
+    trigger-emergency: 一鍵觸發急停
+  components:
+    side-bar:
+      battery-with-percent: 電量：{percent}%
+      enums:
+        anomalies: 例外
+        offlines: 離線
+        onlines: 網路
+        standbys: 待命
+        workings: 任務中
+      toast:
+        not-found: 未找到當前機器人所在地圖
+        operate-success: 操作成功
+  modals:
+    device-operate:
+      content:
+        description-with-name: 是否確認將全部車輛進行{name}?
+      toast:
+        device-operate-success-with-name: ''
+  toast:
+    operate-success-with-name: '{name}執行成功'
+side-menu:
+  debug-tool: ''
+  home: 首頁
+  integrated-equipment: 內部設備
+  language: 選擇語言
+  logout: 登出登入
+  logout-content: 確認已登出嗎
+  map: 地圖
+  message: 訊息
+  order: 訂單
+  robot: 機器人
+  system: 系統
+  system-utils: 工具
+  user-profile: 修改帳號資訊
+system:
+  account:
+    actions:
+      create-account: 新增帳號
+    components:
+      dropdown:
+        account-item:
+          actions:
+            authorized-administrator: 授權管理員
+            delete-user: 刪除帳號
+            disable-user: 停用
+            edit-user: 編輯使用者
+            enable-user: 啟用
+            reset-password: 重設密碼
+            unauthorized-administrator: 取消管理員
+    composables:
+      user-account:
+        actions:
+          confirm-change-status:
+            content:
+              disable-with-name: 確認禁用【{name}】帳號？
+              enable-with-name: 確認啟用【{name}】帳號？
+          confirm-delete-account:
+            content-with-name: 確認刪除【{name}】帳號？
+            ok-text: 刪除
+        toast:
+          delete-account-success: 刪除成功
+          update-account-role-success: 操作成功
+          update-account-status-success: 操作成功
+    enums:
+      role-name:
+        admin: 管理員
+        default: 一般成員
+        super-admin: 超管理員
+    modals:
+      create-account:
+        content:
+          form:
+            labels:
+              nickname: 暱稱
+              password: 使用者密碼
+              password-confirm: 確認密碼
+              role-name: 所屬角色
+              username: 使用者帳號
+            placeholder:
+              nickname: 請輸入暱稱
+              password: 請輸入使用者密碼
+              password-confirm: 請輸入確認密碼
+              role-name: 請選擇所屬角色
+              username: 請輸入使用者帳號
+          toast:
+            create-success: 創建成功
+        title: 新增帳號
+      reset-password:
+        content:
+          form:
+            labels:
+              password: 密碼
+              password-confirm: 確認密碼
+            placeholder:
+              password: 請輸入密碼
+              password-confirm: 請再次輸入密碼
+          toast:
+            update-success: 提交成功
+        title: 重設密碼
+      update-account:
+        content:
+          form:
+            custom-message:
+              nickname-max: 暱稱過長
+              username-max: 帳號過長
+            labels:
+              nickname: 暱稱
+              username: 帳戶
+            placeholder:
+              nickname: 請輸入暱稱
+              username: 請輸入帳戶
+          toast:
+            update-success: 提交成功
+        title: 修改帳號資訊
+    placeholder:
+      keywords: 請輸入關鍵字
+    table-columns:
+      nickname: 暱稱
+      operator: 操作
+      role-name: 角色
+      username: 帳號
+  debug-tool:
+    advanced-options: 進階選項
+    binary-system: 二進位
+    clear: 清除
+    connect: 連接
+    data-log: 資料日誌
+    data-send: 資料發送
+    debug-tool: 偵錯工具
+    disconnect: 斷開
+    display-type: 顯示類型
+    hexadecimal: 十六進位
+    input-ip: 請輸入IP位址
+    input-port: 請輸入連接埠
+    ping-tool: ping工具
+    please-input: 請輸入
+    port: 連接埠
+    protocol-type: 協定類型
+    send: 傳送
+    socket-tool: socket工具
+    start: 開始
+    string: 字串
+  dispatch:
+    actions:
+      edit-config: 編輯
+    enterprise-info:
+      action:
+        update-enterprise-info: 更新
+      table-columns:
+        icon: 網頁 ICON
+        icon-subtitle: （解析度 32*32 最佳，ico 格式，檔案大小在 1Mb 以內）
+        logo: 系統 LOGO
+        logo-subtitle: （解析度 88*32 最佳，png 格式，檔案大小在 1Mb 以內）
+      toast:
+        update-enterprise-info-success: 更新 Logo 資訊成功
+        upload-icon-file-success: 上傳 Icon 文件成功
+        upload-logo-file-success: 上傳 Logo 檔案成功
+    modals:
+      sys-config:
+        content:
+          form:
+            labels:
+              config-key-desc: 描述
+              config-key-name: 配置名稱
+              config-type: 配置類型
+              config-value: 目前值
+              config-value-range: 取值範圍
+              config-value-unit: 單位
+              default-config-value: 預設值
+        title: 編輯系統配置
+    table-columns:
+      config-key: 配置KEY
+      config-key-name: 配置名稱
+      config-value: 目前值
+      id: ID
+      operator: ''
+    tabs:
+      enterprise-info: 替換 Logo
+      https-config: HTTPS 設定
+      system-config: 系統配置
+  message:
+    critical: 嚴重
+    deadly: 致命
+    device: 裝置
+    error-code: 錯誤碼
+    happened-time: 發生時間
+    input-order-id: 請輸入訂單ID
+    major-alarm: 嚴重等級告警
+    message-manage: 訊息管理
+    normal: 一般
+    operate: 操作
+    operate-tip: 操作提示
+    order: 訂單
+    order-id: 訂單ID
+    read: 已讀
+    read-status: 已讀狀態
+    read-unread: 已讀未讀
+    read-width-one-click: 一鍵已讀
+    robot: 機器人
+    select-level: 請選擇級別
+    select-warn-type: 請選擇警告類型
+    server: 伺服器
+    success: 操作成功
+    unread: 未讀
+    view: 查看
+    warn-description: 告警描述
+    warn-type: 告警類型
+    warning: 警告
+  monitor:
+    alternate-ip: 備用伺服器IP
+    attribute: 屬性
+    available-memory: 可用記憶體
+    available-size: 可用大小
+    current-idle-rate: 目前空閒率
+    device-hot-backup-status: 雙機熱備狀態
+    disk-status: 磁碟狀態
+    drive-path: 磁碟機路徑
+    drive-type: 磁碟符類型
+    file-system: 檔案系統
+    internal-memory: 記憶體
+    number-of-cores: 核心數
+    operating-system: 作業系統
+    operational-info: 運作資訊
+    percentage-used: 已用百分比
+    running-time: RIOT已運行時間
+    secondary-serve-status: 備用伺服器狀態
+    server-info: 伺服器資訊
+    server-ip: 伺服器IP
+    server-monitor: 伺服器監控
+    server-name: 伺服器名稱
+    system-architecture: 系統架構
+    system-usage: 系統使用率
+    total-memory: 總記憶體
+    total-size: 總大小
+    used-size: 已用大小
+    user-utilization-rate: 使用者使用率
+    userd-memory: 已用記憶體
+    utilization-rate: 使用率
+  operation-log:
+    actions:
+      detail: 看詳情
+      detail-default-message: 未知數據
+      detail-default-title: 詳情
+    enums:
+      operate-success:
+        'false': 失敗
+        'true': 成功
+    placeholder:
+      operate-ip: 請輸入 IP 位址
+      operate-module: 選擇操作模組
+      operate-module-detail: 選擇操作行為
+      operate-sub-name: 請輸入操作對象
+      operate-user-name: 請輸入操作用戶
+    table-columns:
+      gmt-modified: 操作時間
+      operate-data: 原始請求數據
+      operate-ip: 操作 IP
+      operate-module: 操作模組
+      operate-module-detail: 操作行為
+      operate-sub-name: 操作對象
+      operate-success: 操作結果
+      operate-user-name: 操作用戶
+  playback:
+    1-speed: 1倍速
+    2-speed: 2倍速
+    4-speed: 4倍速
+    advance-5-second: 前進5s
+    back-5-second: 後退5s
+    current-time: 目前時間
+    half-speed: 0.5倍速
+    pause: 暫停
+    play: 播放
+    speed: 倍速
+  system-log:
+    actions:
+      export-log: 匯出
+    title-columns:
+      operator: 操作
+      size-label: 日誌大小
+      time: 日誌時間
+    toast:
+      downloading: 下載中
+      export-success: 匯出成功
+  upgrade:
+    actions:
+      auth-mgt:
+        update-license: 更新授權文件
+      system-upgrade:
+        confirm-reboost-after-upload:
+          content: 上傳成功，是否重啟服務?
+          ok-text: 重啟
+          title: 重啟
+        confirm-reboost:
+          content: 確認重啟服務？
+          title: 重啟
+        confirm-rollback:
+          content: 確認回滾到該版本？
+          title: 復原
+        current-version: 目前版本
+        reboost: 重啟服務
+        rollback-version: 復原
+        upgrade-version: 升級
+    components:
+      sys-activate-info:
+        enums:
+          business-info:
+            items:
+              company-name: 公司名稱
+              order-id: 訂單編號
+              sales-name: 銷售經理
+            title: 業務資訊
+          license-info:
+            items:
+              display-version: 授權文件版本號
+              expire-date-str: 授權過期時間
+              license-id: 授權文件ID
+              limit-vehicle-quantity: 可連接機器人數量
+              machine-id: 機器碼
+              valid-days: 授權剩餘有效時間
+              valid-days-with-number: '{number}天'
+            title: 授權資訊
+    enums:
+      auth-mgt: 授權管理
+      system-upgrade: 系統升級
+    table-columns:
+      system-upgrade:
+        display-version: 版本號
+        gmt-modified: 更新時間
+        modified-by: 更新人
+        operator: 操作
+    toast:
+      auth-mgt:
+        update-success: 更新授權文件成功
+      system-upgrade:
+        reboost-success: 服務重啟成功
+        rollback-success-with-version: 版本已回滾至{version}，請手動點選「重啟服務」
