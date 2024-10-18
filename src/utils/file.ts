@@ -1,6 +1,7 @@
+import type { I18nFileSummary, I18nLocaleSummary, I18nMessages } from '@/types'
 import fs from 'node:fs'
 import path from 'node:path'
-import type { I18nLocaleSummary } from '@/types'
+import { loadConfig } from './config'
 import { parsePatchMatcher } from './path-matcher'
 
 export function listFiles(dir: string, options: { recursive: boolean }): string[] {
@@ -64,7 +65,7 @@ export function loadLocaleInfo(dir: string, matcher: string, ext = ''): {
   }
 
   for (const file of files) {
-    const summary = loadLocaleSummary(file, matcher, ext)
+    const summary = loadLocaleSummary(file, matcher)
     if (summary) {
       result.namespace.add(summary.namespace)
       result.locales.add(summary.locale)
@@ -83,4 +84,21 @@ export function loadLocaleInfo(dir: string, matcher: string, ext = ''): {
     locales: Array.from(result.locales),
     ext: result.ext,
   }
+}
+
+export async function loadI18nMessages(summaries: I18nFileSummary[]): Promise<I18nMessages> {
+  const config = await loadConfig()
+  const messages = {} as I18nMessages
+
+  for (const summary of summaries) {
+    const loader = config.loaders![summary.ext]
+    if (!loader) {
+      throw new Error(`Loader for ${summary.ext} not found`)
+    }
+
+    const message = await loader(path.join(summary.basePath, summary.filename), summary)
+    messages[summary.locale] = message
+  }
+
+  return messages
 }

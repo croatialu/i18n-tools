@@ -1,5 +1,5 @@
-import { loadConfig as unLoadConfig } from 'unconfig'
 import type { I18nConfig } from '../types'
+import { loadConfig as unLoadConfig } from 'unconfig'
 
 let globalConfig: I18nConfig | undefined
 export async function loadConfig(): Promise<I18nConfig> {

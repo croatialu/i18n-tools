@@ -1,6 +1,6 @@
 import path from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { listFiles, listLocaleFiles } from './file'
+import { listFiles, listLocaleFiles, loadI18nMessages } from './file'
 
 const fixturesDir = path.join(__dirname, '..', '..', 'fixtures')
 
@@ -58,5 +58,56 @@ describe('listLocaleFiles', () => {
       'vision/zh-CN.yml',
       'vision/zh-TW.yml',
     ])
+  })
+})
+
+describe('loadI18nMessages', () => {
+  it('应该正确加载I18n消息', async () => {
+    const summaries = [
+      {
+        ext: 'yml',
+        basePath: 'fixtures/locales-1',
+        filename: 'en.yml',
+        locale: 'en',
+        namespace: 'api-code',
+      },
+      {
+        ext: 'yml',
+        basePath: 'fixtures/locales-1',
+        filename: 'zh-CN.yml',
+        locale: 'zh-CN',
+        namespace: 'api-code',
+      },
+    ]
+
+    const messages = await loadI18nMessages(summaries)
+
+    expect(messages).toEqual({
+      'en': { key: 'value' },
+      'zh-CN': { key: 'value' },
+    })
+
+    // expect(mockConfig.loaders['.yml']).toHaveBeenCalledTimes(2)
+    // expect(mockConfig.loaders['.yml']).toHaveBeenCalledWith('/path/to/en.yml', summaries[0])
+    // expect(mockConfig.loaders['.yml']).toHaveBeenCalledWith('/path/to/zh-CN.yml', summaries[1])
+  })
+
+  it('应该在找不到加载器时抛出错误', async () => {
+    // const mockConfig = {
+    //   loaders: {},
+    // }
+    // vi.mocked(loadConfig).mockResolvedValue(mockConfig)
+
+    const summaries = [
+      {
+        ext: 'unknown',
+        basePath: '/path/to',
+        filename: 'en.unknown',
+        locale: 'en',
+        namespace: 'api-code',
+      },
+    ]
+
+    await expect(loadI18nMessages(summaries)).rejects.toThrow('Loader for unknown not found')
   })
 })

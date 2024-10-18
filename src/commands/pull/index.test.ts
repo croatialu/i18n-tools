@@ -1,9 +1,9 @@
+import type { I18nFileSummary, I18nMessages } from '@/types'
 import path from 'node:path'
 import { loadConfig } from '@/utils/config'
-import { listLocaleFiles, loadLocaleInfo, loadLocaleSummary } from '@/utils/file'
-import { compact, get, groupBy } from 'lodash-es'
-import { describe, expect, it } from 'vitest'
-import type { I18nLocaleSummary, I18nMessages } from '@/types'
+import { listLocaleFiles, loadLocaleSummary } from '@/utils/file'
+import { compact, groupBy } from 'lodash-es'
+import { describe, it } from 'vitest'
 
 describe('pull', () => {
   it('should pull', async () => {
@@ -20,7 +20,7 @@ describe('pull', () => {
 
       const pull = locale.pull || config.pull
 
-      const localeSummaries = compact(files.map((file) => {
+      const localeSummaries: I18nFileSummary[] = compact(files.map((file) => {
         const summary = loadLocaleSummary(file, locale.matcher)
         if (!summary)
           return undefined
@@ -28,6 +28,7 @@ describe('pull', () => {
         return {
           ...summary,
           filename: file,
+          basePath: locale.path,
         }
       }))
 

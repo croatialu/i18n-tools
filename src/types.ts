@@ -25,6 +25,11 @@ export interface I18nLocaleSummary {
   ext: string
 }
 
+export interface I18nFileSummary extends I18nLocaleSummary {
+  filename: string
+  basePath: string
+}
+
 export interface I18nLoader {
   (filename: string, summary: I18nLocaleSummary): Promise<I18nMessage>
 }

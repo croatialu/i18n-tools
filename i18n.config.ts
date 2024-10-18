@@ -8,8 +8,8 @@ export default defineConfig({
       path: 'fixtures/locales-1',
       matcher: '{namespace}/{locale}.yml',
       ext: 'yml',
-      pull: async (filename, summary) => {
-        console.log(filename, summary, '2333')
+      pull: async (namespace) => {
+        console.log(namespace, '2333')
         return {}
       },
     },

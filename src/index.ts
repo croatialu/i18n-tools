@@ -1,2 +1,2 @@
-export const one = 1
-export const two = 2
+export { defineGenerator, defineLoader } from './define'
+export { defineConfig } from './defineConfig'
