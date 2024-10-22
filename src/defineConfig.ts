@@ -8,14 +8,14 @@ import { yamlLoader } from './loaders/yaml'
 export function defineConfig(config: I18nConfig): I18nConfig {
   const defaultConfig: Partial<I18nConfig> = {
     generators: {
-      json: jsonGenerator,
-      yaml: yamlGenerator,
-      yml: yamlGenerator,
+      '.json': jsonGenerator,
+      '.yaml': yamlGenerator,
+      '.yml': yamlGenerator,
     },
     loaders: {
-      json: jsonLoader,
-      yaml: yamlLoader,
-      yml: yamlLoader,
+      '.json': jsonLoader,
+      '.yaml': yamlLoader,
+      '.yml': yamlLoader,
     },
   }
 

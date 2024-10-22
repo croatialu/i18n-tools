@@ -1,4 +1,4 @@
-import type { I18nFileSummary, I18nLocaleSummary, I18nMessages } from '@/types'
+import type { I18nConfig, I18nFileSummary, I18nLocaleSummary, I18nMessages, I18nNamespaceSummary } from '@/types'
 import fs from 'node:fs'
 import path from 'node:path'
 import { loadConfig } from './config'
@@ -40,7 +40,7 @@ export function loadLocaleSummary(filename: string, matcher: string): I18nLocale
     return {
       namespace,
       locale,
-      ext,
+      ext: `.${ext}`,
     }
   }
 }
@@ -101,4 +101,34 @@ export async function loadI18nMessages(summaries: I18nFileSummary[]): Promise<I1
   }
 
   return messages
+}
+
+export async function generateFile(
+  namespaceSummary: I18nNamespaceSummary,
+  messages: I18nMessages,
+  generators: I18nConfig['generators'],
+): Promise<void> {
+  const { summaries } = namespaceSummary
+
+  if (!generators) {
+    throw new Error('generators 未定义')
+  }
+
+  for (const localeFileSummary of summaries) {
+    const { basePath, filename, ext, locale } = localeFileSummary
+    const outputPath = path.join(basePath, filename)
+
+    const generator = generators[ext]
+
+    if (!generator) {
+      throw new Error(`${ext} 的 generator 未定义`)
+    }
+
+    const message = messages[locale]
+    if (!message) {
+      throw new Error(`${locale} 的 message 未定义`)
+    }
+
+    await generator(outputPath, message, localeFileSummary)
+  }
 }
