@@ -55,26 +55,40 @@ export async function mergeI18nMessagesToLocal(
 export async function mergeI18nMessagesToRemote(
   localMessages: I18nMessages,
   remoteMessages: I18nMessages,
+  policy: I18nMergePolicy = 'remote-first',
+  freezeDefaultLanguage = true,
 ): Promise<I18nMessages> {
   const config = await loadConfig()
 
   const defaultLanguageMessages = localMessages[config.defaultLanguage]
 
   const mergedMessages: I18nMessages = {
-    [config.defaultLanguage]: defaultLanguageMessages,
+    [config.defaultLanguage]: freezeDefaultLanguage ? defaultLanguageMessages : {},
   }
 
   const allKeys = getObjectAllKeys(defaultLanguageMessages)
   const localeKeys = Object.keys(localMessages)
 
   localeKeys.forEach((locale) => {
-    if (locale === config.defaultLanguage)
+    if (locale === config.defaultLanguage && freezeDefaultLanguage)
       return
 
     allKeys.forEach((key) => {
       const keyPath = [locale, ...key.split('.')]
+      const localValue = get(localMessages, keyPath)
       const remoteValue = get(remoteMessages, keyPath)
-      set(mergedMessages, keyPath, remoteValue)
+
+      let newValue = ''
+      switch (policy) {
+        case 'local-first':
+          newValue = localValue
+          break
+        case 'remote-first':
+          newValue = remoteValue
+          break
+      }
+
+      set(mergedMessages, keyPath, newValue)
     })
   })
 

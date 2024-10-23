@@ -12,7 +12,7 @@ export async function pull({
   dryRun = false,
 }: PullOptions = {}): Promise<void> {
   const config = await loadConfig()
-  const { locales, loaders, generators, pull, mergeOptions } = config
+  const { locales, loaders, generators, pull, mergeOptions, hooks } = config
 
   const spinner = ora('Start pulling').start()
   spinner.info('Start pulling')
@@ -21,14 +21,19 @@ export async function pull({
 
     const namespaces = loadLocalNamespaces(files, locale)
     const tmpMergeOptions = locale.mergeOptions || mergeOptions
+    const beforePull = locale.hooks?.beforePull || hooks?.beforePull
+    const afterPull = locale.hooks?.afterPull || hooks?.afterPull
 
     await Promise.all(namespaces.map(async (namespaceSummary) => {
       const spinner = ora(`Pulling locale: ${namespaceSummary.namespace}`).start()
       const localMergeOptions = typeof tmpMergeOptions === 'function'
-        ? tmpMergeOptions(namespaceSummary.namespace)
+        ? tmpMergeOptions(namespaceSummary.namespace, 'pull')
         : tmpMergeOptions
       const localMessages = await loadLocalMessages(namespaceSummary, locale.path, loaders)
+
+      await beforePull?.(namespaceSummary.namespace, namespaceSummary.summaries)
       const remoteMessages = await loadRemoteMessages(namespaceSummary, locale.pull || pull)
+      await afterPull?.(namespaceSummary.namespace, remoteMessages)
 
       const mergedMessages = await mergeI18nMessagesToLocal(
         localMessages,

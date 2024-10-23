@@ -12,6 +12,7 @@ program
 
 program
   .command('format')
+  .description('format locale data')
   .action(async () => {
     const config = await loadConfig()
 
@@ -27,7 +28,8 @@ program
 
 program
   .command('pull')
-  .option('--dry-run', 'dry run')
+  .option('--dry-run', 'dry run', false)
+  .description('pull locale data from remote')
   .action(async (options) => {
     const config = await loadConfig()
     await pull({
@@ -42,7 +44,8 @@ program
   })
 
 program.command('push')
-  .option('--dry-run', 'dry run')
+  .option('--dry-run', 'dry run', false)
+  .description('push locale data to remote')
   .action(async (options) => {
     const config = await loadConfig()
 

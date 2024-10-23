@@ -20,7 +20,6 @@ export default defineConfig({
       }, 1000)
     })
   },
-
   locales: [
     {
       path: 'fixtures/locales-1',

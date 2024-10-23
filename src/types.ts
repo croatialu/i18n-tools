@@ -3,9 +3,10 @@ export interface I18nConfig {
   loaders?: Record<`.${string}`, I18nLoader>
   generators?: Record<`.${string}`, I18nGenerator>
   formatter?: I18nFormatter
+  hooks?: I18nHooks
   pull?: (namespace: string, summaries: I18nLocaleSummary[]) => Promise<I18nMessages>
   push?: (namespace: string, message: I18nMessages, summaries: I18nLocaleSummary[]) => Promise<void>
-  mergeOptions?: I18nMergeOptions | ((namespace: string) => I18nMergeOptions)
+  mergeOptions?: I18nMergeOptions | ((namespace: string, action: 'pull' | 'push') => I18nMergeOptions)
   locales: Array<I18nLocaleConfig>
 }
 
@@ -16,6 +17,14 @@ export interface I18nLocaleConfig {
   pull?: I18nConfig['pull']
   push?: I18nConfig['push']
   mergeOptions?: I18nConfig['mergeOptions']
+  hooks?: I18nHooks
+}
+
+export interface I18nHooks {
+  beforePull?: (namespace: string, summaries: I18nLocaleSummary[]) => Promise<void>
+  afterPull?: (namespace: string, messages: I18nMessages) => Promise<void>
+  beforePush?: (namespace: string, messages: I18nMessages, summaries: I18nLocaleSummary[]) => Promise<boolean>
+  afterPush?: (namespace: string, messages: I18nMessages, summaries: I18nLocaleSummary[]) => Promise<void>
 }
 
 export type I18nFormatter = 'prettier' | 'eslint' | 'auto' | false
