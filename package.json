@@ -2,6 +2,11 @@
   "name": "@croatialu/i18n-tools",
   "type": "module",
   "version": "0.0.0",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest",
+    "registry": "https://registry.npmjs.org/"
+  },
   "packageManager": "pnpm@9.12.2",
   "description": "_description_",
   "author": "Croatia Lu <wuli.croatia@foxmail.com>",
