@@ -2,6 +2,7 @@ export interface I18nConfig {
   defaultLanguage: string
   loaders?: Record<`.${string}`, I18nLoader>
   generators?: Record<`.${string}`, I18nGenerator>
+  formatter?: I18nFormatter
   pull?: (namespace: string, summaries: I18nLocaleSummary[]) => Promise<I18nMessages>
   push?: (namespace: string, message: I18nMessages, summaries: I18nLocaleSummary[]) => Promise<void>
   mergeOptions?: I18nMergeOptions | ((namespace: string) => I18nMergeOptions)
@@ -16,6 +17,8 @@ export interface I18nLocaleConfig {
   push?: I18nConfig['push']
   mergeOptions?: I18nConfig['mergeOptions']
 }
+
+export type I18nFormatter = 'prettier' | 'eslint' | 'auto' | false
 
 export type I18nMessage = Record<string, unknown>
 

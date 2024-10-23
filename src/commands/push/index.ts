@@ -3,7 +3,6 @@ import { listLocaleFiles } from '@/utils/file'
 import { loadLocalMessages, loadLocalNamespaces, loadRemoteMessages, mergeI18nMessagesToRemote } from '@/utils/messages'
 import { isEqual } from 'lodash-es'
 import ora from 'ora'
-import { pull } from '../pull'
 
 export interface PushOptions {
   dryRun?: boolean
@@ -13,11 +12,6 @@ export async function push({
   dryRun = false,
 }: PushOptions = {}): Promise<void> {
   const config = await loadConfig()
-
-  // PUSH 前， 先拉取远程数据更新本地
-  await pull({
-    dryRun,
-  })
 
   const spinner = ora('Start pushing').start()
   spinner.info('Start pushing')
