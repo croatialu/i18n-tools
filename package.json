@@ -37,6 +37,7 @@
     "i18n": "bin/index.mjs"
   },
   "files": [
+    "bin",
     "dist"
   ],
   "scripts": {
@@ -51,7 +52,10 @@
     "prepare": "simple-git-hooks"
   },
   "dependencies": {
+    "commander": "^12.1.0",
+    "consola": "^3.2.3",
     "lodash-es": "^4.17.21",
+    "ora": "^8.1.0",
     "unconfig": "^0.6.0",
     "yaml": "^2.6.0"
   },

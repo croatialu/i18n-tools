@@ -1,34 +1,35 @@
-import type { I18nConfig, I18nLocaleConfig, I18nMergeOptions } from '@/types'
+import { loadConfig } from '@/utils/config'
 import { generateFile, listLocaleFiles } from '@/utils/file'
 import { loadLocalMessages, loadLocalNamespaces, loadRemoteMessages, mergeI18nMessagesToLocal } from '@/utils/messages'
+import { isEqual } from 'lodash-es'
+import ora from 'ora'
 
 export interface PullOptions {
-  mergeOptions?: I18nMergeOptions | ((namespace: string) => I18nMergeOptions)
-  locales?: I18nLocaleConfig[]
-  loaders?: I18nConfig['loaders']
-  generators?: I18nConfig['generators']
-  pull?: I18nConfig['pull']
+  dryRun?: boolean
 }
 
 export async function pull({
-  mergeOptions,
-  locales = [],
-  loaders,
-  generators,
-  pull,
+  dryRun = false,
 }: PullOptions = {}): Promise<void> {
-  locales.forEach(async (locale) => {
+  const config = await loadConfig()
+  const { locales, loaders, generators, pull, mergeOptions } = config
+
+  const spinner = ora('Start pulling').start()
+  spinner.info('Start pulling')
+  await Promise.all(locales.map(async (locale, index) => {
     const files = listLocaleFiles(locale.path, locale.matcher, locale.ext)
 
     const namespaces = loadLocalNamespaces(files, locale)
+    const tmpMergeOptions = locale.mergeOptions || mergeOptions
 
     await Promise.all(namespaces.map(async (namespaceSummary) => {
-      const localMergeOptions = typeof mergeOptions === 'function'
-        ? mergeOptions(namespaceSummary.namespace)
-        : mergeOptions
-
+      const spinner = ora(`Pulling locale: ${namespaceSummary.namespace}`).start()
+      const localMergeOptions = typeof tmpMergeOptions === 'function'
+        ? tmpMergeOptions(namespaceSummary.namespace)
+        : tmpMergeOptions
       const localMessages = await loadLocalMessages(namespaceSummary, locale.path, loaders)
       const remoteMessages = await loadRemoteMessages(namespaceSummary, locale.pull || pull)
+
       const mergedMessages = await mergeI18nMessagesToLocal(
         localMessages,
         remoteMessages,
@@ -36,7 +37,21 @@ export async function pull({
         localMergeOptions?.freezeDefaultLanguage,
       )
 
-      await generateFile(namespaceSummary, mergedMessages, generators)
+      if (isEqual(mergedMessages, remoteMessages)) {
+        spinner.succeed(`No changes for locale: ${namespaceSummary.namespace}`)
+        return
+      }
+
+      if (!dryRun) {
+        spinner.info(`Generating locale: config[${index}]  ${namespaceSummary.namespace}`)
+        await generateFile(namespaceSummary, mergedMessages, generators)
+        spinner.succeed(`Generated locale: config[${index}] ${namespaceSummary.namespace}`)
+      }
+      else {
+        spinner.succeed(`[Dry Run] Generated locale: config[${index}] ${namespaceSummary.namespace}`)
+      }
     }))
-  })
+  }))
+
+  spinner.succeed('Pulling completed')
 }

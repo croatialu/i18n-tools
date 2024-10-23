@@ -1,9 +1,11 @@
+import path from 'node:path'
 import { defineBuildConfig } from 'unbuild'
 
 const dirname = new URL('.', import.meta.url).pathname
 export default defineBuildConfig({
   entries: [
     'src/index',
+    'src/cli',
   ],
   declaration: true,
   clean: true,
@@ -11,6 +13,7 @@ export default defineBuildConfig({
     emitCJS: true,
   },
   alias: {
-    '@/': `${dirname}/src/`,
+    '@': path.join(dirname, 'src'),
   },
+  failOnWarn: false,
 })
