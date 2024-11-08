@@ -59,6 +59,10 @@ export function listToI18nMessages(list: { key: string, [x: string]: string }[])
 
     Object.entries(values).forEach(([language, value]) => {
       const keyPath = [language, ...key.split('.')]
+      if (!get(messages, language)) {
+        set(messages, language, {})
+      }
+
       set(messages, keyPath, value)
     })
   })

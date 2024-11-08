@@ -14,7 +14,7 @@ export async function mergeI18nMessagesToLocal(
 ): Promise<I18nMessages> {
   const config = await loadConfig()
 
-  const defaultLanguageMessages = localMessages[config.defaultLanguage]
+  const defaultLanguageMessages = freezeDefaultLanguage ? localMessages[config.defaultLanguage] : remoteMessages[config.defaultLanguage]
 
   const mergedMessages: I18nMessages = {
     [config.defaultLanguage]: defaultLanguageMessages,
@@ -24,8 +24,9 @@ export async function mergeI18nMessagesToLocal(
 
   const localeKeys = Object.keys(localMessages)
   localeKeys.forEach((locale) => {
-    if (locale === config.defaultLanguage && freezeDefaultLanguage)
+    if (locale === config.defaultLanguage && freezeDefaultLanguage) {
       return
+    }
     if (!get(mergedMessages, locale)) {
       set(mergedMessages, locale, {})
     }
@@ -60,7 +61,7 @@ export async function mergeI18nMessagesToRemote(
 ): Promise<I18nMessages> {
   const config = await loadConfig()
 
-  const defaultLanguageMessages = localMessages[config.defaultLanguage]
+  const defaultLanguageMessages = freezeDefaultLanguage ? localMessages[config.defaultLanguage] : remoteMessages[config.defaultLanguage]
 
   const mergedMessages: I18nMessages = {
     [config.defaultLanguage]: freezeDefaultLanguage ? defaultLanguageMessages : {},
