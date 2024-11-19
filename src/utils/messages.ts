@@ -1,99 +1,121 @@
-import type { I18nConfig, I18nFileSummary, I18nLocaleConfig, I18nMergePolicy, I18nMessages, I18nNamespaceSummary } from '@/types'
-import path from 'node:path'
-import { get, set } from 'lodash-es'
-import { getObjectAllKeys } from './common'
+import type { I18nConfig, I18nFileSummary, I18nLocaleConfig, I18nMergePolicy, I18nMessage, I18nMessages, I18nNamespaceSummary } from '@/types'
+import { compact, isEmpty, omit, uniq } from 'lodash-es'
 import { loadConfig } from './config'
 import { loadLocaleSummary } from './file'
+
+function getOperationType(hasLocalMessage: boolean, hasRemoteMessage: boolean): 'add' | 'update' | 'delete' {
+  if (hasLocalMessage && hasRemoteMessage) {
+    return 'update' as const
+  }
+  else if (hasLocalMessage && !hasRemoteMessage) {
+    // 本地有， 远端无， 则为新增
+    return 'add' as const
+  }
+  else if (!hasLocalMessage && hasRemoteMessage) {
+    // 本地无， 远端有， 则为删除
+    return 'delete' as const
+  }
+
+  throw new Error('非预期结果')
+}
 
 export async function mergeI18nMessagesToLocal(
   localMessages: I18nMessages,
   remoteMessages: I18nMessages,
-  policy: I18nMergePolicy = 'remote-first',
-  // 是否冻结默认语言的值，冻结后默认语言的值将不会被覆盖
-  freezeDefaultLanguage = true,
+  policy: I18nMergePolicy = 'local-first',
 ): Promise<I18nMessages> {
   const config = await loadConfig()
 
-  const defaultLanguageMessages = freezeDefaultLanguage ? localMessages[config.defaultLanguage] : remoteMessages[config.defaultLanguage]
+  const allKeys = compact(uniq(
+    [
+      ...localMessages.map(v => v.key),
+      ...remoteMessages.map(v => v.key),
+    ],
+  )).sort()
 
-  const mergedMessages: I18nMessages = {
-    [config.defaultLanguage]: defaultLanguageMessages,
-  }
+  const newMessageMapping: Record<string, I18nMessage> = {}
 
-  const allKeys = getObjectAllKeys(defaultLanguageMessages)
+  const localMessageMapping = localMessages.reduce((acc, message) => {
+    acc[message.key] = message
+    return acc
+  }, {} as Record<string, I18nMessage>)
 
-  const localeKeys = Object.keys(localMessages)
-  localeKeys.forEach((locale) => {
-    if (locale === config.defaultLanguage && freezeDefaultLanguage) {
-      return
+  const remoteMessageMapping = remoteMessages.reduce((acc, message) => {
+    acc[message.key] = message
+    return acc
+  }, {} as Record<string, I18nMessage>)
+
+  allKeys.forEach((key) => {
+    const localMessage = localMessageMapping[key] || {}
+    const remoteMessage = remoteMessageMapping[key] || {}
+    const keys = uniq([
+      ...Object.keys(omit(localMessage, 'deletedAt', 'key')),
+      ...Object.keys(omit(remoteMessage, 'deletedAt', 'key')),
+    ])
+
+    const transition = keys.reduce((acc, key) => {
+      acc[key] = remoteMessage[key] || localMessage[key]
+      return acc
+    }, {} as Record<string, any>)
+
+    newMessageMapping[key] = {
+      ...transition,
+      key,
+      [config.defaultLanguage]:
+        policy === 'local-first' ? localMessage[config.defaultLanguage] : remoteMessage[config.defaultLanguage],
     }
-    if (!get(mergedMessages, locale)) {
-      set(mergedMessages, locale, {})
-    }
-
-    allKeys.forEach((key) => {
-      const keyPath = [locale, ...key.split('.')]
-      const localValue = get(localMessages, keyPath)
-      const remoteValue = get(remoteMessages, keyPath)
-
-      let newValue = ''
-      switch (policy) {
-        case 'local-first':
-          newValue = localValue || remoteValue
-          break
-        case 'remote-first':
-          newValue = remoteValue || localValue
-          break
-      }
-
-      set(mergedMessages, keyPath, newValue)
-    })
   })
 
-  return mergedMessages
+  return allKeys.map(key => newMessageMapping[key])
 }
 
 export async function mergeI18nMessagesToRemote(
   localMessages: I18nMessages,
   remoteMessages: I18nMessages,
-  policy: I18nMergePolicy = 'remote-first',
-  freezeDefaultLanguage = true,
 ): Promise<I18nMessages> {
   const config = await loadConfig()
 
-  const defaultLanguageMessages = freezeDefaultLanguage ? localMessages[config.defaultLanguage] : remoteMessages[config.defaultLanguage]
+  const allKeys = compact(uniq(
+    [
+      ...localMessages.map(v => v.key),
+      ...remoteMessages.map(v => v.key),
+    ],
+  )).sort()
 
-  const mergedMessages: I18nMessages = {
-    [config.defaultLanguage]: freezeDefaultLanguage ? defaultLanguageMessages : {},
-  }
+  const newMessageMapping: Record<string, I18nMessage> = {}
 
-  const allKeys = getObjectAllKeys(defaultLanguageMessages)
-  const localeKeys = Object.keys(localMessages)
+  const localMessageMapping = localMessages.reduce((acc, message) => {
+    acc[message.key] = message
+    return acc
+  }, {} as Record<string, I18nMessage>)
 
-  localeKeys.forEach((locale) => {
-    if (locale === config.defaultLanguage && freezeDefaultLanguage)
-      return
+  const remoteMessageMapping = remoteMessages.reduce((acc, message) => {
+    acc[message.key] = message
+    return acc
+  }, {} as Record<string, I18nMessage>)
 
-    allKeys.forEach((key) => {
-      const keyPath = [locale, ...key.split('.')]
-      const localValue = get(localMessages, keyPath)
-      const remoteValue = get(remoteMessages, keyPath)
-
-      let newValue = ''
-      switch (policy) {
-        case 'local-first':
-          newValue = localValue
-          break
-        case 'remote-first':
-          newValue = remoteValue
-          break
-      }
-
-      set(mergedMessages, keyPath, newValue)
-    })
+  allKeys.forEach((key) => {
+    const localMessage = localMessageMapping[key] || {}
+    const remoteMessage = remoteMessageMapping[key] || {}
+    const keys = uniq([
+      ...Object.keys(omit(localMessage, 'deletedAt', 'key')),
+      ...Object.keys(omit(remoteMessage, 'deletedAt', 'key')),
+    ])
+    const transition = keys.reduce((acc, key) => {
+      acc[key] = remoteMessage[key]
+      return acc
+    }, {} as Record<string, any>)
+    const type = getOperationType(!isEmpty(localMessage), !isEmpty(remoteMessage))
+    newMessageMapping[key] = {
+      ...transition,
+      key,
+      // 删除时， 使用远端语言的值
+      [config.defaultLanguage]: type === 'delete' ? remoteMessage[config.defaultLanguage] : localMessage[config.defaultLanguage],
+      deletedAt: type === 'delete' ? new Date().toISOString() : undefined,
+    }
   })
 
-  return mergedMessages
+  return allKeys.map(key => newMessageMapping[key])
 }
 
 export function loadLocalNamespaces(files: string[], locale: I18nLocaleConfig): I18nNamespaceSummary[] {
@@ -111,24 +133,6 @@ export function loadLocalNamespaces(files: string[], locale: I18nLocaleConfig): 
 
   return Object.entries(namespaceMapping)
     .map(([namespace, summaries]) => ({ namespace, summaries }))
-}
-
-export async function loadLocalMessages(
-  namespaceSummary: I18nNamespaceSummary,
-  basePath: string,
-  loaders: I18nConfig['loaders'],
-): Promise<I18nMessages> {
-  const { summaries } = namespaceSummary
-  const localeMessages = {} as I18nMessages
-  await Promise.all(summaries.map(async (summary) => {
-    const loader = loaders![summary.ext]
-    if (!loader) {
-      throw new Error(`${summary.ext} 的loader未定义`)
-    }
-    const fileData = await loader(path.join(basePath, summary.filename), summary)
-    localeMessages[summary.locale] = fileData
-  }))
-  return localeMessages
 }
 
 export async function loadRemoteMessages(

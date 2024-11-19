@@ -1,6 +1,8 @@
-import type { I18nConfig, I18nFileSummary, I18nLocaleSummary, I18nMessages, I18nNamespaceSummary } from '@/types'
+import type { I18nConfig, I18nFileSummary, I18nKey, I18nLocaleSummary, I18nMessage, I18nMessages, I18nNamespaceSummary } from '@/types'
 import fs from 'node:fs'
 import path from 'node:path'
+import { get, merge, set } from 'lodash-es'
+import { getObjectAllKeys } from './common'
 import { loadConfig } from './config'
 import { parsePatchMatcher } from './path-matcher'
 
@@ -88,7 +90,7 @@ export function loadLocaleInfo(dir: string, matcher: string, ext = ''): {
 
 export async function loadI18nMessages(summaries: I18nFileSummary[]): Promise<I18nMessages> {
   const config = await loadConfig()
-  const messages = {} as I18nMessages
+  let resultMapping: Record<I18nKey, I18nMessage> = {}
 
   for (const summary of summaries) {
     const loader = config.loaders![summary.ext]
@@ -97,10 +99,26 @@ export async function loadI18nMessages(summaries: I18nFileSummary[]): Promise<I1
     }
 
     const message = await loader(path.join(summary.basePath, summary.filename), summary)
-    messages[summary.locale] = message
+
+    const keys = getObjectAllKeys(message)
+
+    const mapping = keys.reduce((acc, key) => {
+      const keyPaths = key.split('.')
+      acc[key] = {
+        [summary.locale]: get(message, keyPaths),
+      }
+      return acc
+    }, {} as Record<string, any>)
+
+    resultMapping = merge(resultMapping, mapping)
   }
 
-  return messages
+  const allKeys = Object.keys(resultMapping).sort()
+
+  return allKeys.map(key => ({
+    ...resultMapping[key],
+    key,
+  }))
 }
 
 export async function generateFile(
@@ -123,12 +141,19 @@ export async function generateFile(
     if (!generator) {
       throw new Error(`${ext} 的 generator 未定义`)
     }
+    const messageRecord = messages.reduce((acc, message) => {
+      const paths = message.key.split('.')
+      const lastKey = paths.pop()!
 
-    const message = messages[locale]
-    if (!message) {
-      throw new Error(`${locale} 的 message 未定义`)
-    }
+      if (!get(acc, paths)) {
+        set(acc, paths, {})
+      }
 
-    await generator(outputPath, message, localeFileSummary)
+      set(acc, [...paths, lastKey], message[locale])
+
+      return acc
+    }, {} as Record<I18nKey, any>)
+
+    await generator(outputPath, messageRecord, localeFileSummary)
   }
 }

@@ -144,10 +144,9 @@ describe('generateFile', () => {
       ],
     }
 
-    const messages: I18nMessages = {
-      'en': { key: 'value' },
-      'zh-CN': { key: '值' },
-    }
+    const messages: I18nMessages = [
+      { 'key': 'value', 'en': 'value', 'zh-CN': '值' },
+    ]
 
     const mockGenerator = vi.fn()
     const generators: I18nConfig['generators'] = {
@@ -157,8 +156,8 @@ describe('generateFile', () => {
     await generateFile(namespaceSummary, messages, generators)
 
     expect(mockGenerator).toHaveBeenCalledTimes(2)
-    expect(mockGenerator).toHaveBeenCalledWith('/path/to/en.json', { key: 'value' }, namespaceSummary.summaries[0])
-    expect(mockGenerator).toHaveBeenCalledWith('/path/to/zh-CN.json', { key: '值' }, namespaceSummary.summaries[1])
+    expect(mockGenerator).toHaveBeenCalledWith('/path/to/en.json', { value: 'value' }, namespaceSummary.summaries[0])
+    expect(mockGenerator).toHaveBeenCalledWith('/path/to/zh-CN.json', { value: '值' }, namespaceSummary.summaries[1])
   })
 
   it('应该在generators未定义时抛出错误', async () => {
@@ -166,7 +165,7 @@ describe('generateFile', () => {
       namespace: 'test',
       summaries: [],
     }
-    const messages: I18nMessages = {}
+    const messages: I18nMessages = []
 
     await expect(generateFile(namespaceSummary, messages, undefined))
       .rejects
@@ -186,36 +185,13 @@ describe('generateFile', () => {
         },
       ],
     }
-    const messages: I18nMessages = {
-      en: { key: 'value' },
-    }
+    const messages: I18nMessages = [
+      { key: 'value', en: 'value', zhCN: '值' },
+    ]
     const generators: I18nConfig['generators'] = {}
 
     await expect(generateFile(namespaceSummary, messages, generators))
       .rejects
       .toThrow('.unknown 的 generator 未定义')
-  })
-
-  it('应该在找不到特定locale的message时抛出错误', async () => {
-    const namespaceSummary: I18nNamespaceSummary = {
-      namespace: 'test',
-      summaries: [
-        {
-          ext: '.json',
-          basePath: '/path/to',
-          filename: 'en.json',
-          locale: 'en',
-          namespace: 'test',
-        },
-      ],
-    }
-    const messages: I18nMessages = {}
-    const generators: I18nConfig['generators'] = {
-      '.json': vi.fn(),
-    }
-
-    await expect(generateFile(namespaceSummary, messages, generators))
-      .rejects
-      .toThrow('en 的 message 未定义')
   })
 })

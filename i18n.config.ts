@@ -5,11 +5,14 @@ export default defineConfig({
   pull: async (namespace) => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve({
-          en: {
-            test: `[${namespace}] test`,
+        resolve([
+          {
+            'en': `${namespace} en`,
+            'zh-CN': `${namespace} zh-CN`,
+            'key': 'test',
+            'deletedAt': '2024-01-01 00:00:00',
           },
-        })
+        ])
       }, 1000)
     })
   },

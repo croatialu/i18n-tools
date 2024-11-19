@@ -29,11 +29,21 @@ export interface I18nHooks {
 
 export type I18nFormatter = 'prettier' | 'eslint' | 'auto' | false
 
-export type I18nMessage = Record<string, unknown>
+/**
+ * 使用点号连接的key
+ */
+export type I18nKey = string
 
-export interface I18nMessages {
-  [locale: string]: I18nMessage
+interface I18nLocaleMessage {
+  [locale: string]: string | undefined
 }
+
+export type I18nMessage = I18nLocaleMessage & {
+  deletedAt?: string
+  key: I18nKey
+}
+
+export type I18nMessages = I18nMessage[]
 
 export interface I18nLocaleSummary {
   namespace: string
@@ -52,11 +62,11 @@ export interface I18nNamespaceSummary {
 }
 
 export interface I18nLoader {
-  (filename: string, summary: I18nLocaleSummary): Promise<I18nMessage>
+  (filename: string, summary: I18nLocaleSummary): Promise<Record<string, any>>
 }
 
 export interface I18nGenerator {
-  (filename: string, message: I18nMessage, summary: I18nLocaleSummary): Promise<void>
+  (filename: string, message: Record<string, any>, summary: I18nLocaleSummary): Promise<void>
 }
 
 export type I18nMergePolicy = 'local-first' | 'remote-first'
@@ -66,8 +76,4 @@ export interface I18nMergeOptions {
    * @default 'remote-first'
    */
   policy?: I18nMergePolicy
-  /**
-   * @default true
-   */
-  freezeDefaultLanguage?: boolean
 }

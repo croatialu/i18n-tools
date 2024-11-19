@@ -1,7 +1,7 @@
 import type { I18nConfig, I18nMessages, I18nNamespaceSummary } from '@/types'
 import { loadConfig } from '@/utils/config'
 import { generateFile, listLocaleFiles } from '@/utils/file'
-import { loadLocalMessages, loadLocalNamespaces, loadRemoteMessages, mergeI18nMessagesToRemote } from '@/utils/messages'
+import { loadLocalNamespaces, loadRemoteMessages, mergeI18nMessagesToRemote } from '@/utils/messages'
 import { describe, expect, it, vi } from 'vitest'
 import { push } from './index'
 
@@ -55,10 +55,8 @@ describe('push function', () => {
     vi.mocked(loadLocalNamespaces).mockReturnValue(mockNamespaces)
 
     // 模拟消息
-    const mockLocalMessages: I18nMessages = { en: { key: 'localValue' } }
-    const mockRemoteMessages: I18nMessages = { en: { key: 'remoteValue' } }
-    const mockMergedMessages: I18nMessages = { en: { key: 'mergedValue' } }
-    vi.mocked(loadLocalMessages).mockResolvedValue(mockLocalMessages)
+    const mockRemoteMessages: I18nMessages = [{ key: 'remoteKey', en: 'remoteValue' }]
+    const mockMergedMessages: I18nMessages = [{ key: 'mergedKey', en: 'mergedValue' }]
     vi.mocked(loadRemoteMessages).mockResolvedValue(mockRemoteMessages)
     vi.mocked(mergeI18nMessagesToRemote).mockResolvedValue(mockMergedMessages)
 
@@ -67,13 +65,12 @@ describe('push function', () => {
 
     // 验证是否正确处理了每个locale
     expect(listLocaleFiles).toHaveBeenCalledWith('path/to/locale', '{locale}.json', '.json')
-    // expect(loadLocalNamespaces).toHaveBeenCalledWith(mockFiles, mockConfig.locales[0])
+    expect(loadLocalNamespaces).toHaveBeenCalledWith(mockFiles, mockConfig.locales[0])
 
     // 验证是否正确处理了每个namespace
-    expect(loadLocalMessages).toHaveBeenCalled()
     expect(loadRemoteMessages).toHaveBeenCalled()
     // expect(mergeI18nMessagesToRemote).toHaveBeenCalled()
-    // expect(mergeI18nMessagesToRemote).toHaveBeenCalledWith(mockLocalMessages, mockRemoteMessages)
+    // expect(mergeI18nMessagesToRemote).toHaveBeenCalledWith(mockMergedMessages, mockRemoteMessages)
     // expect(generateFile).toHaveBeenCalled()
     // expect(generateFile).toHaveBeenCalledWith(mockNamespaces[0], mockMergedMessages, mockConfig.generators)
   })

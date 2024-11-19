@@ -1,18 +1,23 @@
 import { loadConfig } from '@/utils/config'
-import { generateFile, listLocaleFiles } from '@/utils/file'
-import { loadLocalMessages, loadLocalNamespaces, loadRemoteMessages, mergeI18nMessagesToLocal } from '@/utils/messages'
+import { generateFile, listLocaleFiles, loadI18nMessages } from '@/utils/file'
+import { loadLocalNamespaces, loadRemoteMessages, mergeI18nMessagesToLocal } from '@/utils/messages'
 import { isEqual } from 'lodash-es'
 import ora from 'ora'
 
 export interface PullOptions {
   dryRun?: boolean
+  /**
+   * 是否使用远端数据强制覆盖本地数据（放弃两者合并）
+   */
+  force?: boolean
 }
 
 export async function pull({
   dryRun = false,
+  force = false,
 }: PullOptions = {}): Promise<void> {
   const config = await loadConfig()
-  const { locales, loaders, generators, pull, mergeOptions, hooks } = config
+  const { locales, generators, pull, mergeOptions, hooks } = config
 
   const spinner = ora('Start pulling').start()
   spinner.info('Start pulling')
@@ -29,20 +34,21 @@ export async function pull({
       const localMergeOptions = typeof tmpMergeOptions === 'function'
         ? tmpMergeOptions(namespaceSummary.namespace, 'pull')
         : tmpMergeOptions
-      const localMessages = await loadLocalMessages(namespaceSummary, locale.path, loaders)
+      const localMessages = await loadI18nMessages(namespaceSummary.summaries)
 
       await beforePull?.(namespaceSummary.namespace, namespaceSummary.summaries)
       const remoteMessages = await loadRemoteMessages(namespaceSummary, locale.pull || pull)
       await afterPull?.(namespaceSummary.namespace, remoteMessages)
 
-      const mergedMessages = await mergeI18nMessagesToLocal(
-        localMessages,
-        remoteMessages,
-        localMergeOptions?.policy,
-        localMergeOptions?.freezeDefaultLanguage,
-      )
+      const mergedMessages = force
+        ? remoteMessages
+        : await mergeI18nMessagesToLocal(
+          localMessages,
+          remoteMessages,
+          localMergeOptions?.policy,
+        )
 
-      if (isEqual(mergedMessages, remoteMessages)) {
+      if (!force && isEqual(mergedMessages, remoteMessages)) {
         spinner.succeed(`No changes for locale: ${namespaceSummary.namespace}`)
         return
       }

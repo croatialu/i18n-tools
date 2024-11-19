@@ -1,22 +1,40 @@
-import type { I18nConfig, I18nLocaleConfig, I18nNamespaceSummary } from '@/types'
-import path from 'node:path'
+import type { I18nConfig, I18nLocaleConfig, I18nMessages, I18nNamespaceSummary } from '@/types'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { loadLocaleSummary } from './file'
-import { loadLocalMessages, loadLocalNamespaces, loadRemoteMessages, mergeI18nMessagesToLocal, mergeI18nMessagesToRemote } from './messages'
+import { loadLocalNamespaces, loadRemoteMessages, mergeI18nMessagesToLocal, mergeI18nMessagesToRemote } from './messages'
 
 vi.mock('./file', () => ({
   loadLocaleSummary: vi.fn(),
+  loadI18nMessages: vi.fn(),
 }))
 
 describe('mergeI18nMessagesToLocal', () => {
-  const localMessages = {
-    en: { hello: 'Hello', world: 'World' },
-    fr: { hello: 'Bonjour', world: 'Monde' },
-  }
-  const remoteMessages = {
-    en: { hello: 'Hi', world: 'Earth' },
-    fr: { hello: 'Salut', world: 'Terre' },
-  }
+  const localMessages: I18nMessages = [
+    {
+      key: 'hello',
+      en: 'Hello',
+      fr: 'Bonjour',
+    },
+    {
+      key: 'world',
+      en: 'World',
+      fr: 'Monde',
+    },
+  ]
+  const remoteMessages: I18nMessages = [
+    {
+      key: 'hello',
+      en: 'Hi',
+      fr: 'Salut',
+      ja: 'こんにちは',
+    },
+    {
+      key: 'world',
+      en: 'Earth',
+      fr: 'Terre',
+      ja: '地球',
+    },
+  ]
 
   beforeEach(() => {
     vi.mock('./config', () => ({
@@ -29,64 +47,48 @@ describe('mergeI18nMessagesToLocal', () => {
   })
 
   it('should merge messages with remote-first policy by default', async () => {
-    const result = await mergeI18nMessagesToLocal(localMessages, remoteMessages)
-    expect(result).toEqual({
-      en: { hello: 'Hello', world: 'World' },
-      fr: { hello: 'Salut', world: 'Terre' },
-    })
+    const result = await mergeI18nMessagesToLocal(localMessages, remoteMessages, 'remote-first')
+    expect(result).toEqual([
+      { key: 'hello', en: 'Hi', fr: 'Salut', ja: 'こんにちは' },
+      { key: 'world', en: 'Earth', fr: 'Terre', ja: '地球' },
+    ])
   })
 
   it('should merge messages with local-first policy when specified', async () => {
     const result = await mergeI18nMessagesToLocal(localMessages, remoteMessages, 'local-first')
-    expect(result).toEqual({
-      en: { hello: 'Hello', world: 'World' },
-      fr: { hello: 'Bonjour', world: 'Monde' },
-    })
-  })
-
-  it('should handle nested objects correctly', async () => {
-    const nestedLocalMessages = {
-      en: { greetings: { hello: 'Hello', goodbye: 'Goodbye' } },
-      fr: { greetings: { hello: 'Bonjour', goodbye: 'Au revoir' } },
-    }
-    const nestedRemoteMessages = {
-      en: { greetings: { hello: 'Hi', goodbye: 'Bye' } },
-      fr: { greetings: { hello: 'Salut', goodbye: 'À bientôt' } },
-    }
-    const result = await mergeI18nMessagesToLocal(nestedLocalMessages, nestedRemoteMessages)
-    expect(result).toEqual({
-      en: { greetings: { hello: 'Hello', goodbye: 'Goodbye' } },
-      fr: { greetings: { hello: 'Salut', goodbye: 'À bientôt' } },
-    })
+    expect(result).toEqual([
+      { key: 'hello', en: 'Hello', fr: 'Salut', ja: 'こんにちは' },
+      { key: 'world', en: 'World', fr: 'Terre', ja: '地球' },
+    ])
   })
 
   it('should use default language from config', async () => {
-    const customLocalMessages = {
-      en: { test: 'Test' },
-      de: { test: 'Test' },
-    }
-    const customRemoteMessages = {
-      en: { test: 'Remote Test' },
-      de: { test: 'Remote Test' },
-    }
+    const customLocalMessages: I18nMessages = [
+      { key: 'test.a', en: 'Test' },
+      { key: 'test.b', de: 'Test' },
+    ]
+    const customRemoteMessages: I18nMessages = [
+      { key: 'test.a', en: 'Remote Test' },
+      { key: 'test.b', de: 'Remote Test' },
+    ]
 
     const result = await mergeI18nMessagesToLocal(customLocalMessages, customRemoteMessages)
-    expect(result).toEqual({
-      en: { test: 'Test' },
-      de: { test: 'Remote Test' },
-    })
+    expect(result).toEqual([
+      { key: 'test.a', en: 'Test' },
+      { key: 'test.b', de: 'Remote Test' },
+    ])
   })
 })
 
 describe('mergeI18nMessagesToRemote', () => {
-  const localMessages = {
-    en: { hello: 'Hello', world: 'World' },
-    fr: { hello: 'Bonjour', world: 'Monde' },
-  }
-  const remoteMessages = {
-    en: { hello: 'Hi', world: 'Earth' },
-    fr: { hello: 'Salut', world: 'Terre' },
-  }
+  const localMessages: I18nMessages = [
+    { key: 'hello', en: 'Hello - local', fr: 'Bonjour - local' },
+    { key: 'world', en: 'World - local', fr: 'Monde - local' },
+  ]
+  const remoteMessages: I18nMessages = [
+    { key: 'hello', en: 'Hi - remote', fr: 'Salut - remote' },
+    { key: 'world', en: 'Earth - remote', fr: 'Terre - remote' },
+  ]
 
   beforeEach(() => {
     vi.mock('./config', () => ({
@@ -100,58 +102,61 @@ describe('mergeI18nMessagesToRemote', () => {
 
   it('should merge messages to remote correctly', async () => {
     const result = await mergeI18nMessagesToRemote(localMessages, remoteMessages)
-    expect(result).toEqual({
-      en: { hello: 'Hello', world: 'World' },
-      fr: { hello: 'Salut', world: 'Terre' },
-    })
-  })
-
-  it('should handle nested objects correctly', async () => {
-    const nestedLocalMessages = {
-      en: { greetings: { hello: 'Hello', goodbye: 'Goodbye' } },
-      fr: { greetings: { hello: 'Bonjour', goodbye: 'Au revoir' } },
-    }
-    const nestedRemoteMessages = {
-      en: { greetings: { hello: 'Hi', goodbye: 'Bye' } },
-      fr: { greetings: { hello: 'Salut', goodbye: 'À bientôt' } },
-    }
-    const result = await mergeI18nMessagesToRemote(nestedLocalMessages, nestedRemoteMessages)
-    expect(result).toEqual({
-      en: { greetings: { hello: 'Hello', goodbye: 'Goodbye' } },
-      fr: { greetings: { hello: 'Salut', goodbye: 'À bientôt' } },
-    })
+    expect(result).toEqual([
+      { key: 'hello', en: 'Hello - local', fr: 'Salut - remote', deletedAt: undefined },
+      { key: 'world', en: 'World - local', fr: 'Terre - remote', deletedAt: undefined },
+    ])
   })
 
   it('should use default language from config and ignore it in merging', async () => {
-    const customLocalMessages = {
-      en: { test: 'Test' },
-      de: { test: 'Test' },
-    }
-    const customRemoteMessages = {
-      en: { test: 'Remote Test' },
-      de: { test: 'Remote Test' },
-    }
+    const customLocalMessages: I18nMessages = [
+      { key: 'hello', en: 'Hello - local', de: 'Hallo - local' },
+      { key: 'world', en: 'World - local', de: 'Welt - local' },
+    ]
+    const customRemoteMessages: I18nMessages = [
+      { key: 'hello', en: 'Hi - remote', de: 'Hallo - remote' },
+      { key: 'world', en: 'Earth - remote', de: 'Erde - remote' },
+    ]
     const result = await mergeI18nMessagesToRemote(customLocalMessages, customRemoteMessages)
-    expect(result).toEqual({
-      en: { test: 'Test' },
-      de: { test: 'Remote Test' },
-    })
+    expect(result).toEqual([
+      { key: 'hello', en: 'Hello - local', de: 'Hallo - remote', deletedAt: undefined },
+      { key: 'world', en: 'World - local', de: 'Erde - remote', deletedAt: undefined },
+    ])
   })
 
   it('should handle missing keys in remote messages', async () => {
-    const localWithExtra = {
-      en: { hello: 'Hello', extra: 'Extra' },
-      fr: { hello: 'Bonjour', extra: 'Extra' },
-    }
-    const remoteWithMissing = {
-      en: { hello: 'Hi' },
-      fr: { hello: 'Salut' },
-    }
+    const localWithExtra: I18nMessages = [
+      { key: 'hello', en: 'Hello - local', ja: 'こんにちは - local', extra: 'Extra' },
+      { key: 'world', en: 'World - local', ja: 'こんにちは - local', extra: 'Extra' },
+    ]
+    const remoteWithMissing: I18nMessages = [
+      { key: 'hello', en: 'Hi - remote', ja: 'こんにちは - remote' },
+      { key: 'world', en: 'Salut - remote', ja: 'こんにちは - remote' },
+    ]
     const result = await mergeI18nMessagesToRemote(localWithExtra, remoteWithMissing)
-    expect(result).toEqual({
-      en: { hello: 'Hello', extra: 'Extra' },
-      fr: { hello: 'Salut', extra: undefined },
-    })
+    expect(result).toEqual([
+      { key: 'hello', en: 'Hello - local', ja: 'こんにちは - remote', deletedAt: undefined },
+      { key: 'world', en: 'World - local', ja: 'こんにちは - remote', deletedAt: undefined },
+    ])
+  })
+
+  it('should handle local messages deletedAt', async () => {
+    const localMessages: I18nMessages = [
+      { key: 'hello', en: 'Hello - local', zhCN: '你好 - local' },
+      { key: 'world', en: 'World - local', zhCN: '世界 - local' },
+    ]
+    const remoteMessages: I18nMessages = [
+      { key: 'extra', en: 'Extra - remote', zhCN: '额外 - remote' },
+      { key: 'hello', en: 'Hi - remote', zhCN: '嗨 - remote' },
+      { key: 'world', en: 'Salut - remote', zhCN: '你好 - remote' },
+    ]
+
+    const result = await mergeI18nMessagesToRemote(localMessages, remoteMessages)
+    expect(result).toEqual([
+      { key: 'extra', en: 'Extra - remote', zhCN: '额外 - remote', deletedAt: expect.any(String) },
+      { key: 'hello', en: 'Hello - local', zhCN: '嗨 - remote', deletedAt: undefined },
+      { key: 'world', en: 'World - local', zhCN: '你好 - remote', deletedAt: undefined },
+    ])
   })
 })
 
@@ -221,69 +226,6 @@ describe('loadLocalNamespaces', () => {
   })
 })
 
-describe('loadLocalMessages', () => {
-  it('应正确加载本地消息', async () => {
-    const namespaceSummary: I18nNamespaceSummary = {
-      namespace: 'common',
-      summaries: [
-        { namespace: 'common', locale: 'en', filename: 'en.json', ext: '.json', basePath: '/locales' },
-        { namespace: 'common', locale: 'fr', filename: 'fr.json', ext: '.json', basePath: '/locales' },
-      ],
-    }
-    const locale = {
-      path: '/locales',
-      matcher: '{locale}.json',
-      pull: vi.fn().mockResolvedValue({
-        en: { hello: 'Hello' },
-        fr: { hello: 'Bonjour' },
-      }),
-    } as I18nLocaleConfig
-    const config: I18nConfig = {
-      defaultLanguage: 'en',
-      locales: [locale],
-      loaders: {
-        '.json': vi.fn().mockImplementation((filePath) => {
-          const locale = path.basename(filePath, '.json')
-          return Promise.resolve({ hello: `Hello in ${locale}` })
-        }),
-      },
-    }
-
-    const result = await loadLocalMessages(namespaceSummary, locale.path, config.loaders)
-
-    expect(result).toEqual({
-      en: { hello: 'Hello in en' },
-      fr: { hello: 'Hello in fr' },
-    })
-  })
-
-  it('应在loader未定义时抛出错误', async () => {
-    const namespaceSummary: I18nNamespaceSummary = {
-      namespace: 'common',
-      summaries: [
-        {
-          namespace: 'common',
-          locale: 'en',
-          filename: 'en.yaml',
-          ext: '.yaml',
-          basePath: '/locales',
-        },
-      ],
-    }
-    const locale: I18nLocaleConfig = {
-      path: '/locales',
-      matcher: '{locale}.yaml',
-    }
-    const config: I18nConfig = {
-      defaultLanguage: 'en',
-      locales: [locale],
-      loaders: {},
-    }
-
-    await expect(loadLocalMessages(namespaceSummary, locale.path, config.loaders)).rejects.toThrow('yaml 的loader未定义')
-  })
-})
-
 describe('loadRemoteMessages', () => {
   it('应正确加载远程消息', async () => {
     const namespaceSummary: I18nNamespaceSummary = {
@@ -296,10 +238,9 @@ describe('loadRemoteMessages', () => {
     const locale: I18nLocaleConfig = {
       path: '/locales',
       matcher: '{locale}.json',
-      pull: vi.fn().mockResolvedValue({
-        en: { hello: 'Hello' },
-        fr: { hello: 'Bonjour' },
-      }),
+      pull: vi.fn().mockResolvedValue([
+        { key: 'hello', en: 'Hello', fr: 'Bonjour' },
+      ]),
     }
     const config: I18nConfig = {
       defaultLanguage: 'en',
@@ -308,10 +249,9 @@ describe('loadRemoteMessages', () => {
 
     const result = await loadRemoteMessages(namespaceSummary, locale.pull || config.pull)
 
-    expect(result).toEqual({
-      en: { hello: 'Hello' },
-      fr: { hello: 'Bonjour' },
-    })
+    expect(result).toEqual([
+      { key: 'hello', en: 'Hello', fr: 'Bonjour' },
+    ])
     expect(locale.pull).toHaveBeenCalledWith('common', namespaceSummary.summaries)
   })
 

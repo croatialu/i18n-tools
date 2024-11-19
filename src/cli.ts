@@ -28,12 +28,14 @@ program
 
 program
   .command('pull')
-  .option('--dry-run', 'dry run', false)
   .description('pull locale data from remote')
-  .action(async (options) => {
+  .option('--dry-run', 'dry run', false)
+  .option('--force', 'force pull, will delete all local messages', false)
+  .action(async (options: { dryRun?: boolean, force?: boolean }) => {
     const config = await loadConfig()
     await pull({
       dryRun: options.dryRun,
+      force: options.force,
     })
 
     if (config.formatter !== false) {
@@ -44,9 +46,10 @@ program
   })
 
 program.command('push')
-  .option('--dry-run', 'dry run', false)
   .description('push locale data to remote')
-  .action(async (options) => {
+  .option('--dry-run', 'dry run', false)
+  .option('--force', 'force push, will delete all remote messages', false)
+  .action(async (options: { dryRun?: boolean, force?: boolean }) => {
     const config = await loadConfig()
 
     // PUSH 前， 先拉取远程数据更新本地
