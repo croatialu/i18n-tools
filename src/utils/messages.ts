@@ -58,11 +58,14 @@ export async function mergeI18nMessagesToLocal(
       return acc
     }, {} as Record<string, any>)
 
+    const localValue = localMessage[config.defaultLanguage]
+    const remoteValue = remoteMessage[config.defaultLanguage]
+
     newMessageMapping[key] = {
       ...transition,
       key,
       [config.defaultLanguage]:
-        policy === 'local-first' ? localMessage[config.defaultLanguage] : remoteMessage[config.defaultLanguage],
+        policy === 'local-first' ? (localValue || remoteValue) : (remoteValue || localValue),
     }
   })
 
@@ -105,7 +108,8 @@ export async function mergeI18nMessagesToRemote(
       acc[key] = remoteMessage[key]
       return acc
     }, {} as Record<string, any>)
-    const type = getOperationType(!isEmpty(localMessage), !isEmpty(remoteMessage))
+    const type = remoteMessage.deletedAt ? 'delete' : getOperationType(!isEmpty(localMessage), !isEmpty(remoteMessage))
+
     newMessageMapping[key] = {
       ...transition,
       key,
@@ -145,5 +149,7 @@ export async function loadRemoteMessages(
     throw new Error('push 时，locale.pull 或 config.pull 未定义')
   }
 
-  return pull(namespace, summaries)
+  const messages = await pull(namespace, summaries)
+
+  return messages.toSorted((a, b) => a.key.localeCompare(b.key))
 }

@@ -48,7 +48,7 @@ export async function pull({
           localMergeOptions?.policy,
         )
 
-      if (!force && isEqual(mergedMessages, remoteMessages)) {
+      if (!force && isEqual(mergedMessages, localMessages)) {
         spinner.succeed(`No changes for locale: ${namespaceSummary.namespace}`)
         return
       }

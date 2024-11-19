@@ -91,7 +91,6 @@ export function loadLocaleInfo(dir: string, matcher: string, ext = ''): {
 export async function loadI18nMessages(summaries: I18nFileSummary[]): Promise<I18nMessages> {
   const config = await loadConfig()
   let resultMapping: Record<I18nKey, I18nMessage> = {}
-
   for (const summary of summaries) {
     const loader = config.loaders![summary.ext]
     if (!loader) {
